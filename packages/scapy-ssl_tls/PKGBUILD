@@ -1,22 +1,22 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='scapy-ssl_tls'
-pkgver='1.2.3.2'
+pkgname=scapy-ssl_tls
+pkgver=2.0.0
 pkgrel=1
 pkgdesc='An SSL/TLS layer for scapy the interactive packet manipulation tool.'
 arch=('any')
-url='https://github.com/tintinweb/scapy-ssl_tls'
+url='https://pypi.org/project/scapy-ssl_tls/#files'
 license=('GPL2')
-depends=('python2' 'scapy' 'python2-crypto')
+depends=('python2' 'python2-scapy' 'python2-crypto')
 makedepends=('python2-setuptools')
-source=("https://pypi.python.org/packages/04/8b/f9688918ca8ac8ff9040abaafdd4ba6dc79d136aed2d40155c8a48feae5f/scapy-ssl_tls-${pkgver}.tar.gz")
-sha1sums=('4b341c2837ee6155cc62432344a77162bff48ed7')
+source=("https://files.pythonhosted.org/packages/5e/00/2b1455c5b372e1c99c9a76f593afd4e8c4cc35cceec7770f978f36a65c74/scapy-ssl_tls-${pkgver}.tar.gz")
+sha512sums=('18bd4e8d1edf9b90bd3a307cf72d4b93098f57d40f2c52e714602fb8bb62c3036f46a08c9c2eaa2b596c72da1f6a75b47d7709b8880e0805007f9413ca94f96b')
 
 package() {
   cd "$srcdir/scapy-ssl_tls-$pkgver"
 
-  mkdir -p "$pkgdir/usr/lib/python2.7/site-packages"
+  install -dm 755 "$pkgdir/usr/lib/python2.7/site-packages"
 
   cp -a scapy_ssl_tls scapy_ssl_tls.egg-info \
     "$pkgdir/usr/lib/python2.7/site-packages"

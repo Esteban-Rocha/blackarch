@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='o-saft'
-pkgver=2278.87926d5
+pkgname=o-saft
+pkgver=2613.98fa855
 pkgrel=1
 groups=('blackarch' 'blackarch-scanner' 'blackarch-recon')
 pkgdesc='A tool to show informations about SSL certificate and tests the SSL connection according given list of ciphers and various SSL configurations.'
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('perl' 'perl-io-socket-ssl' 'perl-net-ssleay' 'perl-io-socket-inet6')
 makedepends=('git')
 source=('git+https://github.com/OWASP/O-Saft.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/O-Saft"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/O-Saft"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/o-saft"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/o-saft"
 
   install -Dm644 README "$pkgdir/usr/share/doc/o-saft/README"
   install -m644 CHANGES "$pkgdir/usr/share/doc/o-saft/CHANGES"

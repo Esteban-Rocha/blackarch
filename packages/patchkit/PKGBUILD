@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='patchkit'
+pkgname=patchkit
 pkgver=36.5fe79b7
 pkgrel=1
 pkgdesc='Powerful binary patching from Python.'
@@ -13,7 +13,7 @@ depends=('python2' 'python2-coding' 'python2-capstone' 'python2-keystone'
          'unicorn')
 makedepends=('git')
 source=('git+https://github.com/lunixbochs/patchkit')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/patchkit"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/patchkit"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/patchkit"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/patchkit"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/patchkit/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/patchkit/LICENSE"

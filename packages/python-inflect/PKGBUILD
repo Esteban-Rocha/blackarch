@@ -1,17 +1,17 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python-inflect'
-pkgver='0.2.5'
-pkgrel=1
+pkgname=python-inflect
+pkgver=0.3.1
+pkgrel=2
 pkgdesc='Correctly generate plurals, singular nouns, ordinals, indefinite articles; convert numbers to words.'
-url='https://pypi.python.org/pypi/inflect/'
+url='https://pypi.org/project/inflect/#files'
 arch=('any')
 license=('GAGPL')
 depends=('python')
 makedepends=('python-setuptools')
-source=("https://pypi.python.org/packages/e1/5d/478a8e9d8b7cc004a36b75369f9caf1c23cd7ba0b97af146b516c49923d9/inflect-${pkgver}.tar.gz")
-sha1sums=('7aa4f37975050a75ad898695f73b12da62caabb9')
+source=("https://files.pythonhosted.org/packages/de/2e/2c9667ee54032d1fa1895642772f106dc47817b64c331ed2247f7cce7be3/inflect-${pkgver}.tar.gz")
+sha512sums=('c832f0f36b56f5f59d8c3a7c0b128c0ae00f7a90c57f303e79a2118657ee7b62ed3db7cd4c3297e41a07c4d2bdbc18d6c754c319a43004af6d35cab3701169a6')
 
 build() {
   cd "$srcdir/inflect-$pkgver"

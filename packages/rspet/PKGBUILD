@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='rspet'
+pkgname=rspet
 pkgver=263.de4356e
 pkgrel=1
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-backdoor'
@@ -13,7 +13,7 @@ license=('MIT')
 depends=('python2' 'python2-flask' 'python2-flask-cors')
 makedepends=('git' 'python2-pip')
 source=('git+https://github.com/panagiks/RSPET.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "${srcdir}/RSPET"
@@ -34,8 +34,8 @@ package() {
 
   cd "${srcdir}/RSPET"
 
-  mkdir -p "${pkgdir}/usr/bin"
-  mkdir -p "${pkgdir}/usr/share/${_app_name}"
+  install -dm 755 "${pkgdir}/usr/bin"
+  install -dm 755 "${pkgdir}/usr/share/${_app_name}"
 
   install -Dm644 -t "${pkgdir}/usr/share/doc/${_app_name}/" README.md
   install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${_app_name}/LICENSE"

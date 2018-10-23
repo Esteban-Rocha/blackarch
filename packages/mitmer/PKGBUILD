@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='mitmer'
+pkgname=mitmer
 pkgver=22.b01c7fe
 pkgrel=3
 groups=('blackarch' 'blackarch-sniffer' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('custom')
 depends=('python2' 'python2-scapy' 'python2-nfqueue')
 makedepends=('git')
 source=('git+https://github.com/husam212/MITMer.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/MITMer"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/MITMer"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/mitmer"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/mitmer"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/mitmer/README.md"
 

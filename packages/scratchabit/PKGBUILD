@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='scratchabit'
+pkgname=scratchabit
 pkgver=483.72da2e8
 pkgrel=1
 pkgdesc='Easily retargetable and hackable interactive disassembler with IDAPython-compatible plugin API.'
@@ -28,8 +28,8 @@ prepare() {
 package() {
   cd "$srcdir/ScratchABit"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/scratchabit"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/scratchabit"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/scratchabit" README.md docs/*
 
@@ -45,3 +45,4 @@ EOF
 
   chmod +x "$pkgdir/usr/bin/scratchabit"
 }
+

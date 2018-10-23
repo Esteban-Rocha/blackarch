@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wafninja'
+pkgname=wafninja
 pkgver=25.379cd98
 pkgrel=1
 pkgdesc='A tool which contains two functions to attack Web Application Firewalls.'
@@ -13,7 +13,7 @@ depends=('python2' 'python2-prettytable' 'python2-progressbar'
          'python2-pysqlite' 'python2-pyopenssl')
 makedepends=('git')
 source=('git+https://github.com/khalilbijjou/WAFNinja')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/WAFNinja"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/WAFNinja"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/wafninja"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/wafninja"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/wafninja/" README.md
 

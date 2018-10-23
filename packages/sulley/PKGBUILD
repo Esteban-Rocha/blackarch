@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='sulley'
+pkgname=sulley
 pkgver=1.0.e72d343
 pkgrel=1
 epoch=3
@@ -13,7 +13,7 @@ license=('GPL2')
 makedepends=('git')
 depends=('python2' 'libpcap' 'python2-pcapy' 'impacket')
 source=('git+http://github.com/OpenRCE/sulley.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/sulley"
@@ -32,7 +32,7 @@ prepare() {
 package() {
   cd "$srcdir/sulley"
 
-  mkdir -p "$pkgdir/usr/share/sulley"
+  install -dm 755 "$pkgdir/usr/share/sulley"
 
   cp -a --no-preserve=ownership * "$pkgdir/usr/share/sulley/"
 }

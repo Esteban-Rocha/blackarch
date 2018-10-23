@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='yara-rules'
-pkgver=1508.7966196
+pkgname=yara-rules
+pkgver=1594.1e9f602
 pkgrel=1
 pkgdesc='A Repository of yara rules.'
 arch=('any')
@@ -10,7 +10,7 @@ url='https://github.com/Yara-Rules/rules'
 license=('GPL2')
 makedepends=('git')
 source=("git+https://github.com/Yara-Rules/rules.git")
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/rules"
@@ -21,7 +21,7 @@ pkgver() {
 package() {
   cd "$srcdir/rules"
 
-  mkdir -p "$pkgdir/usr/share/yara-rules"
+  install -dm 755 "$pkgdir/usr/share/yara-rules"
 
   cp -a --no-preserve=ownership * "$pkgdir/usr/share/yara-rules/"
 

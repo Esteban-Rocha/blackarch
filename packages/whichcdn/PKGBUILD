@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='whichcdn'
+pkgname=whichcdn
 pkgver=22.5fc6ddd
 pkgrel=3
 pkgdesc='Tool to detect if a given website is protected by a Content Delivery Network.'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2' 'python2-argparse' 'python2-requests')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/Nitr4x/whichCDN.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/whichCDN"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/whichCDN"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/whichcdn"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/whichcdn"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/whichcdn/" *.md
   install -Dm644 LICENCE.txt "$pkgdir/usr/share/licenses/whichcdn/LICENSE.txt"

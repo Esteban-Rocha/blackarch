@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='hulk'
-pkgver=21.d47030b
+pkgname=hulk
+pkgver=23.124b6e0
 pkgrel=1
 pkgdesc='A webserver DoS tool (Http Unbearable Load King) ported to Go with some additional features.'
 groups=('blackarch' 'blackarch-dos')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('glibc')
 makedepends=('git' 'go')
 source=('git+https://github.com/grafov/hulk.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/hulk"

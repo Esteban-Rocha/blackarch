@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='riwifshell'
+pkgname=riwifshell
 pkgver=38.40075d5
 pkgrel=2
 pkgdesc='Web backdoor - infector - explorer.'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/graniet/riwifshell.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/riwifshell"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/riwifshell"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/riwifshell"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/riwifshell"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/riwifshell/" README.md
 

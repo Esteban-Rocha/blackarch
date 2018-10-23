@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='gnutls2'
-pkgver='2.12.23'
+pkgname=gnutls2
+pkgver=2.12.23
 pkgrel=2
 groups=('blackarch' 'blackarch-crypto')
 pkgdesc='A library which provides a secure layer over a reliable transport layer (Version 2)'
@@ -37,6 +37,6 @@ package() {
   
   make DESTDIR="${pkgdir}" install
   
-  mkdir -p "${pkgdir}"/etc/ld.so.conf.d
+  install -dm 755 "${pkgdir}"/etc/ld.so.conf.d
   echo '/usr/gnutls2/lib/' > "${pkgdir}/etc/ld.so.conf.d/${pkgname}.conf"
 }

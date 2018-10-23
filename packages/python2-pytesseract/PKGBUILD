@@ -1,0 +1,26 @@
+# This file is part of BlackArch Linux ( http://blackarch.org ).
+# See COPYING for license details.
+
+pkgname=python2-pytesseract
+pkgver=0.2.0
+pkgrel=2
+pkgdesc="Python-tesseract is a python wrapper for Google's Tesseract-OCR."
+arch=('any')
+url='https://pypi.org/project/pytesseract/'
+license=('GPL3')
+depends=('python2')
+makedepends=('python2-setuptools')
+source=("https://files.pythonhosted.org/packages/7c/19/93a003a1f514dd0584eba13afc1e7093c135964766c56998bc3a2efc331f/pytesseract-${pkgver}.tar.gz")
+sha512sums=('4282721c85a59991ee33379bc262c45e9976609d0917d0227507e2a2503850cd94851a6ce74053f3d68300f3b6824f89a1c5f64eace3c0677154fcbcd119c078')
+
+build() {
+  cd "$srcdir/pytesseract-$pkgver"
+
+  python2 setup.py build
+}
+
+package() {
+  cd "$srcdir/pytesseract-$pkgver"
+
+  python2 setup.py install --prefix=/usr --root="$pkgdir" --optimize=1
+}

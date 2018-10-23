@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='crlf-injector'
+pkgname=crlf-injector
 pkgver=8.abaf494
 pkgrel=1
 pkgdesc='A python script for testing CRLF injecting issues.'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-netaddr' 'python2-argparse')
 makedepends=('git')
 source=('git+https://github.com/rudSarkar/crlf-injector.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/crlf-injector"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/crlf-injector"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/crlf-injector"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/crlf-injector"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/crlf-injector/" README.md
   install -Dm644 LICENSE.md/LICENSE.md \

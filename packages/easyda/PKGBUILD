@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='easyda'
+pkgname=easyda
 pkgver=7.0867f9b
 pkgrel=2
 groups=('blackarch' 'blackarch-automation' 'blackarch-scanner'
@@ -13,7 +13,7 @@ license=('GPL3')
 depends=('bash' 'metasploit')
 makedepends=('git')
 source=('git+https://github.com/nccgroup/easyda.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/easyda"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='crowbar'
+pkgname=crowbar
 pkgver=79.a338de6
 pkgrel=1
 groups=('blackarch' 'blackarch-cracker')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-paramiko' 'openvpn' 'openssh' 'freerdp' 'tigervnc')
 makedepends=('git')
 source=('git+https://github.com/galkan/crowbar.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/crowbar"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/crowbar"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/crowbar"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/crowbar"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/crowbar/README"
   install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/crowbar/LICENSE.txt"

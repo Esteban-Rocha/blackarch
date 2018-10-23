@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='honssh'
+pkgname=honssh
 pkgver=202.7adbf1b
 pkgrel=2
 groups=('blackarch' 'blackarch-honeypot')
@@ -12,7 +12,7 @@ license=('BSD')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/tnich/honssh.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/honssh"
@@ -23,7 +23,7 @@ pkgver() {
 package() {
   cd "$srcdir/honssh"
 
-  mkdir -p "$pkgdir/usr/share/honssh"
+  install -dm 755 "$pkgdir/usr/share/honssh"
 
   install -Dm644 README "$pkgdir/usr/share/doc/honssh/README"
 

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='imagegrep'
+pkgname=imagegrep
 pkgver=7.0d59c2b
 pkgrel=1
 pkgdesc='Grep word in pdf or image based on OCR.'
@@ -12,7 +12,7 @@ license=('LGPL')
 depends=('bash' 'tesseract' 'imagemagick')
 makedepends=('git')
 source=('git+https://github.com/coderofsalvation/imagegrep-bash.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/imagegrep-bash"

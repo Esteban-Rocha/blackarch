@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='red-hawk'
+pkgname=red-hawk
 pkgver=25.d1bdac7
 pkgrel=1
 pkgdesc='All in one tool for Information Gathering, Vulnerability Scanning and Crawling.'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('php')
 makedepends=('git')
 source=('git+https://github.com/Tuhinshubhra/RED_HAWK')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/RED_HAWK"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/RED_HAWK"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/red-hawk"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/red-hawk"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/red-hawk/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/red-hawk/LICENSE"

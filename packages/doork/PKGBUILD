@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='doork'
+pkgname=doork
 pkgver=6.90c7260
 pkgrel=2
 groups=('blackarch' 'blackarch-webapp' 'blackarch-recon')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-requests' 'python2-beautifulsoup4'
          'python2-xgoogle' 'python2-simplejson')
 makedepends=('git')
 source=('git+https://github.com/AeonDave/doork.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/doork"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/doork"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/doork"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/doork"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/doork/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/doork/LICENSE"

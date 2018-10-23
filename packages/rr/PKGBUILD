@@ -1,18 +1,19 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='rr'
-pkgver='5.0.0'
+pkgname=rr
+pkgver=5.1.0
 pkgrel=1
 groups=('blackarch' 'blackarch-debugger' 'blackarch-misc')
 pkgdesc='A Record and Replay Framework.'
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 url='https://github.com/mozilla/rr'
 license=('custom')
-depends=('libpfm4' 'zlib' 'python2-pexpect' 'man-pages')
-makedepends=('cmake' 'gdb')
+depends=('libpfm4' 'zlib' 'python2-pexpect' 'man-pages' 'libpfm4'
+         'gcc-libs' 'bash' 'lib32-zlib' 'python2' 'gcc')
+makedepends=('cmake' 'gdb' 'capnproto')
 source=("https://github.com/mozilla/rr/archive/${pkgver}.tar.gz")
-sha1sums=('80b641b18f2cbb7b0af51e21127eb6e3a55185fa')
+sha512sums=('8cb7da20ddb2bfbeaf57d9bca76a3b5495d4bd74a00092c40c948570a2cda3dca6cb1e73ed65af099fe405a4d29ff1a852496baf0fcb6119258443649a65766a')
 
 build(){
   cd "$srcdir/rr-$pkgver"
@@ -24,7 +25,8 @@ build(){
   cd build
 
   cmake -Ddisable32bit=ON -DCMAKE_VERBOSE_MAKEFILE=ON \
-    -DCMAKE_INSTALL_PREFIX=/usr ..
+    -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr \
+    -DPYTHON_EXECUTABLE=/usr/bin/python2 ..
 
   make
 }

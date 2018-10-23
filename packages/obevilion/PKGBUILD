@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='obevilion'
-pkgver=408.021c9f2
+pkgname=obevilion
+pkgver=409.29fbe9d
 pkgrel=1
 pkgdesc='Another archive cracker created in python | cracking [zip/7z/rar].'
 groups=('blackarch' 'blackarch-cracker')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2' 'python2-colorama' 'python2-pyqt4')
 makedepends=('git')
 source=('git+https://github.com/BL4CKvGHOST/Ob3vil1on.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Ob3vil1on"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/Ob3vil1on"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/obevilion"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/obevilion"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/obevilion/" README.md
   install -Dm644 COPYING "$pkgdir/usr/share/licenses/obevilion/COPYING"

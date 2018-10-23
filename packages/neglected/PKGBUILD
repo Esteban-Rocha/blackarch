@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='neglected'
+pkgname=neglected
 pkgver=8.68d02b3
 pkgrel=2
 epoch=1
@@ -13,7 +13,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-requests')
 makedepends=('git')
 source=('git+https://github.com/GuerrillaWarfare/neglected.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/neglected"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/neglected"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/neglected"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/neglected"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/neglected/README.md"
 

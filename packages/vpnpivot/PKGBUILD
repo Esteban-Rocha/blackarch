@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='vpnpivot'
+pkgname=vpnpivot
 pkgver=22.37bbde0
 pkgrel=1
 pkgdesc='Explore the network using this tool.'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('linux-headers' 'openssl')
 makedepends=('git')
 source=('git+https://github.com/0x36/VPNPivot.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/VPNPivot"

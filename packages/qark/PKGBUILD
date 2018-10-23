@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='qark'
-pkgver=138.94dfcfe
-pkgrel=2
+pkgname=qark
+pkgver=144.8f7cd41
+pkgrel=1
 groups=('blackarch' 'blackarch-mobile' 'blackarch-fuzzer' 'blackarch-scanner'
         'blackarch-exploitation')
 pkgdesc='Tool to look for several security related Android application vulnerabilities.'
@@ -15,7 +15,7 @@ depends=('python2' 'java-environment' 'python2-pubsub' 'python2-lxml'
          'python2-html5lib' 'python2-coloredlogs' 'python2-beautifulsoup4')
 makedepends=('git')
 source=('git+https://github.com/linkedin/qark.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/qark"
@@ -26,8 +26,8 @@ pkgver() {
 package() {
   cd "$srcdir/qark"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/qark"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/qark"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/qark/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/qark/LICENSE"

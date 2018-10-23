@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='azazel'
+pkgname=azazel
 pkgver=14.e6a12a2
 pkgrel=1
 groups=('blackarch' 'blackarch-backdoor')
@@ -13,7 +13,7 @@ depends=('python2')
 makedepends=('git')
 install='azazel.install'
 source=('git+https://github.com/chokepoint/azazel.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/azazel"
@@ -24,7 +24,7 @@ pkgver() {
 package() {
   cd "$srcdir/azazel"
 
-  mkdir -p "$pkgdir/usr/share/azazel"
+  install -dm 755 "$pkgdir/usr/share/azazel"
 
   cp -a --no-preserve=ownership * "$pkgdir/usr/share/azazel"
 }

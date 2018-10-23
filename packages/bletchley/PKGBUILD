@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='bletchley'
-pkgver='0.0.1'
-pkgrel=8
+pkgname=bletchley
+pkgver=0.0.1
+pkgrel=9
 groups=('blackarch' 'blackarch-crypto')
 pkgdesc='A collection of practical application cryptanalysis tools.'
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
@@ -13,7 +13,7 @@ depends=('python3' 'python-requests')
 makedepends=('subversion' 'scons')
 source=('svn+https://code.blindspotsecurity.com/dav/bletchley/trunk/')
 #source=("https://googledrive.com/host/0B6HCWPzk_jKoVHI5WV9EMURfbms/bletchley-src-${pkgver}.tar.gz")
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 build() {
   cd "$srcdir/trunk"
@@ -27,8 +27,8 @@ package() {
   tools="bletchley-analyze bletchley-clonecertchain bletchley-decode"
   tools="${tools} bletchley-encode bletchley-http2py bletchley-nextrand"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/bletchley"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/bletchley"
 
   PREFIX="$pkgdir" scons install
 

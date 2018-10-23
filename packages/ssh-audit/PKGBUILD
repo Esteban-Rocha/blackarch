@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ssh-audit'
+pkgname=ssh-audit
 pkgver=165.22b671e
 pkgrel=1
 groups=('blackarch' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/arthepsy/ssh-audit.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ssh-audit"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/ssh-audit"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/ssh-audit"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/ssh-audit"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/ssh-audit/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/ssh-audit/LICENSE"

@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-tweepy'
-pkgver='20100216'
-pkgrel=8
+pkgname=python2-tweepy
+pkgver=20100216
+pkgrel=9
 pkgdesc='Twitter api library for python. (forked but 100% compatible).'
 url='http://github.com/m00n/tweepy'
 license=('custom')
@@ -12,7 +12,7 @@ makedepends=('git' 'python2-setuptools')
 conflicts=('tweepy-git')
 provides=('tweepy-git')
 source=('git+http://github.com/m00n/tweepy.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 build() {
   cd "$srcdir"

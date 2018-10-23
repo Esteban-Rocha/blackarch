@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='network-app-stress-tester'
+pkgname=network-app-stress-tester
 pkgver=19.df75391
 pkgrel=1
 groups=('blackarch' 'blackarch-dos' 'blackarch-networking' 'blackarch-fuzzer')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('')
 makedepends=('git')
 source=('git+https://github.com/PherricOxide/Network-App-Stress-Tester.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Network-App-Stress-Tester"

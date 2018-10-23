@@ -1,10 +1,10 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='cansina'
-pkgver=231.3c7960e
-pkgrel=1
-epoch=1
+pkgname=cansina
+pkgver=14.b42ff88
+pkgrel=2
+epoch=2
 groups=('blackarch' 'blackarch-webapp' 'blackarch-scanner')
 pkgdesc='A python-based Web Content Discovery Tool.'
 arch=('any')
@@ -13,7 +13,7 @@ license=('GPL3')
 depends=('python2' 'python2-requests' 'java-environment' 'fuzzdb')
 makedepends=('git')
 source=('git+https://github.com/deibit/cansina.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/cansina"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/cansina"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/cansina"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/cansina"
 
   install -Dm644 -t "$pkgdir/usr/share/cansina/" *.py
 

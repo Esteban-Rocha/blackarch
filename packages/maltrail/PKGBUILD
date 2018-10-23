@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='maltrail'
-pkgver=1462.e62bc40
+pkgname=maltrail
+pkgver=3101.96086cf3
 pkgrel=1
 pkgdesc='Malicious traffic detection system.'
 groups=('blackarch' 'blackarch-defensive' 'blackarch-networking'
@@ -13,7 +13,7 @@ license=('MIT')
 depends=('python2' 'python2-pcapy' 'python2-pysqlite')
 makedepends=('git')
 source=('git+https://github.com/stamparm/maltrail.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/maltrail"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/maltrail"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/maltrail"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/maltrail"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/maltrail/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/maltrail/LICENSE"

@@ -1,21 +1,21 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ranger-scanner'
+pkgname=ranger-scanner
 pkgver=149.3aae5dd
-pkgrel=4
+pkgrel=5
 groups=('blackarch' 'blackarch-scanner' 'blackarch-recon')
 pkgdesc='A tool to support security professionals to access and interact with remote Microsoft Windows based systems.'
 arch=('any')
 url='https://github.com/funkandwagnalls/ranger'
 license=('custom:unknown')
 depends=('python2' 'python2-python-nmap' 'impacket' 'python2-lxml'
-         'python2-netifaces' 'python2-netaddr' 'python2-crypto')
+         'python2-netifaces' 'python2-netaddr' 'python2-pycryptodome')
 makedepends=('git')
 source=('git+https://github.com/funkandwagnalls/ranger.git'
         'ranger.py.patch')
-sha1sums=('SKIP'
-          '2bc9b9550b625ab43ae0f6330bf7c4e376ac21ac')
+sha512sums=('SKIP'
+            'e16b0ea0c3d0237c72d4cddd6b186c6e883dfe67199f4bad606a4e101dbe3b95d6676142857de5f9007986d9d0b4a2146defbd7fff8857df7de12613f4e7fd2d')
 
 pkgver() {
   cd "$srcdir/ranger"
@@ -32,8 +32,8 @@ prepare() {
 package() {
   cd "$srcdir/ranger"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/ranger"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/ranger"
 
   install -Dm755 ranger.py "$pkgdir/usr/bin/ranger-scanner"
   install -Dm644 -t "$pkgdir/usr/share/doc/ranger-scanner/" README.md

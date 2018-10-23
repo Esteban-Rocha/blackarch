@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='crozono'
+pkgname=crozono
 pkgver=20.ece1a5e
-pkgrel=1
+pkgrel=2
 pkgdesc='A modular framework designed to automate the penetration testing of wireless networks from drones and such unconventional devices.'
 groups=('blackarch' 'blackarch-drone' 'blackarch-wireless')
 arch=('any')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python' 'python-colorama' 'python-pyfiglet' 'python-poormanslogging')
 makedepends=('git')
 source=('git+https://github.com/crozono/crozono-free.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/crozono-free"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/crozono-free"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/crozono"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/crozono"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/crozono/" README.md
 

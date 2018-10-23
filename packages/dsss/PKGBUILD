@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dsss'
+pkgname=dsss
 pkgver=116.6d14edb
 pkgrel=2
 groups=('blackarch' 'blackarch-webapp' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/stamparm/DSSS.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/DSSS"

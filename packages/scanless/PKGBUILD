@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='scanless'
-pkgver=46.f7ccc69
+pkgname=scanless
+pkgver=61.e63f55e
 pkgrel=1
 pkgdesc='Utility for using websites that can perform port scans on your behalf.'
 groups=('blackarch' 'blackarch-scanner')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-argparse' 'python2-beautifulsoup4'
          'python2-requests')
 makedepends=('git')
 source=('git+https://github.com/vesche/scanless.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/scanless"

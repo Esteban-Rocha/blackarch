@@ -1,16 +1,16 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-archinfo'
-pkgver='7.7.9.14'
+pkgname=python2-archinfo
+pkgver=7.8.8.1
 pkgrel=1
 pkgdesc='UNKNOWN'
 arch=('any')
-url='http://pypi.python.org/pypi/archinfo'
+url='https://pypi.org/project/archinfo/#files'
 license=('custom:unknown')
 depends=('python2' 'capstone' 'python2-pyelftools')
-source=("https://pypi.python.org/packages/a3/57/9a5c99efc258fd053d71412cfaccdd1752e446cc0aa2edd0d1bd2fc901f4/archinfo-${pkgver}.tar.gz")
-sha1sums=('4005156ee9355939dfa24a6f444ca49ea1eb0725')
+source=("https://files.pythonhosted.org/packages/ac/d3/705b0284e9c621acd85fc6d3c948b3cb78cafea5cd41a072c9e989a862e4/archinfo-${pkgver}.tar.gz")
+sha512sums=('f5cdb22e35c12965484b627ca971eb09ac0a350b1fd4e24a3d8194d82bec1fa683903298dd8e4b4fcc360507f3ee1648cce73d430a9a40377a16a9bc7062cc44')
 
 build() {
   cd "$srcdir/archinfo-$pkgver"

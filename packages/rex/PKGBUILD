@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='rex'
-pkgver=437.fe4483d
+pkgname=rex
+pkgver=469.2ab2422
 pkgrel=1
 pkgdesc="Shellphish's automated exploitation engine, originally created for the Cyber Grand Challenge."
 groups=('blackarch' 'blackarch-exploitation')
@@ -12,7 +12,7 @@ license=('BSD')
 depends=('python2' 'python2-simuvex' 'python2-tracer' 'angr' 'angrop')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/shellphish/rex.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/rex"

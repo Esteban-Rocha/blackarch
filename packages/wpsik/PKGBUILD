@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wpsik'
+pkgname=wpsik
 pkgver=6.7eda4fd
 pkgrel=2
 pkgdesc='WPS scan and pwn tool.'
@@ -13,7 +13,7 @@ depends=('python2' 'python2-coloredlogs' 'python2-netaddr' 'python2-colorama'
          'impacket' 'python2-scapy')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/0x90/wpsik.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/wpsik"

@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='tls-prober'
-pkgver=264.d56de68
-pkgrel=2
+pkgname=tls-prober
+pkgver=268.0746033
+pkgrel=1
 pkgdesc='A tool to fingerprint SSL/TLS servers.'
 groups=('blackarch' 'blackarch-fingerprint' 'blackarch-crypto')
 arch=('any')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/WestpointLtd/tls_prober')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/tls_prober"
@@ -29,8 +29,8 @@ prepare() {
 package() {
   cd "$srcdir/tls_prober"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/tls-prober"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/tls-prober"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/tls-prober/" README.md doc/*
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/tls-prober/LICENSE"

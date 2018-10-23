@@ -1,17 +1,17 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-js2py'
-pkgver='0.50'
-pkgrel=1
+pkgname=python2-js2py
+pkgver=0.59
+pkgrel=2
 pkgdesc='JavaScript to Python Translator & JavaScript interpreter written in 100% pure Python.'
 arch=('any')
-url='https://pypi.python.org/pypi/Js2Py/'
+url='https://pypi.org/project/Js2Py/#files'
 license=('MIT')
 depends=('python2')
 makedepends=('python2-setuptools')
-source=("https://pypi.python.org/packages/69/73/9c05be6a463f01178749e551253994c1d938827c8c35b0e18c937761030d/Js2Py-${pkgver}.tar.gz")
-sha1sums=('47fd81f40a74a4752fce3fc81728740475bdd3fc')
+source=("https://files.pythonhosted.org/packages/ef/1d/763ddc32da7519de26249a47483587741cc0a93ed1ddf71b2ac2c98c4e84/Js2Py-${pkgver}.tar.gz")
+sha512sums=('fd6c59259af431436eb99794492a9dbee03e68458f5e72aa67f5ead04e0dc7913fa45b9261ed756c235de4fbe45c1de61a49bc8c37be522ec4e063857d3a9e42')
 
 build() {
   cd "$srcdir/Js2Py-$pkgver"

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='spiga'
-pkgver=555.adb5dbb
+pkgname=spiga
+pkgver=601.1207c5d
 pkgrel=1
 epoch=2
 groups=('blackarch' 'blackarch-webapp' 'blackarch-scanner')
@@ -13,7 +13,7 @@ license=('custom:unknown')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/WSTNPHX/scripts-n-tools.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/scripts-n-tools"

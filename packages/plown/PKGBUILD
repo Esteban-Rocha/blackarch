@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='plown'
+pkgname=plown
 pkgver=13.ccf998c
 pkgrel=2
 groups=('blackarch' 'blackarch-webapp')
@@ -12,7 +12,7 @@ license=('unknown')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/unweb/plown.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/plown"
@@ -29,8 +29,8 @@ prepare() {
 package() {
   cd "$srcdir/plown"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/plown"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/plown"
 
   cp -a * "$pkgdir/usr/share/plown"
 

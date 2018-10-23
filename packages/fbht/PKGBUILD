@@ -2,7 +2,7 @@
 # See COPYING for license details.
 # Original: https://aur.archlinux.org/packages/fb/fbht-git/PKGBUILD
 
-pkgname='fbht'
+pkgname=fbht
 pkgver=70.d75ae93
 pkgrel=2
 epoch=1
@@ -16,7 +16,7 @@ depends=('python2' 'python2-mechanize' 'python2-networkx' 'python2-matplotlib'
 makedepends=('git')
 provides=('fbht')
 source=('git+https://github.com/chinoogawa/fbht.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/fbht"
@@ -35,8 +35,8 @@ prepare(){
 package() {
   cd "$srcdir/fbht"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/fbht"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/fbht"
 
   install -Dm644 "README.md" "$pkgdir/usr/share/doc/fbht/README.md"
   install -Dm644 License "$pkgdir/usr/share/licenses/fbht/License"

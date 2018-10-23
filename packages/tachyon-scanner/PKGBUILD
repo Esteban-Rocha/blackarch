@@ -1,23 +1,31 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='tachyon-scanner'
-pkgver=386.44f18e9
+pkgname=tachyon-scanner
+pkgver=442.a909305
 pkgrel=1
 pkgdesc='Fast Multi-Threaded Web Discovery Tool.'
 groups=('blackarch' 'blackarch-scanner')
 arch=('any')
 url='https://github.com/delvelabs/tachyon'
 license=('custom:unknown')
-depends=('python' 'python-urllib3')
+depends=('python' 'python-urllib3' 'python-easyinject' 'python-click'
+         'python-hammertime-http')
 makedepends=('git' 'python-setuptools' 'python-pip')
-source=('git+https://github.com/delvelabs/tachyon.git')
-sha1sums=('SKIP')
+source=('git+https://github.com/delvelabs/tachyon.git' 'setup.py.patch')
+sha512sums=('SKIP'
+            'fbe5a4a1db5fe5d5cf6d7f450bd96221c5cc3ed882c0a98308b7f560006df085674fcd20f664dbedebf241ea16e64084ac1a62231edba2bd0646548a3e29f2e7')
 
 pkgver() {
   cd "$srcdir/tachyon"
 
   echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+}
+
+prepare() {
+  cd "$srcdir"
+
+  patch -p1 < setup.py.patch
 }
 
 build() {
@@ -31,8 +39,7 @@ package() {
 
   python setup.py install --root="$pkgdir" --prefix=/usr
 
-  install -Dm644 -t "$pkgdir/usr/share/doc/tachyon/" README.md CHANGELOG docs/* \
-    THANKS
+  install -Dm644 -t "$pkgdir/usr/share/doc/tachyon/" README.md CHANGELOG THANKS
 
-  mv "$pkgdir/usr/bin/tachyon.py" "$pkgdir/usr/bin/tachyon-scanner"
+  #mv "$pkgdir/usr/bin/tachyon.py" "$pkgdir/usr/bin/tachyon-scanner"
 }

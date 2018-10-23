@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='recstudio'
-pkgver='4.0_20130717'
+pkgname=recstudio
+pkgver=4.0_20130717
 pkgrel=7
 groups=('blackarch' 'blackarch-decompiler' 'blackarch-reversing')
 pkgdesc="Cross platform interactive decompiler"
@@ -13,20 +13,20 @@ depends=('gtk2')
 [[ $CARCH == x86_64 ]] && depends=('lib32-gtk2')
 source=('http://www.backerstreet.com/rec/RecStudioLinux.tgz'
         'LICENSE')
-sha1sums=('d2aef715b7db46ec35122d06076e2cbacfedd866'
-          'e8a6336f63f14fa1abf8f8f8a15a44dc3fd8d372')
+sha512sums=('d5c3ca3889a7dc1038a9d03e33b360f6d7e86fb82ef1a5760b44d726d09597ae7f16f443a18ec4c4e238fa5f55c3dcf8a3607d834562151eab9bd4d899891d6d'
+            '04807840aa2127abc520c2e068b9eee14cbf5dba6d1faa0bb712387bc46ac6756b7540e3e2edba1a80b3da73aa8eb2acf27a1ae66c3c10c2bb41e3c67dfd72a5')
 options=('!strip')
 
 package() {
   cd "$srcdir"
 
   # Base directories.
-  mkdir -p "$pkgdir/opt/recstudio/bin"
-  mkdir -p "$pkgdir/opt/recstudio/support"
-  mkdir -p "$pkgdir/opt/recstudio/support/Prototypes"
-  mkdir -p "$pkgdir/opt/recstudio/support/win32api"
-  mkdir -p "$pkgdir/usr/share/licenses/recstudio"
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/opt/recstudio/bin"
+  install -dm 755 "$pkgdir/opt/recstudio/support"
+  install -dm 755 "$pkgdir/opt/recstudio/support/Prototypes"
+  install -dm 755 "$pkgdir/opt/recstudio/support/win32api"
+  install -dm 755 "$pkgdir/usr/share/licenses/recstudio"
+  install -dm 755 "$pkgdir/usr/bin"
 
   # Bin.
   install -m755 bin/* "$pkgdir/opt/recstudio/bin"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='tlsenum'
+pkgname=tlsenum
 pkgver=78.787c88b
 pkgrel=1
 groups=('blackarch' 'blackarch-crypto' 'blackarch-scanner')
@@ -14,7 +14,7 @@ depends=('python2' 'python2-coverage' 'python2-flake8' 'python2-pytest'
          'python2-construct' 'python2-click')
 makedepends=('git')
 source=('git+https://github.com/Ayrx/tlsenum.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/tlsenum"

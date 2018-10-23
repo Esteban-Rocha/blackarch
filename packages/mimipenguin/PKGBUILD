@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='mimipenguin'
-pkgver=109.8b95a58
+pkgname=mimipenguin
+pkgver=136.af325aa
 pkgrel=1
 pkgdesc='A tool to dump the login password from the current linux user.'
 groups=('blackarch' 'blackarch-forensic' 'blackarch-cracker')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python')
 makedepends=('git')
 source=('git+https://github.com/huntergregal/mimipenguin.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/mimipenguin"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/mimipenguin"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/mimipenguin"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/mimipenguin"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/mimipenguin/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/mimipenguin/LICENSE"

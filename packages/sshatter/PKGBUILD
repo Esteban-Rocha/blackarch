@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='sshatter'
-pkgver='1.2'
+pkgname=sshatter
+pkgver=1.2
 pkgrel=5
 pkgdesc='Password bruteforcer for SSH.'
 url='http://www.nth-dimension.org.uk/downloads.php?id=34'
@@ -13,13 +13,13 @@ depends=('perl' 'perl-parallel-forkmanager' 'perl-net-ssh-perl'
          'perl-cryptx')
 DLAGENTS=("http::/usr/bin/curl -L -k -o %o %u")
 source=("SSHatter-${pkgver}.tar.gz"::"http://www.nth-dimension.org.uk/utils/get.php?downloadsid=34")
-sha1sums=('6de52002a685081f86c33b1a00c28aee0b8985c8')
+sha512sums=('bed8ea70ddb3800a510f966bfda756a16966aa211cf9934a5eeb57b3ed5c200af78b1a291faa83dc8600abbff6522eac0af4e370cbfc7c531dadd4a2042aa4ca')
 
 package() {
   cd "$srcdir/SSHatter-$pkgver/src"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/sshatter"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/sshatter"
 
   cp -a * "$pkgdir/usr/share/sshatter"
 

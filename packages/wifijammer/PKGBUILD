@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wifijammer'
-pkgver=85.b1e1858
-pkgrel=2
+pkgname=wifijammer
+pkgver=90.ac12bbe
+pkgrel=1
 groups=('blackarch' 'blackarch-wireless')
 pkgdesc='A python script to continuosly jam all wifi clients within range.'
 arch=('any')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2' 'python2-scapy')
 makedepends=('git')
 source=('git+https://github.com/DanMcInerney/wifijammer.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/wifijammer"

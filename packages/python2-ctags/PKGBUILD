@@ -1,16 +1,16 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-ctags'
-pkgver='0.1'
-pkgrel=2
+pkgname=python2-ctags
+pkgver=0.1
+pkgrel=3
 pkgdesc="Python ctag bindings"
 arch=('any')
 url='https://github.com/paraxor/python-ctags'
 license=('LGPL')
 depends=('python2' 'python2-setuptools')
 source=('git+https://github.com/paraxor/python-ctags')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 package() {
   cd "$srcdir/python-ctags"

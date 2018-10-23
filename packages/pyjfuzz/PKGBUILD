@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pyjfuzz'
-pkgver=145.be2f6b0
+pkgname=pyjfuzz
+pkgver=147.04501fc
 pkgrel=1
 pkgdesc='Python JSON Fuzzer.'
 groups=('blackarch' 'blackarch-fuzzer')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-bottle' 'python2-netifaces' 'python2-argparse'
          'python2-wsgiref' 'python2-pyopenssl' 'python2-gramfuzz')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/mseclab/PyJFuzz.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/PyJFuzz"

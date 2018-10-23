@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pnscan'
-pkgver='1.11'
+pkgname=pnscan
+pkgver=1.11
 pkgrel=4
 groups=('blackarch' 'blackarch-scanner')
 pkgdesc='A parallel network scanner that can be used to survey TCP network services.'
@@ -10,7 +10,7 @@ url='http://www.lysator.liu.se/~pen/pnscan/'
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 license=('GPL2')
 source=("ftp://ftp.lysator.liu.se/pub/unix/pnscan/pnscan-${pkgver}.tar.gz")
-sha1sums=('981f892febd329e511e44a1eab24ae1d19844901')
+sha512sums=('b3ca7b18846a7756d3626676dc8c9198896dccfa0a94bab859335e721786eebb48745248c7edc5d3c8365dd6894e7bf923816deda3bcbb54a90b91c388b36756')
 
 build(){
   cd "$srcdir/pnscan-$pkgver"
@@ -21,8 +21,8 @@ build(){
 package() {
   cd "$srcdir/pnscan-$pkgver"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/man/man1"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/man/man1"
 
   install -m755 pnscan "$pkgdir/usr/bin"
   install -m755 ipsort "$pkgdir/usr/bin"

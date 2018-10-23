@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='opendoor'
-pkgver=381.f1e8df2
-pkgrel=1
+pkgname=opendoor
+pkgver=384.a728d2f
+pkgrel=2
 pkgdesc='OWASP WEB Directory Scanner.'
 groups=('blackarch' 'blackarch-webapp' 'blackarch-scanner')
 arch=('any')
@@ -13,7 +13,7 @@ depends=('python' 'python-urllib3' 'python-json2html' 'python-tabulate'
          'python-argparse' 'python-ddt' 'python-mock')
 makedepends=('git' 'python-setuptools')
 source=('git+https://github.com/stanislav-web/OpenDoor.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/OpenDoor"
@@ -30,8 +30,8 @@ build() {
 package() {
   cd "$srcdir/OpenDoor"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/opendoor"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/opendoor"
 
   #python setup.py install --root="$pkgdir" --prefix=/usr --optimize=1
 

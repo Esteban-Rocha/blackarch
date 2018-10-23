@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='kismet2earth'
-pkgver='1.0'
+pkgname=kismet2earth
+pkgver=1.0
 pkgrel=2
 pkgdesc="A set of utilities that convert from Kismet logs to Google Earth .kml format"
 url="http://code.google.com/p/kismet2earth/"
@@ -10,7 +10,7 @@ license=('GPL')
 groups=('blackarch' 'blackarch-wireless')
 arch=('any')
 source=('http://kismet2earth.googlecode.com/files/kismet2earth.tar.gz')
-sha1sums=('beee3f9877710dbafe250a612c2f1f946fafb657')
+sha512sums=('beee3f9877710dbafe250a612c2f1f946fafb657')
 
 prepare() {
   cd "$srcdir/kismet2earth"
@@ -22,8 +22,8 @@ package(){
   cd "$srcdir/kismet2earth"
 
   # Base directories
-  mkdir -p "$pkgdir/usr/share/kismet2earth"
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/kismet2earth"
+  install -dm 755 "$pkgdir/usr/bin"
 
   cp -a * "$pkgdir/usr/share/kismet2earth"
 

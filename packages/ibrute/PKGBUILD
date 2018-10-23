@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ibrute'
+pkgname=ibrute
 pkgver=12.3a6a11e
 pkgrel=2
 groups=('blackarch' 'blackarch-cracker' 'blackarch-mobile')
@@ -12,7 +12,7 @@ license=('unknown')
 depends=('python2' 'python2-simplejson' 'python2-lxml')
 makedepends=('git')
 source=('git+https://github.com/hackappcom/ibrute.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ibrute"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/ibrute"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/ibrute"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/ibrute"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/ibrute/README.md"
 

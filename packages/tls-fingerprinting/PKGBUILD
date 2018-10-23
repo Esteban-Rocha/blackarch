@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='tls-fingerprinting'
+pkgname=tls-fingerprinting
 pkgver=252.1aced53
 pkgrel=1
 pkgdesc='Tool and scripts to perform TLS Fingerprinting.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('libpcap' 'python2')
 makedepends=('git')
 source=('git+https://github.com/LeeBrotherston/tls-fingerprinting.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/tls-fingerprinting"

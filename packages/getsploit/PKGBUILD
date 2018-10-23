@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='getsploit'
+pkgname=getsploit
 pkgver=25.1db4256
-pkgrel=1
+pkgrel=2
 pkgdesc='Command line utility for searching and downloading exploits.'
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-misc')
 arch=('any')
@@ -12,7 +12,7 @@ license=('LGPL3')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/vulnersCom/getsploit.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/getsploit"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/getsploit"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/getsploit"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/getsploit"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/getsploit/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/getsploit/LICENSE"
@@ -35,7 +35,7 @@ package() {
 
   cat > "$pkgdir/usr/bin/getsploit" << EOF
 #!/bin/sh
-cd /usr/share/getsploit
+cd /usr/share/getsploit/getsploit
 exec python2 getsploit.py "\${@}"
 EOF
 

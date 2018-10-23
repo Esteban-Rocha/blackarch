@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='visql'
+pkgname=visql
 pkgver=49.3082e30
 pkgrel=1
 pkgdesc='Scan SQL vulnerability on target site and sites of on server.'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2' 'python2-requests' 'python2-colorama')
 makedepends=('git')
 source=('git+https://github.com/blackvkng/viSQL.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/viSQL"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/viSQL"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/visql"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/visql"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/visql/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/visql/LICENSE"

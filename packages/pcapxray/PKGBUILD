@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pcapxray'
+pkgname=pcapxray
 pkgver=141.4f7d1c1
 pkgrel=1
 pkgdesc='A Network Forensics Tool - To visualize a Packet Capture offline as a Network Diagram including device identification, highlight important communication and file extraction.'
@@ -14,7 +14,7 @@ depends=('python2' 'python2-networkx' 'python2-netaddr' 'python2-ipwhois'
          'python2-pygraphviz')
 makedepends=('git')
 source=('git+https://github.com/Srinivas11789/PcapXray.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/PcapXray"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/PcapXray"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/pcapxray"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/pcapxray"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/pcapxray/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/pcapxray/LICENSE"

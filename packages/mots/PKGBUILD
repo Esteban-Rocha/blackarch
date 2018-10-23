@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='mots'
+pkgname=mots
 pkgver=5.34017ca
 pkgrel=3
 groups=('blackarch' 'blackarch-sniffer' 'blackarch-networking' 'blackarch-spoof'
@@ -13,7 +13,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-netifaces' 'python2-scapy')
 makedepends=('git')
 source=('git+https://github.com/kevinkoo001/MotS.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/MotS"
@@ -26,8 +26,8 @@ package() {
 
   local tools="quantumdetect quantuminject"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/mots"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/mots"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/eapeak/" README.md
 

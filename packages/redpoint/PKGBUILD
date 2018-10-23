@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='redpoint'
+pkgname=redpoint
 pkgver=123.23ef36b
 pkgrel=2
 groups=('blackarch' 'blackarch-misc')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('nmap')
 makedepends=('git')
 source=('git+https://github.com/digitalbond/Redpoint.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Redpoint"

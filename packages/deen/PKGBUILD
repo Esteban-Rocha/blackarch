@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='deen'
-pkgver=241.3762fda
+pkgname=deen
+pkgver=413.d960858
 pkgrel=1
 groups=('blackarch' 'blackarch-crypto' 'blackarch-misc')
 arch=('any')
@@ -12,7 +12,7 @@ license=('Apache')
 depends=('python' 'python-lxml' 'python-pyqt5')
 makedepends=('git' 'python-setuptools')
 source=('git+https://github.com/takeshixx/deen.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/deen"

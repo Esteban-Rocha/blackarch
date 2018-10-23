@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='bluphish'
+pkgname=bluphish
 pkgver=9.a7200bd
 pkgrel=2
 pkgdesc='Bluetooth device and service discovery tool that can be used for security assessment and penetration testing.'
@@ -12,7 +12,7 @@ license=('Apache2')
 depends=('java-environment')
 makedepends=('git')
 source=('git+https://github.com/olivo/BluPhish.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/BluPhish"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/BluPhish"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/bluphish"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/bluphish"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/bluphish/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/bluphish/LICENSE"

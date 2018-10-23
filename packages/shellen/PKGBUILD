@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='shellen'
-pkgver=55.2bea7c5
+pkgname=shellen
+pkgver=60.349e2c8
 pkgrel=1
 pkgdesc='Interactive shellcoding environment to easily craft shellcodes.'
 groups=('blackarch' 'blackarch-exploitation')
@@ -14,7 +14,7 @@ depends=('python' 'python-requests' 'python-termcolor' 'python-colorama'
          'python-keystone' 'python-prompt_toolkit' 'python-keystone-engine')
 makedepends=('git' 'python-setuptools')
 source=('git+https://github.com/merrychap/shellen.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/shellen"

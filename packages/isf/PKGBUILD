@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='isf'
-pkgver=63.4bc9344
-pkgrel=2
+pkgname=isf
+pkgver=65.34ffe5c
+pkgrel=1
 pkgdesc='Industrial Exploitation Framework is an exploitation framework based on Python.'
 groups=('blackarch' 'blackarch-exploitation')
 arch=('any')
@@ -14,7 +14,7 @@ depends=('python2' 'python2-pexpect' 'python2-paramiko' 'python2-argparse'
          'python2-requests' 'python2-scapy')
 makedepends=('git')
 source=('git+https://github.com/dark-lbp/isf.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/isf"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/isf"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/isf"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/isf"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/isf/" README.md docs/*.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/isf/LICENSE"

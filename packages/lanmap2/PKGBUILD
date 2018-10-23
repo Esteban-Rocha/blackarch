@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='lanmap2'
+pkgname=lanmap2
 pkgver=127.1197999
 pkgrel=3
 epoch=1
@@ -14,7 +14,7 @@ depends=('sqlite3' 'libpcap' 'php' 'graphviz' 'libbsd')
 makedepends=('git' 'make' 'gcc-libs')
 install='lanmap2.install'
 source=('git+http://github.com/rflynn/lanmap2.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/lanmap2"
@@ -48,9 +48,9 @@ build() {
 package () {
   cd "$srcdir/lanmap2"
 
-  mkdir -p "$pkgdir/usr/share/lanmap2/tools"
-  mkdir -p "$pkgdir/usr/share/doc/lanmap2"
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/lanmap2/tools"
+  install -dm 755 "$pkgdir/usr/share/doc/lanmap2"
+  install -dm 755 "$pkgdir/usr/bin"
 
   install -m755 "$srcdir/lanmap2/src/cap" "$pkgdir/usr/share/lanmap2"
   install -m755 "$srcdir/lanmap2/tools/os-graph" \

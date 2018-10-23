@@ -1,41 +1,32 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='bytecode-viewer'
-pkgver=258.66aa6e7
+pkgname=bytecode-viewer
+pkgver=2.9.11
 pkgrel=1
+epoch=1
 groups=('blackarch' 'blackarch-binary' 'blackarch-reversing')
 pkgdesc='A Java 8/Android APK Reverse Engineering Suite.'
 arch=('any')
 url='https://github.com/Konloch/bytecode-viewer'
-license=('')
+license=('custom:unknown')
 depends=('java-environment')
 makedepends=('git')
-source=('git+https://github.com/Konloch/bytecode-viewer.git')
-sha1sums=('SKIP')
-
-pkgver() {
-  cd "$srcdir/bytecode-viewer"
-
-  echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
-}
+source=("https://github.com/Konloch/bytecode-viewer/releases/download/${pkgver}/Bytecode-Viewer-${pkgver}.jar")
+noextract=("Bytecode-Viewer-${pkgver}.jar")
+sha512sums=('1d419b670bf6e27fb533d6389199448b03860cfaa68a9b253cf4af77f4bad4d14067d3289be5598f4a81a4a1a6cce06ef75b8ef70fbaa9ab4a77d3498079fbf9')
 
 package() {
-  cd "$srcdir/bytecode-viewer"
+  cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/bytecode-viewer"
+  install -dm 755 "$pkgdir/usr/bin"
 
-  install -Dm644 -t "$pkgdir/usr/share/doc/bytecode-viewer/" README.txt VERSION
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/bytecode-viewer/LICENSE"
-
-  rm README.txt VERSION LICENSE
-
-  cp -a * "$pkgdir/usr/share/bytecode-viewer/"
+  install -Dm644 Bytecode-Viewer-${pkgver}.jar \
+    "$pkgdir/usr/share/bytecode-viewer/Bytecode-Viewer-${pkgver}.jar"
 
   cat > "$pkgdir/usr/bin/bytecode-viewer" << EOF
 #!/bin/sh
-exec java -jar "/usr/share/bytecode-viewer/BytecodeViewer 2.9.8.jar" "\${@}"
+exec java -jar "/usr/share/bytecode-viewer/Bytecode-Viewer-${pkgver}.jar" "\${@}"
 EOF
 
   chmod a+x "$pkgdir/usr/bin/bytecode-viewer"

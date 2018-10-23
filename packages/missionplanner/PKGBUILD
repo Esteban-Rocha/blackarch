@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='missionplanner'
-pkgver='1.2.55'
+pkgname=missionplanner
+pkgver=1.2.55
 pkgrel=1
 groups=('blackarch' 'blackarch-drone')
 pkgdesc='A GroundControl Station for Ardupilot.'
@@ -13,13 +13,13 @@ depends=('mono')
 makedepends=('unzip')
 options=('!strip')
 source=("https://ardupilot-mega.googlecode.com/files/MissionPlanner-$pkgver.zip")
-sha1sums=('43cfaadbec49fb0646fc5fd4a47a9df89e53c700')
+sha512sums=('43cfaadbec49fb0646fc5fd4a47a9df89e53c700')
 
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/missionplanner"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/missionplanner"
 
   cp -a * "$pkgdir/usr/share/missionplanner"
 

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wnmap'
-pkgver='0.1'
+pkgname=wnmap
+pkgver=0.1
 pkgrel=7
 groups=('blackarch' 'blackarch-automation' 'blackarch-scanner')
 pkgdesc='A shell script written with the purpose to automate and chain scans via nmap. You can run nmap with a custom mode written by user and create directories for every mode with the xml/nmap files inside.'
@@ -11,7 +11,7 @@ url="http://nullsecurity.net/tools/automation.html"
 license=('GPL3')
 depends=('nmap' 'vim')
 source=("https://github.com/nullsecuritynet/tools/raw/master/automation/wnmap/release/wnmap-${pkgver}.tar.gz")
-sha1sums=('5436fe1667cecfa44d0a06b9c25ef12f8bfc8e23')
+sha512sums=('c8469d8dc28f69271b50bef186adf9c6b371792f3122e43bd12b35b76c1db66e3c6b2ae25281a2e258af13295defce254e24ada39448b2c8539bb0206b069335')
 
 prepare() {
   cd "$srcdir/wnmap-$pkgver"
@@ -23,8 +23,8 @@ prepare() {
 package() {
   cd "$srcdir/wnmap-$pkgver"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/wnmap"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/wnmap"
 
   install -Dm644 docs/LICENSE "$pkgdir/usr/share/licenses/wnmap/LICENSE"
 

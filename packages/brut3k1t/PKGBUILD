@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='brut3k1t'
-pkgver=83.6351254
+pkgname=brut3k1t
+pkgver=86.034906c
 pkgrel=1
 groups=('blackarch' 'blackarch-cracker')
 arch=('any')
@@ -10,10 +10,12 @@ pkgdesc='Brute-force attack that supports multiple protocols and services.'
 url='https://github.com/ex0dus-0x/brut3k1t'
 license=('MIT')
 depends=('python2' 'python2-pip' 'python2-selenium' 'python2-paramiko'
-         'python2-skpy' 'python2-mechanize' 'geckodriver' 'xmpppy')
+         'python2-skpy' 'python2-mechanize' 'geckodriver' 'xmpppy'
+         'python2-cffi' 'python2-asn1crypto' 'python2-enum34' 'python2-six'
+         'python2-requests' 'python2-pycparser' 'python2-pyasn1')
 makedepends=('git')
 source=('git+https://github.com/ex0dus-0x/brut3k1t.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/brut3k1t"
@@ -24,19 +26,20 @@ pkgver() {
 package() {
   cd "$srcdir/brut3k1t"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/brut3k1t"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/brut3k1t"
 
-  install -Dm644 -t "$pkgdir/usr/share/doc/brut3k1t" README.md docs/*
+  install -Dm644 -t "$pkgdir/usr/share/doc/brut3k1t" README.md
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/brut3k1t/LICENSE"
 
-  rm -rf docs README.md
+  rm *.md
 
   cp -a --no-preserve=ownership * "$pkgdir/usr/share/brut3k1t"
 
   cat > "$pkgdir/usr/bin/brut3k1t" << EOF
 #!/bin/sh
 cd /usr/share/brut3k1t
-exec python2 brut3k1t.py "\${@}"
+exec python2 brut3k1t "\${@}"
 EOF
 
   chmod a+x "$pkgdir/usr/bin/brut3k1t"

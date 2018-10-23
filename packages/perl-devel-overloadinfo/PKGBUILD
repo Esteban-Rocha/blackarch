@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='perl-devel-overloadinfo'
-pkgver='0.004'
-pkgrel=5
+pkgname=perl-devel-overloadinfo
+pkgver=0.005
+pkgrel=2
 pkgdesc='Introspect overloaded operators.'
 arch=('any')
 license=('PerlArtistic' 'GPL')
@@ -11,7 +11,7 @@ options=('!emptydirs')
 depends=('perl' 'perl-mro-compat' 'perl-package-stash' 'perl-sub-identify')
 url='https://metacpan.org/release/Devel-OverloadInfo'
 source=("http://search.cpan.org/CPAN/authors/id/I/IL/ILMARI/Devel-OverloadInfo-${pkgver}.tar.gz")
-sha1sums=('be0bd5a5bd258a4f70c55cbef19d91bcb8dcf9ec')
+sha512sums=('66ff0869ecd34b2a80e6c8052e9ba7cf396b85e25f2efa92e42447ae3164ac50f703ca4dbee38ac676b70caf19ce189a6d2a1d6322cf3af342d4edd5c0b336e7')
 _distdir="Devel-OverloadInfo-0.004"
 
 build() {

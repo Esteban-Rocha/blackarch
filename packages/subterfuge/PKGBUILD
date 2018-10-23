@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='subterfuge'
-pkgver='5.0'
-pkgrel=3
+pkgname=subterfuge
+pkgver=5.0
+pkgrel=4
 epoch=2
 groups=('blackarch' 'blackarch-exploitation')
 pkgdesc='Automated Man-in-the-Middle Attack Framework.'
@@ -13,14 +13,14 @@ license=('GPL3')
 depends=('python-django')
 install='subterfuge.install'
 source=("https://subterfuge.googlecode.com/files/SubterfugePublicBeta${pkgver}.tar.gz")
-sha1sums=('8c8bb64985ce2a661f5f5d50c72840f3102ca05a')
+sha512sums=('8c8bb64985ce2a661f5f5d50c72840f3102ca05a')
 
 package() {
   cd "$srcdir/subterfuge"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/subterfuge"
-  mkdir -p "$pkgdir/usr/share/licenses/subterfuge"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/subterfuge"
+  install -dm 755 "$pkgdir/usr/share/licenses/subterfuge"
 
   tar xzf subterfuge_packages.tar.gz
 

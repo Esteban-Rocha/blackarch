@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='chankro'
-pkgver=8.13c4225
+pkgname=chankro
+pkgver=14.b560921
 pkgrel=1
 pkgdesc='Tool that generates a PHP capable of run a custom binary (like a meterpreter) or a bash script (p.e. reverse shell) bypassing disable_functions & open_basedir).'
 groups=('blackarch' 'blackarch-webapp' 'blackarch-exploitation')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2' 'python2-argparse')
 makedepends=('git')
 source=('git+https://github.com/TarlogicSecurity/Chankro.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Chankro"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/Chankro"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/chankro"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/chankro"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/chankro/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/chankro/LICENSE"

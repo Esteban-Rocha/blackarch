@@ -2,45 +2,49 @@
 # See COPYING for license details.
 # Original Maintainer on AUR: zwindl
 
-pkgname='gdbgui'
-pkgver=328.50e73a8
-pkgrel=1
+pkgname=gdbgui
+pkgver=364.78eb7ca
+pkgrel=3
 pkgdesc='Browser-based gdb frontend using Flask and JavaScript to visually debug C, C++, Go, or Rust.'
 groups=('blackarch' 'blackarch-debugger' 'blackarch-binary')
 arch=('any')
 url='https://github.com/cs01/gdbgui'
 depends=('python' 'python-eventlet' 'python-flask' 'python-flask-socketio'
          'python-pygdbmi' 'python-pypugjs' 'python-enum-compat' 'python-gevent'
-         'python-pygments')
-optdepends=('gdb: GNU Project Debugger')
+         'python-pygments' 'python-flask-compress' 'gdb')
 makedepends=('git' 'python-setuptools')
 license=('GPL3')
 install='gdbgui.install'
-source=('git+https://github.com/cs01/gdbgui.git')
-sha1sums=('SKIP')
+source=('git+https://github.com/cs01/gdbgui.git' 'setup.py.patch')
+sha512sums=('SKIP'
+            '04cc4e1aab4575a594e40910be7f34a82193f80e53ee9b974f5123996b3cdb6ab7c43a5c168dd56e21ac41aed7998d0fea51522c536999d1dc36a4039f4fd26a')
 
 pkgver() {
-  cd "$srcdir/gdbgui"
+  cd gdbgui
 
   echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
 }
 
 prepare() {
-  cd "$srcdir/gdbgui"
+  cd "$srcdir"
 
-  sed -i 's|>=0.12.2||;s|>=0.7.3.3||;s|>=4.2.0||;s|>=2.8.3||;s|>=1.2.1||;s|>=0.20.1||;s|>=2.2.0||' setup.py
+  patch -p1 < setup.py.patch
 }
 
 build() {
-  cd "$srcdir/gdbgui"
+  cd gdbgui
 
   python setup.py build
 }
 
 package() {
-  cd "$srcdir/gdbgui"
+  cd gdbgui
 
   python setup.py install --root="$pkgdir" --optimize=1 --skip-build
 
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/gdbgui/LICENSE"
+
+  find "$pkgdir" -type d -name 'tests' -exec rm -rf {} +
+  find "$pkgdir" -type d -name '__pycache__' -exec rm -rf {} +
 }
+

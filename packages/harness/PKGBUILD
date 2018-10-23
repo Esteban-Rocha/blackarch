@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='harness'
+pkgname=harness
 pkgver=19.ed2a6aa
 pkgrel=1
 pkgdesc='Interactive remote PowerShell Payload.'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python')
 makedepends=('git')
 source=('git+https://github.com/Rich5/Harness.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Harness"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/Harness"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/harness"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/harness"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/harness/" README.md changelog
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/harness/LICENSE"

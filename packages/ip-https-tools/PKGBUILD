@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ip-https-tools'
+pkgname=ip-https-tools
 pkgver=7.170691f
 pkgrel=2
 groups=('blackarch' 'blackarch-tunnel' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('unknown')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/takeshixx/ip-https-tools.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ip-https-tools"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/ip-https-tools"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/ip-https-tools"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/ip-https-tools"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/ip-https-tools/README.md"
 

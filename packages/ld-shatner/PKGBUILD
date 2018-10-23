@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ld-shatner'
+pkgname=ld-shatner
 pkgver=4.5c215c4
 pkgrel=3
 groups=('blackarch' 'blackarch-backdoor' 'blackarch-binary')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('gcc-libs' 'gcc')
 makedepends=('git')
 source=('git+https://github.com/sduverger/ld-shatner.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ld-shatner"
@@ -46,8 +46,8 @@ build() {
 package() {
   cd "$srcdir/ld-shatner"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/ld-shatner"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/ld-shatner"
 
   cp -a interpatch ld-shatner obj.elf "$pkgdir/usr/share/ld-shatner/"
 

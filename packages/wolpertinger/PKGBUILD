@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wolpertinger'
+pkgname=wolpertinger
 pkgver=2.58ef8e2
 pkgrel=1
 pkgdesc='A distributed portscanner.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('linux-headers' 'sqlite' 'libpcap' 'python2' 'libdnet')
 makedepends=('git')
 source=('git+https://github.com/Crapworks/wolpertinger.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/wolpertinger"

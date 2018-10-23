@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='netscan2'
-pkgver=50.aebdb9c
+pkgname=netscan2
+pkgver=54.262bffe
 pkgrel=1
 groups=('blackarch' 'blackarch-scanner' 'blackarch-recon')
 pkgdesc='Active / passive network scanner.'
@@ -13,7 +13,7 @@ depends=('python2' 'python2-pcapy'  'python2-dpkt' 'mitmproxy'
          'python2-nose' 'python2-requests' 'python2-netaddr' 'python2-awake')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/walchko/netscan2.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/netscan2"

@@ -1,10 +1,10 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='perl-task-weaken'
+pkgname=perl-task-weaken
 _cpanname="Task-Weaken"
-pkgver='1.04'
-pkgrel=7
+pkgver=1.06
+pkgrel=2
 pkgdesc="Ensure that a platform has weaken support"
 arch=('any')
 license=('PerlArtistic' 'GPL')
@@ -12,8 +12,8 @@ options=('!emptydirs')
 depends=('perl')
 makedepends=('perl-module-install')
 url="http://search.cpan.org/dist/$_cpanname"
-source=("http://search.cpan.org/CPAN/authors/id/A/AD/ADAMK/${_cpanname}-${pkgver}.tar.gz")
-sha1sums=('a057c88cd98d1d81cad911f2d8bbd8c717310d43')
+source=("http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Task-Weaken-${pkgver}.tar.gz")
+sha512sums=('2cd723a748c1fb3df12b465ad278070330959c611ed125f54770c2d820202592cc6e46f16ee43671e310abfcf86fe7ffa639db7dd605d69d7d13fca793d59808')
 
 # Function to change to the working directory and set
 # environment variables to override undesired options.

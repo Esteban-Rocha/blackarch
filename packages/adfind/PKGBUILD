@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='adfind'
+pkgname=adfind
 pkgver=29.179602f
 pkgrel=1
 pkgdesc='Simple admin panel finder for php,js,cgi,asp and aspx admin panels.'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('php' 'curl' 'git')
 makedepends=('git')
 source=('git+https://github.com/sahakkhotsanyan/adfind.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/adfind"

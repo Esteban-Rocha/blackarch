@@ -1,19 +1,19 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='det'
+pkgname=det
 pkgver=31.417cbce
-pkgrel=2
+pkgrel=3
 pkgdesc='(extensible) Data Exfiltration Toolkit.'
 groups=('blackarch' 'blackarch-networking' 'blackarch-misc')
 arch=('any')
 url='https://github.com/sensepost/det'
 license=('custom:unknown')
 depends=('python2' 'python2-tweepy' 'python2-pysocks' 'python2-dnslib'
-         'python2-crypto' 'python2-scapy')
+         'python2-pycryptodome' 'python2-scapy')
 makedepends=('git')
 source=('git+https://github.com/sensepost/det.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/det"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/det"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/det"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/det"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/det/README.md"
 

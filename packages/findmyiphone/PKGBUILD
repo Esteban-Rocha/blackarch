@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='findmyiphone'
+pkgname=findmyiphone
 pkgver=19.aef3ac8
 pkgrel=1
 pkgdesc='Locates all devices associated with an iCloud account'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/manwhoami/FindMyiPhone.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/FindMyiPhone"

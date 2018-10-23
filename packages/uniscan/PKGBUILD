@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='uniscan'
-pkgver='6.3'
+pkgname=uniscan
+pkgver=6.3
 pkgrel=3
 groups=('blackarch' 'blackarch-fuzzer' 'blackarch-scanner' 'blackarch-webapp')
 pkgdesc='A simple Remote File Include, Local File Include and Remote Command Execution vulnerability scanner.'
@@ -12,13 +12,13 @@ license=('GPL2')
 depends=('perl' 'perl-moose' 'perl-lwp-protocol-https'
          'perl-devel-overloadinfo')
 source=("http://downloads.sourceforge.net/project/uniscan/6.2/uniscan6.2.tar.gz")
-sha1sums=('f2396d873fbbbacc3dc3ba5fe90d32a70d6edec5')
+sha512sums=('2d5484d3b9f2268a0d63731a9940cf307f8d397d0d9b0ef59f36e3924c24f5b5a7b86d05287b6e06eb98002a1f8e291f899b1a462f2e8a25d100c78f96e4f8cc')
 
 package() {
   cd "$srcdir/uniscan6.2"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/uniscan"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/uniscan"
 
   cp -a --no-preserve=ownership * "$pkgdir/usr/share/uniscan"
 

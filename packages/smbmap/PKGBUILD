@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='smbmap'
-pkgver=59.e26e199
+pkgname=smbmap
+pkgver=67.b55fc05
 pkgrel=1
 groups=('blackarch' 'blackarch-scanner' 'blackarch-recon')
 pkgdesc='A handy SMB enumeration tool.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2' 'impacket')
 makedepends=('git')
 source=('git+https://github.com/ShawnDEvans/smbmap.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/smbmap"

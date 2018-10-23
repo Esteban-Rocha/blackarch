@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dpkt-svn'
-pkgver='82'
+pkgname=dpkt-svn
+pkgver=82
 pkgrel=1
 pkgdesc='Fast, simple packet creation / parsing module for python, with definitions for the basic TCP/IP protocols.'
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
@@ -13,7 +13,7 @@ depends=('python2')
 makedepends=('subversion')
 _svntrunk=('http://dpkt.googlecode.com/svn/trunk')
 _svnmod='dpkt-read-only'
-sha1sums=()
+
 
 prepare() {
   cd "$srcdir"
@@ -30,3 +30,4 @@ package() {
     README
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/dpkt-svn/LICENSE"
 }
+

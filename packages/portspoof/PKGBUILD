@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='portspoof'
+pkgname=portspoof
 pkgver=125.a15bca7
 pkgrel=1
 pkgdesc="This program's primary goal is to enhance OS security through a set of new techniques."
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('gcc-libs')
 makedepends=('git' 'automake')
 source=('git+https://github.com/drk1wi/portspoof.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/portspoof"
@@ -31,7 +31,7 @@ build() {
 package() {
   cd "$srcdir/portspoof"
 
-  mkdir -p "$pkgdir"/{usr/bin,etc/portspoof}
+  install -dm 755 "$pkgdir"/{usr/bin,etc/portspoof}
 
   install -Dm755 src/portspoof "$pkgdir/usr/bin/portspoof"
 

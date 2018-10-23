@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='atear'
+pkgname=atear
 pkgver=139.245ec8d
 pkgrel=2
 pkgdesc='Wireless Hacking, WiFi Security, Vulnerability Analyzer, Pentestration.'
@@ -14,7 +14,7 @@ depends=('nmap' 'wireshark-cli' 'aircrack-ng' 'hostapd' 'python2-scapy' 'python2
          'python2-smartencoding' 'python2-python-libnmap')
 makedepends=('git')
 source=('git+https://github.com/NORMA-Inc/AtEar.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/AtEar"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/AtEar"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/atear"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/atear"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/atear/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/atear/LICENSE"

@@ -1,15 +1,15 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='climber'
+pkgname=climber
 pkgver=30.5530a78
-pkgrel=2
+pkgrel=3
 groups=('blackarch' 'blackarch-scanner')
 pkgdesc='Check UNIX/Linux systems for privilege escalation.'
 url='https://github.com/raffaele-forte/climber'
 arch=('any')
 license=('GPL3')
-depends=('python2' 'python2-crypto' 'python2-mako' 'python2-paramiko'
+depends=('python2' 'python2-pycryptodome' 'python2-mako' 'python2-paramiko'
         'python2-exscript')
 makedepends=('git')
 source=('git+https://github.com/raffaele-forte/climber.git')
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/climber"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/climber"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/climber"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/climber/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/climber/LICENSE"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='scrape-dns'
+pkgname=scrape-dns
 pkgver=58.3df392f
 pkgrel=3
 groups=('blackarch' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('bash' 'dnsutils')
 makedepends=('git')
 source=("git+https://github.com/304GEEK/Scrape-DNS.git")
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Scrape-DNS"
@@ -23,7 +23,7 @@ pkgver() {
 package() {
   cd "$srcdir/Scrape-DNS"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   install -Dm644 -t "$pkgdir/usr/share/scrape-dns" Timing-Scrape.sh bar.sh \
     scrape.sh

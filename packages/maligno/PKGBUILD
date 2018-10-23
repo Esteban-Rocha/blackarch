@@ -1,18 +1,18 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='maligno'
-pkgver='2.5'
-pkgrel=3
+pkgname=maligno
+pkgver=2.5
+pkgrel=4
 groups=('blackarch' 'blackarch-scanner' 'blackarch-fuzzer' 'blackarch-exploitation')
 pkgdesc='An open source penetration testing tool written in python, that serves Metasploit payloads. It generates shellcode with msfvenom and transmits it over HTTP or HTTPS.'
 arch=('any')
 url='http://www.encripto.no/tools/'
 license=('FreeBSD')
-depends=('python2' 'python2-lxml' 'python2-crypto' 'metasploit'
+depends=('python2' 'python2-lxml' 'python2-pycryptodome' 'metasploit'
          'python2-ipcalc')
 source=("http://www.encripto.no/tools/maligno-${pkgver}.tar.gz")
-sha1sums=('1ea66fe6ce91599cfaa891644158a77b1c0f9058')
+sha512sums=('7386b5ee536c2bb92eed0ad64b33ce6afc16d175fec01904da90bce46ffc7302626c5d5624cdcf4a2c38825cf4806f1238931db78ccd482002245177382ee099')
 
 prepare() {
   cd "$srcdir/maligno-$pkgver"
@@ -26,8 +26,8 @@ package() {
 
   local tools="maligno_srv clientgen"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/maligno"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/maligno"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/maligno/" docs/*
 

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='magicrescue'
-pkgver='1.1.9'
+pkgname=magicrescue
+pkgver=1.1.9
 pkgrel=4
 groups=('blackarch' 'blackarch-forensic')
 pkgdesc='Find and recover deleted files on block devices.'
@@ -10,7 +10,7 @@ arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 url='http://freshmeat.net/projects/magicrescue/'
 license=('GPL')
 source=("http://www.itu.dk/people/jobr/magicrescue/release/magicrescue-${pkgver}.tar.gz")
-sha1sums=('d428f7cce8bc00ea4ae3212da5d074fb5bcc1dfe')
+sha512sums=('d428f7cce8bc00ea4ae3212da5d074fb5bcc1dfe')
 
 prepare() {
   cd "$srcdir/magicrescue-$pkgver"
@@ -29,7 +29,7 @@ build() {
 package() {
   cd "$srcdir/magicrescue-$pkgver"
 
-  mkdir -p "$pkgdir/usr"
+  install -dm 755 "$pkgdir/usr"
 
   make PREFIX="$pkgdir/usr" install
 }

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='bluemaho'
-pkgver='090417'
+pkgname=bluemaho
+pkgver=090417
 pkgrel=1
 pkgdesc="A GUI-shell (interface) for suite of tools for testing security of bluetooth devices"
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
@@ -11,7 +11,7 @@ license=('GPL3')
 depends=('wxpython' 'bluediving' 'bss' 'bt-audit' 'hidattack' 'glib2')
 groups=('blackarch' 'blackarch-wireless')
 source=("http://wiki.thc.org/BlueMaho?action=AttachFile&do=get&target=bluemaho_v${pkgver}.tgz")
-sha1sums=('216db6f836b20b7f70f3a56bec95ab0a607a2af5')
+sha512sums=('216db6f836b20b7f70f3a56bec95ab0a607a2af5')
 
 prepare() {
   cd "$srcdir/bluemaho-$pkgver/exploits/sources/bluepimp"
@@ -34,7 +34,7 @@ build() {
   chmod -x *
   chmod +x *.sh
 
-  mkdir -p "$pkgdir/usr/share/bluemaho/tools"
+  install -dm 755 "$pkgdir/usr/share/bluemaho/tools"
 
   cd "$pkgdir/usr/share/bluemaho/tools"
   for tool in 'atshell' 'bccmd' 'psm_scan' 'rfcomm_scan' 'bss' 'btobex' \
@@ -47,7 +47,7 @@ build() {
   cp -r * "$pkgdir/usr/share/bluemaho/tools"
 
   # Symlinks available exploits
-  mkdir -p $pkgdir/usr/share/bluemaho/exploits/
+  install -dm 755 $pkgdir/usr/share/bluemaho/exploits/
   cd "$pkgdir/usr/share/bluemaho/exploits/"
 
   ln -sf /usr/bin/hidattack .

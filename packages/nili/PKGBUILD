@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='nili'
-pkgver=36.97f75f4
-pkgrel=2
+pkgname=nili
+pkgver=39.285220a
+pkgrel=1
 pkgdesc='Tool for Network Scan, Man in the Middle, Protocol Reverse Engineering and Fuzzing.'
 groups=('blackarch' 'blackarch-scanner' 'blackarch-reversing'
         'blackarch-fuzzer')
@@ -13,7 +13,7 @@ license=('GPL3')
 depends=('python' 'python-argparse' 'python2-scapy' 'netzob')
 makedepends=('git' 'python-setuptools')
 source=('git+https://github.com/niloofarkheirkhah/nili.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/nili"
@@ -30,8 +30,8 @@ build() {
 package() {
   cd "$srcdir/nili"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/nili"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/nili"
 
   python setup.py install --root="$pkgdir" --optimize=1
 

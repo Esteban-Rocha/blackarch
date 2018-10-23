@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wcc'
+pkgname=wcc
 pkgver=55.f141963
 pkgrel=1
 pkgdesc='The Witchcraft Compiler Collection.'
@@ -36,8 +36,8 @@ build() {
 package() {
   cd "$srcdir/wcc"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/doc/wcc"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/doc/wcc"
 
   make DESTDIR="$pkgdir" install
 
@@ -45,3 +45,4 @@ package() {
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/wcc/LICENSE"
   cp -a README.md doc/* "$pkgdir/usr/share/doc/wcc/"
 }
+

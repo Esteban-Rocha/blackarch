@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='leviathan'
-pkgver=32.7b48188
+pkgname=leviathan
+pkgver=35.a1a1d8c
 pkgrel=1
 pkgdesc='A mass audit toolkit which has wide range service discovery, brute force, SQL injection detection and running custom exploit capabilities.'
 groups=('blackarch' 'blackarch-scanner' 'blackarch-cracker' 'blackarch-webapp'
@@ -15,7 +15,7 @@ depends=('python2' 'python2-requests' 'python2-paramiko' 'python2-argparse'
          'python2-google-api-python-client' 'shodan')
 makedepends=('git')
 source=('git+https://github.com/leviathan-framework/leviathan.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/leviathan"
@@ -26,8 +26,8 @@ pkgver() {
 package() {
   cd "$srcdir/leviathan"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/leviathan"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/leviathan"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/leviathan/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/leviathan/LICENSE"

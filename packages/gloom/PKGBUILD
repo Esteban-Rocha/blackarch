@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='gloom'
+pkgname=gloom
 pkgver=95.607162b
 pkgrel=2
 pkgdesc='Linux Penetration Testing Framework.'
@@ -15,7 +15,7 @@ depends=('python2' 'python2-mechanize' 'python2-pythonwhois' 'python2-requests'
          'python2-geoip' 'python2-scapy' 'wifijammer' 'nmap' 'curl')
 makedepends=('git')
 source=('git+https://github.com/joshDelta/Gloom-Framework.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Gloom-Framework"
@@ -26,8 +26,8 @@ pkgver() {
 package() {
   cd "$srcdir/Gloom-Framework"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/gloom"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/gloom"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/gloom/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/gloom/LICENSE"

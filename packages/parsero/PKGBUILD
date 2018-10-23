@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='parsero'
+pkgname=parsero
 pkgver=81.e5b585a
-pkgrel=2
+pkgrel=3
 groups=('blackarch' 'blackarch-recon')
 pkgdesc='A robots.txt audit tool.'
 arch=('any')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python3' 'python-urllib3' 'python-beautifulsoup4')
 makedepends=('git')
 source=('git+https://github.com/behindthefirewalls/Parsero.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Parsero"

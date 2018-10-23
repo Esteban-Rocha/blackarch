@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='plasma'
-pkgver=897.8ec3bb7
+pkgname=plasma
+pkgver=903.d691e98
 pkgrel=1
 groups=('blackarch' 'blackarch-disassembler' 'blackarch-binary'
         'blackarch-debugger')
@@ -14,7 +14,7 @@ depends=('python3' 'python-capstone' 'python-pyelftools' 'pefile-py3k'
          'python-msgpack' 'python-pefile' 'python-pyqt4')
 makedepends=('git' 'python-setuptools' 'python-nose' 'python-pip')
 source=('git+https://github.com/joelpx/plasma.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/plasma"
@@ -37,7 +37,7 @@ build() {
 package() {
   cd "$srcdir/plasma"
 
-  mkdir -p "$pkgdir/usr/share/plasma"
+  install -dm 755 "$pkgdir/usr/share/plasma"
 
   python3 setup.py build_ext --inplace
   python3 setup.py install --root="$pkgdir" --prefix=/usr

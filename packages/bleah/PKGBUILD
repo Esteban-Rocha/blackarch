@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='bleah'
-pkgver=32.94ced8f
+pkgname=bleah
+pkgver=42.1f0a628
 pkgrel=1
 pkgdesc='A BLE scanner for "smart" devices hacking.'
 groups=('blackarch' 'blackarch-scanner' 'blackarch-wireless'
@@ -13,7 +13,7 @@ license=('GPL3')
 depends=('python2' 'python2-argparse' 'python2-terminaltables' 'python2-bluepy')
 makedepends=('git')
 source=('git+https://github.com/evilsocket/bleah.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/bleah"

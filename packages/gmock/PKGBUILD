@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='gmock'
-pkgver='1.7.0'
+pkgname=gmock
+pkgver=1.7.0
 _ubuntu_ver='0ubuntu1'
 pkgrel=1
 pkgdesc='A library for writing and using C++ mock classes.'
@@ -14,7 +14,7 @@ options=(!libtool)
 source=("http://googlemock.googlecode.com/files/gmock-${pkgver}.zip"
         'import_private_module.patch'
         'reenable_make_install.patch')
-sha1sums=('f9d9dd882a25f4069ed9ee48e70aff1b53e3c5a5'
+sha512sums=('f9d9dd882a25f4069ed9ee48e70aff1b53e3c5a5'
           '930b402fef3fbc2b13b4e3e7edc77a6e5249e2ca'
           '2b9d278bf585d61b3333fce36e26d5310e52e5a6')
 
@@ -39,8 +39,8 @@ build() {
 package() {
   cd "$srcdir/gmock-$pkgver"
 
-  mkdir -p "$pkgdir/usr/share/gmock"
-  mkdir -p "$pkgdir/usr/share/doc/gmock"
+  install -dm 755 "$pkgdir/usr/share/gmock"
+  install -dm 755 "$pkgdir/usr/share/doc/gmock"
 
   make DESTDIR="$pkgdir" install
 

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dorknet'
-pkgver=40.5b8bf2f
+pkgname=dorknet
+pkgver=43.f77a6c3
 pkgrel=1
 pkgdesc='Selenium powered Python script to automate searching for vulnerable web apps.'
 groups=('blackarch' 'blackarch-webapp' 'blackarch-automation')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2' 'python2-argparse' 'python2-blessings' 'python2-selenium')
 makedepends=('git')
 source=('git+https://github.com/NullArray/DorkNet.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/DorkNet"

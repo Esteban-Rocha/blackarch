@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='revsh'
-pkgver=229.36c9cf0
+pkgname=revsh
+pkgver=264.c750fed
 pkgrel=1
 pkgdesc='A reverse shell with terminal support, data tunneling, and advanced pivoting capabilities.'
 groups=('blackarch' 'blackarch-backdoor' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('openssl')
 makedepends=('git')
 source=('git+https://github.com/emptymonkey/revsh.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/revsh"

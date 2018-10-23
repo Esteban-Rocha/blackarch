@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='sub7'
-pkgver='2.2'
-pkgrel=2
+pkgname=sub7
+pkgver=2.2
+pkgrel=3
 pkgdesc='A remote administration tool. No further comments ;-)'
 url='https://dl.packetstormsecurity.net/trojans/Subseven.2.2.zip'
 groups=('blackarch' 'blackarch-windows' 'blackarch-backdoor')
@@ -12,16 +12,16 @@ arch=('any')
 makedepends=('unzip')
 source=("https://dl.packetstormsecurity.net/trojans/Subseven.${pkgver}.zip")
 noextract=("Subseven.${pkgver}.zip")
-sha1sums=('8928bc355658306cb3c5a953607b0d302eb57f1e')
+sha512sums=('3229a7ddfcee8e991308feacbe09b52c96b155238f41e668370cc288a567cdd52c3ac48dc76ad42f053ff4104d29e3b7ec3cebcf15e7544270f5201df384dbff')
 
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/share/windows/sub7"
+  install -dm 755 "$pkgdir/opt/windows/archive/sub7"
 
   unzip -P p4ssw0rd Subseven.${pkgver}.zip
 
   rm Subseven.${pkgver}.zip
 
-  cp -a * "$pkgdir/usr/share/windows/sub7"
+  cp -a * "$pkgdir/opt/windows/archive/sub7"
 }

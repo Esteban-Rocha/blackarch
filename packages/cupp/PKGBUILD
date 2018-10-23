@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='cupp'
-pkgver=20.07f9b83
+pkgname=cupp
+pkgver=32.9628c13
 pkgrel=1
 pkgdesc='Common User Password Profiler'
 url='http://www.remote-exploit.org/?page_id=418'
@@ -11,7 +11,7 @@ license=('GPL3')
 depends=('python2')
 makedepends=('git')
 arch=('any')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 source=('git+https://github.com/Mebus/cupp.git')
 
 pkgver() {
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/cupp"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/cupp"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/cupp"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/cupp/" README.md CHANGELOG.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/cupp/LICENSE"

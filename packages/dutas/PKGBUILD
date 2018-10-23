@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dutas'
+pkgname=dutas
 pkgver=10.37fa3ab
 pkgrel=2
 pkgdesc='Analysis PE file or Shellcode.'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-capstone' 'capstone' 'unicorn' 'python2-unicorn')
 makedepends=('git')
 source=('git+https://github.com/dungtv543/Dutas.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Dutas"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/Dutas"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/dutas"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/dutas"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/dutas/README.md"
 

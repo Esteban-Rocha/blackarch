@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='parameth'
-pkgver=51.da7b83b
+pkgname=parameth
+pkgver=53.b7ada41
 pkgrel=1
 pkgdesc='This tool can be used to brute discover GET and POST parameters.'
 groups=('blackarch' 'blackarch-webapp' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('custom:unknonw')
 depends=('python2' 'python2-argparse' 'python2-requests' 'python2-numpy')
 makedepends=('git')
 source=('git+https://github.com/mak-/parameth.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/parameth"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/parameth"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/parameth"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/parameth"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/parameth/" README.md
 

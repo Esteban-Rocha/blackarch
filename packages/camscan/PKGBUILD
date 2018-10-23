@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='camscan'
+pkgname=camscan
 pkgver=1.0057215
 pkgrel=2
 groups=('blackarch' 'blackarch-scanner' 'blackarch-networking'
@@ -13,7 +13,7 @@ license=('BSD')
 depends=('python2' 'python2-paramiko')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/securestate/camscan.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/camscan"

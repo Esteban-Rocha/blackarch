@@ -1,19 +1,19 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='shodan'
-pkgver='1.7.7'
-pkgrel=2
+pkgname=shodan
+pkgver=1.10.4
+pkgrel=1
 pkgdesc='Python library for Shodan (https://developer.shodan.io).'
-url='http://github.com/achillean/shodan-python'
+url='https://pypi.org/project/shodan/#files'
 groups=('blackarch' 'blackarch-automation')
 depends=('python2' 'python2-requests' 'python2-simplejson' 'python2-click'
          'python2-click-plugins')
 makedepends=('python2-setuptools')
 license=('MIT')
 arch=('any')
-source=("https://pypi.python.org/packages/21/5b/2285d58661d73f545e77f61fcfdae1bacfcf84560025acf2c27e2e3fa786/shodan-${pkgver}.tar.gz")
-sha1sums=('d7f9f65277ff214e5b8b7b63ffbbfcd1a5b341b2')
+source=("https://files.pythonhosted.org/packages/24/36/87e5e4cab32ffeba1c7304f7dadc00b93491bc3b3de0b599ccacfa3b3671/shodan-$pkgver.tar.gz")
+sha512sums=('3413ec1fe210e8fba6f6ac2a86ab22b7149363e65687d4bd7ec698df3f63b987d5db731a25feea28f57ddc6ab85dfdb1ffb9b74428b4209ddd482a4be231ae29')
 
 build() {
   cd "$srcdir/shodan-$pkgver"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='packetq'
+pkgname=packetq
 pkgver=206.8fba027
 pkgrel=1
 pkgdesc='A tool that provides a basic SQL-frontend to PCAP-files.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('zlib')
 makedepends=('git')
 source=('git+https://github.com/DNS-OARC/PacketQ.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/PacketQ"
@@ -33,7 +33,7 @@ build() {
 package() {
   cd "$srcdir/PacketQ"
 
-  mkdir -p "$pkgdir/usr/share/packetq"
+  install -dm 755 "$pkgdir/usr/share/packetq"
 
   make DESTDIR="$pkgdir" install
 

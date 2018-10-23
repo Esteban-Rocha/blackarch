@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='eapeak'
-pkgver=116.32eba5b
-pkgrel=2
+pkgname=eapeak
+pkgver=130.9550d1c
+pkgrel=1
 groups=('blackarch' 'blackarch-wireless' 'blackarch-recon')
 pkgdesc='Analysis Suite For EAP Enabled Wireless Networks.'
 arch=('any')
@@ -12,7 +12,7 @@ license=('GPL2' 'GPL3')
 depends=('python2' 'python2-scapy' 'python2-m2crypto')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/securestate/eapeak.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/eapeak"

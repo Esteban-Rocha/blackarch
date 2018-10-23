@@ -1,18 +1,18 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dnsfilexfer'
+pkgname=dnsfilexfer
 pkgver=24.126edcd
-pkgrel=1
+pkgrel=2
 groups=('blackarch' 'blackarch-networking' 'blackarch-misc')
 pkgdesc='File transfer via DNS.'
 arch=('any')
 url='https://github.com/leonjza/dnsfilexfer'
 license=('MIT')
-depends=('python2' 'python2-dnspython' 'python2-crypto')
+depends=('python2' 'python2-dnspython' 'python2-pycryptodome')
 makedepends=('git')
 source=('git+https://github.com/leonjza/dnsfilexfer.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/dnsfilexfer"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/dnsfilexfer"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/dnsfilexfer"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/dnsfilexfer"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/dnsfilexfer/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/dnsfilexfer/LICENSE"

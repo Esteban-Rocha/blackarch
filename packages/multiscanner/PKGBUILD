@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='multiscanner'
-pkgver=1336.22eb1ff
+pkgname=multiscanner
+pkgver=1395.dedc48c
 pkgrel=1
 pkgdesc='Modular file scanning/analysis framework.'
 groups=('blackarch' 'blackarch-scanner' 'blackarch-automation')
@@ -16,7 +16,7 @@ depends=('python2' 'python2-requests' 'python2-magic' 'python2-flask'
          'python2-elasticsearch')
 makedepends=('git')
 source=('git+https://github.com/mitre/multiscanner.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/multiscanner"
@@ -33,8 +33,8 @@ build() {
 package() {
   cd "$srcdir/multiscanner"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/multiscanner"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/multiscanner"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/multiscanner/" *.md AUTHORS
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/multiscanner/LICENSE"

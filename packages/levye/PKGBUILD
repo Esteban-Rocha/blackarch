@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='levye'
+pkgname=levye
 pkgver=84.5406303
 pkgrel=2
 epoch=1
@@ -13,7 +13,7 @@ license=('custum')
 depends=('python2' 'python2-paramiko' 'openvpn' 'openssh' 'freerdp')
 makedepends=('git')
 source=('git+https://github.com/heybe/levye')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/levye"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/levye"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/levye"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/levye"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/levye/README.md"
   install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/levye/LICENSE.txt"

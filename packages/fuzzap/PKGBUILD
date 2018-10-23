@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='fuzzap'
+pkgname=fuzzap
 pkgver=17.057002b
 pkgrel=3
 groups=('blackarch' 'blackarch-wireless')
@@ -12,7 +12,7 @@ license=('custom')
 depends=('python2' 'python2-scapy')
 makedepends=('git')
 source=('git+https://github.com/lostincynicism/FuzzAP.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/FuzzAP"
@@ -29,8 +29,8 @@ prepare() {
 package() {
   cd "$srcdir/FuzzAP"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/fuzzap"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/fuzzap"
 
   install -Dm755 fuzzap.py "$pkgdir/usr/share/fuzzap/fuzzap.py"
   install -Dm644 common.txt "$pkgdir/usr/share/fuzzap/common.txt"

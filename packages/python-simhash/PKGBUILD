@@ -1,0 +1,27 @@
+# This file is part of BlackArch Linux ( http://blackarch.org ).
+# See COPYING for license details.
+
+pkgname=python-simhash
+pkgver=1.8.0
+pkgrel=2
+epoch=1
+pkgdesc='A Python implementation of Simhash Algorithm.'
+url='https://pypi.org/project/simhash/#files'
+arch=('any')
+license=('MIT')
+depends=('python')
+makedepends=('python-setuptools')
+source=("https://files.pythonhosted.org/packages/3f/5e/2409105eab2d67cf69d58582ba0a21d56011da8a7465fd081adfc4b06582/simhash-${pkgver}.tar.gz")
+sha512sums=('9d9cb6c021468d4c8dfd369bd5c4b455c3239ff132ed3477d8945638e70be04774038c2898eb4fa10ab72124ae9e31e5e4cff3863abc87126d74cb0d2be6409e')
+
+build() {
+  cd "$srcdir/simhash-$pkgver"
+
+  python setup.py build
+}
+
+package() {
+  cd "$srcdir/simhash-$pkgver"
+
+  python setup.py install --root="$pkgdir" --optimize=1
+}

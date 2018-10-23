@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ipdecap'
-pkgver=92.2d6642a
+pkgname=ipdecap
+pkgver=96.45d2a7d
 pkgrel=1
 groups=('blackarch' 'blackarch-networking')
 pkgdesc='Can decapsulate traffic encapsulated within GRE, IPIP, 6in4, ESP (ipsec) protocols, and can also remove IEEE 802.1Q (virtual lan) header.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('openssl' 'libpcap')
 makedepends=('git')
 source=('git+https://github.com/lpefferkorn/ipdecap.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ipdecap"

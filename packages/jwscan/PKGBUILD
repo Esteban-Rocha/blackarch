@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='jwscan'
+pkgname=jwscan
 pkgver=7.874b3a5
 pkgrel=2
 groups=('blackarch' 'blackarch-reversing' 'blackarch-binary')
@@ -12,7 +12,7 @@ license=('Apache')
 depends=('java-environment')
 makedepends=('git' 'sbt')
 source=('git+https://github.com/katjahahn/JWScan.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/JWScan"
@@ -23,7 +23,7 @@ pkgver() {
 package() {
   cd "$srcdir/JWScan"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   install -Dm755 jwscan.jar "$pkgdir/usr/share/jwscan/jwscan.jar"
   install -Dm644 README.md "$pkgdir/usr/share/doc/jwscan/README.md"

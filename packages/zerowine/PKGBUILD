@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='zerowine'
-pkgver='0.0.2'
+pkgname=zerowine
+pkgver=0.0.2
 pkgrel=8
 pkgdesc='Malware Analysis Tool - research project to dynamically analyze the behavior of malware'
 url='http://zerowine.sf.net/'
@@ -11,13 +11,13 @@ license=('GPL')
 depends=('python2')
 arch=('any')
 source=("http://downloads.sourceforge.net/zerowine/zerowine_vm-${pkgver}-src.tar.gz")
-sha1sums=('0406edabbd5e4be56eeb38ae42483c0931920443')
+sha512sums=('6cab75591c854fe23c062c5949324737c4b0b78571f761e03892242fdb7a885f9a94df21ca7989078a514dd9b898ddf4c5e0297fe1227134e2e4f9109c3274a5')
 
 package() {
   cd "$srcdir"
 
   # TODO: add something to /usr/bin.
-  mkdir -p "$pkgdir/usr/share/zerowine/"
+  install -dm 755 "$pkgdir/usr/share/zerowine/"
 
   cp -r "$srcdir/zerowine_vm/src"/* "$pkgdir/usr/share/zerowine/"
 

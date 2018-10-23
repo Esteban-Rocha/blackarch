@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='freeipmi'
-pkgver='1.5.7'
+pkgname=freeipmi
+pkgver=1.6.2
 pkgrel=1
 pkgdesc='Sensor monitoring, system event monitoring, power control, and serial-over-LAN (SOL).'
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
@@ -12,7 +12,7 @@ license=('GPL')
 depends=('libgcrypt')
 options=('!libtool')
 source=("http://ftp.gnu.org/gnu/freeipmi/freeipmi-${pkgver}.tar.gz")
-sha1sums=('f1f486d781f19f06f3d9a59c33acbb0a0c314d87')
+sha512sums=('5c3f0b3f0632ad89a49a69aae28420c6ec342c9924aff5a8b6c0ccc1dc2f26f8c68906fbd1bc00f0f102dc50690596bb9e8c3443cdcbf93dabb91a7529d87ee8')
 
 build() {
   cd "$srcdir/freeipmi-$pkgver"

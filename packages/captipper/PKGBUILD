@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='captipper'
+pkgname=captipper
 pkgver=70.b08608d
 pkgrel=1
 groups=('blackarch' 'blackarch-forensic' 'blackarch-malware' 'blackarch-sniffer')
@@ -12,7 +12,7 @@ license=('Apache')
 depends=('python2' 'python2-simplejson' 'python2-colorama')
 makedepends=('git')
 source=('git+https://github.com/omriher/CapTipper.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/CapTipper"
@@ -29,8 +29,8 @@ prepare() {
 package() {
   cd "$srcdir/CapTipper"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/captipper"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/captipper"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/captipper" README.md README.txt
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/captipper/LICENSE"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='detect-sniffer'
+pkgname=detect-sniffer
 pkgver=151.63f0d7f
 pkgrel=2
 groups=('blackarch' 'blackarch-defensive' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-ldap' 'python2-scapy')
 makedepends=('git')
 source=('git+https://github.com/galkan/tools')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/tools"

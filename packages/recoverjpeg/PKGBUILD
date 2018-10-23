@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='recoverjpeg'
-pkgver='2.6.1'
+pkgname=recoverjpeg
+pkgver=2.6.2
 pkgrel=1
 groups=('blackarch' 'blackarch-forensic')
 pkgdesc='Recover jpegs from damaged devices.'
@@ -13,7 +13,7 @@ depends=('glibc' 'python' 'bash')
 optdepends=('libexif: needed for sort-pictures'
 'imagemagick: needed for sort-pictures')
 source=("http://www.rfc1149.net/download/recoverjpeg/recoverjpeg-${pkgver}.tar.gz")
-sha1sums=('8b509402015839263ba0eb0ac59b892d6f9381e7')
+sha512sums=('e6d0cc62bfdfd8dff36e9a9afdf509a704a53d15d5b8a7362264237e1012a99a169c9597689fb18bbd96aad0e4a665d5553ba16d586939d7550d9422daa002ed')
 
 build() {
   cd "$srcdir/recoverjpeg-$pkgver"

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='redsocks'
-pkgver=207.5df6a30
+pkgname=redsocks
+pkgver=209.df6394c
 pkgrel=1
 pkgdesc='Transparent redirector of any TCP connection to proxy.'
 groups=('blackarch' 'blackarch-proxy' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('Apache2')
 depends=('libevent')
 makedepends=('git')
 source=('git+https://github.com/darkk/redsocks.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/redsocks"
@@ -32,5 +32,5 @@ package() {
   install -Dm755 redsocks "$pkgdir/usr/bin/redsocks"
   install -Dm644 -t "$pkgdir/usr/share/redsocks/" redsocks.conf.example \
     redsocks.service
-  install -Dm644 README "$pkgdir/usr/share/doc/redsocks/README"
+  install -Dm644 -t "$pkgdir/usr/share/doc/redsocks/" README.md
 }

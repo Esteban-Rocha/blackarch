@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='xsspy'
-pkgver=52.5d66c3d
+pkgname=xsspy
+pkgver=56.d317b27
 pkgrel=1
 pkgdesc='Web Application XSS Scanner.'
 groups=('blackarch' 'blackarch-webapp' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-mechanize')
 makedepends=('git')
 source=('git+https://github.com/faizann24/XssPy.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/XssPy"

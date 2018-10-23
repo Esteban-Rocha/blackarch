@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='sdnpwn'
-pkgver=39.d9c3be2
-pkgrel=2
+pkgname=sdnpwn
+pkgver=52.554fc79
+pkgrel=1
 pkgdesc='An SDN penetration testing toolkit.'
 groups=('blackarch' 'blackarch-scanner' 'blackarch-networking')
 arch=('any')
@@ -13,7 +13,7 @@ depends=('python' 'python-netifaces' 'python-scipy' 'python-tabulate'
          'python-python-openflow' 'python-scapy' 'bridge-utils')
 makedepends=('git')
 source=('git+https://github.com/smythtech/sdnpwn.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/sdnpwn"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/sdnpwn"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/sdnpwn"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/sdnpwn"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/sdnpwn/" README.md
 

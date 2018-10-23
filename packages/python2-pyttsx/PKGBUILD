@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-pyttsx'
-pkgver='1.1'
-pkgrel=2
+pkgname=python2-pyttsx
+pkgver=1.1
+pkgrel=3
 pkgdesc='Cross platform text-to-speech.'
 arch=('any')
 url='https://pypi.python.org/pypi/pyttsx/'

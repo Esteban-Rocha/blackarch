@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='fbid'
+pkgname=fbid
 pkgver=16.1b35eb9
 pkgrel=1
 groups=('blackarch' 'blackarch-recon' 'blackarch-social')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2' 'python2-simplejson')
 makedepends=('git')
 source=('git+https://github.com/guelfoweb/fbid.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/fbid"

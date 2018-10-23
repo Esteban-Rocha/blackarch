@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='eaphammer'
-pkgver=80.a111d12
-pkgrel=2
+pkgname=eaphammer
+pkgver=98.5e81fb4
+pkgrel=1
 pkgdesc='Targeted evil twin attacks against WPA2-Enterprise networks. Indirect wireless pivots using hostile portal attacks.'
 groups=('blackarch' 'blackarch-wireless')
 arch=('any')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-nfcpy' 'python2-argparse' 'python2-tqdm' 'dnsmasq'
          'libnfnetlink' 'libnl' 'openssl')
 makedepends=('git')
 source=('git+https://github.com/s0lst1c3/eaphammer.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/eaphammer"
@@ -21,11 +21,17 @@ pkgver() {
   echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
 }
 
+build() {
+  cd "$srcdir/eaphammer/hostapd-eaphammer/hostapd"
+
+  make hostapd-eaphammer_lib
+}
+
 package() {
   cd "$srcdir/eaphammer"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/eaphammer"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/eaphammer"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/eaphammer/" README.md Changelog
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/eaphammer/LICENSE"

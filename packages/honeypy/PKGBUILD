@@ -1,19 +1,19 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='honeypy'
-pkgver=567.43b70d3
+pkgname=honeypy
+pkgver=582.79a280e
 pkgrel=1
 pkgdesc='A low interaction Honeypot.'
 arch=('any')
 url='https://github.com/foospidy/HoneyPy'
 license=('GPL')
-groups=('blackarch' 'blackarch-honeypot' 'blackarch-defensensive')
+groups=('blackarch' 'blackarch-honeypot' 'blackarch-defensive')
 depends=('python2' 'python2-dnslib' 'python2-requests' 'python2-twisted'
          'python2-certifi' 'python2-urllib3')
 makedepends=('git')
 source=('git+https://github.com/foospidy/HoneyPy.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/HoneyPy"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/HoneyPy"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/${pkgname}"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/${pkgname}"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/honeypy" README.md VERSION
   install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/honeypy"

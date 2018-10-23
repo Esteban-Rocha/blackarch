@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='sessionlist'
-pkgver='1.0'
+pkgname=sessionlist
+pkgver=1.0
 pkgrel=2
 groups=('blackarch' 'blackarch-networking' 'blackarch-sniffer')
 pkgdesc='Sniffer that intents to sniff HTTP packets and attempts to reconstruct interesting authentication data from websites that do not employ proper secure cookie auth.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('libpcap' 'ncurses')
 makedepends=('git')
 source=('git+https://github.com/iamrage/sessionlist.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 build() {
   cd "$srcdir/sessionlist"

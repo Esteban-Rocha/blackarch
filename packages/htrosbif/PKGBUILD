@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='htrosbif'
+pkgname=htrosbif
 pkgver=134.9dc3f86
 pkgrel=5
 groups=('blackarch' 'blackarch-fingerprint' 'blackarch-recon')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('perl' 'perl-json-xs' 'perl-list-moreutils' 'perl-test-deep')
 makedepends=('git')
 source=('git+https://github.com/lkarsten/htrosbif.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/htrosbif"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/htrosbif"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/htrosbif"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/htrosbif"
 
   install -Dm644 REQUIREMENTS "$pkgdir/usr/share/doc/htrosbif/REQUIREMENTS"
   install -Dm644 COPYING "$pkgdir/usr/share/licenses/htrosbif/COPYING"

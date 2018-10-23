@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='chopshop'
-pkgver=399.215679c
+pkgname=chopshop
+pkgver=406.82ce7b6
 pkgrel=1
 pkgdesc='Protocol Analysis/Decoder Framework.'
 groups=('blackarch' 'blackarch-networking' 'blackarch-reversing')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-pynids' 'python2-pymongo' 'python2-yaraprocessor'
          'python2-m2crypto' 'python2-pylibemu' 'python2-dnslib')
 makedepends=('git')
 source=('git+https://github.com/MITRECND/chopshop.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/chopshop"

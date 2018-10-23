@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='smbexec'
+pkgname=smbexec
 pkgver=148.7827616
 pkgrel=8
 epoch=1
@@ -16,7 +16,7 @@ license=('custom:unknown')
 options=('!strip')
 install='smbexec.install'
 source=('git+https://github.com/pentestgeek/smbexec.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/smbexec"
@@ -27,8 +27,8 @@ pkgver() {
 package() {
   cd "$srcdir/smbexec"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/smbexec"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/smbexec"
 
   install -Dm644 README "$pkgdir/usr/share/doc/smbexec"
 

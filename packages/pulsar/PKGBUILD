@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pulsar'
-pkgver=36.8432a85
+pkgname=pulsar
+pkgver=42.18b35db
 pkgrel=1
 pkgdesc='Protocol Learning and Stateful Fuzzing.'
 groups=('blackarch' 'blackarch-fuzzer')
@@ -12,7 +12,7 @@ license=('BSD')
 depends=('python2' 'cuckoo' 'python2-pygraphviz' 'python2-levenshtein')
 makedepends=('git')
 source=('git+https://github.com/hgascon/pulsar.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/pulsar"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/pulsar"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/pulsar"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/pulsar"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/pulsar/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/pulsar/LICENSE"

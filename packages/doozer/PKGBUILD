@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='doozer'
+pkgname=doozer
 pkgver=9.5cfc8f8
 pkgrel=3
 groups=('blackarch' 'blackarch-cracker')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2' 'python2-requests' 'python2-django' 'ophcrack' 'hashcat')
 makedepends=('git')
 source=('git+https://github.com/CoalfireLabs/Doozer.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Doozer"
@@ -29,8 +29,8 @@ prepare() {
 package() {
   cd "$srcdir/Doozer"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/doozer"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/doozer"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/doozer/README.md"
 

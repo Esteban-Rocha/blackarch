@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='cisco-torch'
-pkgver='0.4b'
+pkgname=cisco-torch
+pkgver=0.4b
 pkgrel=6
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-fingerprint' 'blackarch-scanner')
 pkgdesc="Cisco Torch mass scanning, fingerprinting, and exploitation tool."
@@ -12,14 +12,14 @@ depends=('perl' 'perl-net-telnet' 'perl-net-snmp' 'perl-net-ssh-perl' 'perl-net-
 arch=('any')
 #source=(http://www.arhont.com/en/wp-content/uploads/2010/01/cisco-torch-$pkgver.tar.gz)
 source=("https://github.com/foreni-packages/cisco-torch/archive/debian/0.4b-1kali4.tar.gz")
-sha1sums=('0f6524176b443b882852d76114587491a32db26c')
+sha512sums=('d477b637b0b6e299f5474d33c60ba18fe6f132436859c92d5b998ff42ad9a739f765ce41c6b6d2a2db7d5548168e1cb49d9510b051601a8b26d7b54b090b0247')
 
 package() {
   cd "$srcdir/cisco-torch-debian-${pkgver}-1kali4"
 
-  mkdir -p $pkgdir/usr/bin
-  mkdir -p $pkgdir/usr/share/cisco-torch/
-  mkdir -p $pkgdir/usr/share/doc/cisco-torch/
+  install -dm 755 $pkgdir/usr/bin
+  install -dm 755 $pkgdir/usr/share/cisco-torch/
+  install -dm 755 $pkgdir/usr/share/doc/cisco-torch/
 
   install -Dm644 CHANGELOG.txt $pkgdir/usr/share/doc/cisco-torch/
   install -Dm644 README.txt $pkgdir/usr/share/doc/cisco-torch/

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='svn-extractor'
+pkgname=svn-extractor
 pkgver=39.39941be
 pkgrel=1
 groups=('blackarch' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2' 'python2-pysqlite')
 makedepends=('git')
 source=('git+https://github.com/anantshri/svn-extractor.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/svn-extractor"

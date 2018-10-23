@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pytbull'
-pkgver='2.0'
-pkgrel=4
+pkgname=pytbull
+pkgver=2.1
+pkgrel=1
 groups=('blackarch' 'blackarch-scanner' 'blackarch-fuzzer')
 pkgdesc='A python based flexible IDS/IPS testing framework shipped with more than 300 tests.'
 arch=('any')
@@ -11,19 +11,20 @@ url='http://pytbull.sourceforge.net/'
 license=('GPL2')
 depends=('python2' 'python2-scapy' 'python2-feedparser')
 source=("https://downloads.sourceforge.net/project/pytbull/pytbull-${pkgver}.tar.bz2")
-sha1sums=('87218120d58e88ec9e5c2e8340ca71dec3faf877')
+sha512sums=('5ac642ded4f772299966950d7255bc67562f95fa92c7b58321623aae6efc3655abddbc94211f11098a53d5544ef3e172fb73634df3a449e97c1d7f6dd5789430')
 
 prepare() {
   cd "$srcdir/pytbull"
+
   sed -i 's/self.checkNewVersionAvailable()/False/' pytbull
 }
 
 package() {
   cd "$srcdir/pytbull"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/pytbull"
-  mkdir -p "$pkgdir/usr/share/doc/"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/pytbull"
+  install -dm 755 "$pkgdir/usr/share/doc/"
 
   install -Dm644 docs/COPYING "$pkgdir/usr/share/licenses/pytbull/COPYING"
 
@@ -33,7 +34,7 @@ package() {
   cat > "$pkgdir/usr/bin/pytbull" << EOF
 #!/bin/sh
 cd /usr/share/pytbull
-python2 pytbull "\$@"
+python2 pytbull "\${@}"
 EOF
 
   chmod +x "$pkgdir/usr/bin/pytbull"

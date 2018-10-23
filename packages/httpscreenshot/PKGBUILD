@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='httpscreenshot'
+pkgname=httpscreenshot
 pkgver=53.888faaf
 pkgrel=1
 pkgdesc='A tool for grabbing screenshots and HTML of large numbers of websites.'
@@ -14,7 +14,7 @@ depends=('python2' 'python2-selenium' 'python2-pillow' 'python2-python-libnmap'
          'python2-requesocks' 'python2-pyvirtualdisplay')
 makedepends=('git')
 source=('git+https://github.com/breenmachine/httpscreenshot.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/httpscreenshot"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/httpscreenshot"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/httpscreenshot"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/httpscreenshot"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/httpscreenshot/" README.md
 

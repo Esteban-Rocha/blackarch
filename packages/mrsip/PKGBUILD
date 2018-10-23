@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='mrsip'
-pkgver=18.a821cbf
-pkgrel=2
+pkgname=mrsip
+pkgver=19.4662485
+pkgrel=1
 pkgdesc='SIP-Based Audit and Attack Tool.'
 groups=('blackarch' 'blackarch-voip')
 arch=('any')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2' 'python2-scapy' 'toilet')
 makedepends=('git')
 source=('git+https://github.com/meliht/mr.sip.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/mr.sip"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/mr.sip"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/mrsip"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/mrsip"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/mrsip/" README.md To-Do.md \
     Documentation.pdf

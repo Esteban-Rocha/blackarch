@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='udsim'
+pkgname=udsim
 pkgver=23.35c1710
-pkgrel=1
+pkgrel=2
 pkgdesc='A graphical simulator that can emulate different modules in a vehicle and respond to UDS request.'
 groups=('blackarch' 'blackarch-scanner' 'blackarch-fuzzer' 'blackarch-automobile')
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('sdl2' 'sdl2_image' 'sdl2_ttf')
 makedepends=('git')
 source=('git+https://github.com/zombieCraig/UDSim.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/UDSim"
@@ -29,8 +29,8 @@ build() {
 package() {
   cd "$srcdir/UDSim"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/udsim"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/udsim"
 
   install -Dm755 src/udsim "$pkgdir/usr/bin/udsim"
   install -Dm644 -t "$pkgdir/usr/share/doc/udsim/" README.md

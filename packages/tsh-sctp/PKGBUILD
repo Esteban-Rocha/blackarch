@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='tsh-sctp'
+pkgname=tsh-sctp
 pkgver=2.850a2da
 pkgrel=3
 pkgdesc='An open-source UNIX backdoor.'
@@ -11,7 +11,7 @@ groups=('blackarch' 'blackarch-backdoor')
 license=('GPL')
 makedepends=('git')
 source=('git+https://github.com/infodox/tsh-sctp.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/tsh-sctp"
@@ -22,7 +22,7 @@ pkgver() {
 package() {
   cd "$srcdir/tsh-sctp"
 
-  mkdir -p "$pkgdir/usr/share/tsh-sctp"
+  install -dm 755 "$pkgdir/usr/share/tsh-sctp"
 
   cp -a --no-preserve=ownership * "$pkgdir/usr/share/tsh-sctp"
 }

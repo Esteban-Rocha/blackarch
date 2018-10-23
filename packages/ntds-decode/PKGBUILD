@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ntds-decode'
-pkgver='0.1'
-pkgrel=3
+pkgname=ntds-decode
+pkgver=0.1
+pkgrel=4
 groups=('blackarch' 'blackarch-windows' 'blackarch-cracker')
 pkgdesc='This application dumps LM and NTLM hashes from active accounts stored in an Active Directory database.'
 arch=('any')
@@ -11,14 +11,14 @@ url='http://packetstormsecurity.com/files/121543/NTDS-Hash-Decoder-01.b.html'
 license=('unknown')
 makedepends=('unzip')
 source=("http://packetstorm.foofus.com/Win/ntds_decode.zip")
-sha1sums=('c56e515a85d85387efa4ac8ab9b47becc29a40f4')
+sha512sums=('8be2a57ac3334e162a78e4ffbbf47c92de4fdd1ec26034f7d52a11e81cdc3bd8bce8b687ca8ca178b4c95d8657fa7c882a2eef3ed9864605c95b1f9f81df3201')
 
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/share/windows/ntds-decode"
+  install -dm 755 "$pkgdir/opt/windows/archive/ntds-decode"
 
   rm ntds_decode.zip
 
-  cp -a * "$pkgdir/usr/share/windows/ntds-decode"
+  cp -a * "$pkgdir/opt/windows/archive/ntds-decode"
 }

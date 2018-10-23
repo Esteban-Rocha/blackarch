@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='tcpcopy'
-pkgver=1234.07f3610
+pkgname=tcpcopy
+pkgver=1238.4aebb48
 pkgrel=1
 pkgdesc='A TCP stream replay tool to support real testing of Internet server applications.'
 groups=('blackarch' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('BSD')
 depends=('libpcap')
 makedepends=('git')
 source=('git+https://github.com/session-replay-tools/tcpcopy.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/tcpcopy"
@@ -31,8 +31,8 @@ build() {
 package() {
   cd "$srcdir/tcpcopy"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/tcpcopy"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/tcpcopy"
 
   make DESTDIR="$pkgdir" install
 

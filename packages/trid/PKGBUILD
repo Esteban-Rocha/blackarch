@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='trid'
-pkgver='2.24'
+pkgname=trid
+pkgver=2.24
 pkgrel=1
 pkgdesc='An utility designed to identify file types from their binary signatures.'
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
@@ -11,12 +11,12 @@ groups=('blackarch' 'blackarch-forensic' 'blackarch-binary')
 license=('CUSTOM')
 depends=('trid-defs' 'lib32-ncurses')
 source=('http://mark0.net/download/trid_linux.zip')
-sha1sums=('ce7cf28472bbbe630b58d0e00b50d4fad4ad965a')
+sha512sums=('63f732241214e0975413191e60dd94a3b008af9c5b93eeeef7bf13ee43dedc4b6cbf50484fcd46378342fb26f369c3b1b8ca82ce618e9dfabeae841255b8e077')
 
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   install -Dm755 trid "$pkgdir/usr/share/trid/trid"
   install -Dm644 readme.txt "$pkgdir/usr/share/doc/trid/readme_e.txt"

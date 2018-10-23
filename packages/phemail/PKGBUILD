@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='phemail'
+pkgname=phemail
 pkgver=27.7ae21f2
 pkgrel=2
 groups=('blackarch' 'blackarch-social' 'blackarch-automation')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2' 'python2-beautifulsoup4' 'python2-dnspython')
 makedepends=('git')
 source=('git+https://github.com/Dionach/PhEmail.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/PhEmail"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/PhEmail"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/phemail"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/phemail"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/phemail" README.md CHANGELOG.txt \
     DISCLAIMER.txt TODO.txt

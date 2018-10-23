@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='staekka'
+pkgname=staekka
 pkgver=9.57787ca
 pkgrel=1
 pkgdesc='This plugin extends Metasploit for some missing features and modules allowing interaction with other/custom exploits/ways of getting shell access.'
@@ -13,7 +13,7 @@ makedepends=('git' 'make' 'clang' 'ruby-bundler')
 options=('!strip' '!emptydirs')
 source=('git+https://github.com/j-0-t/staekka.git')
 install='staekka.install'
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/staekka"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/staekka"
 
-  mkdir -p "$pkgdir/opt/staekka"
-  mkdir -p "$pkgdir/opt/metasploit/plugins/"
+  install -dm 755 "$pkgdir/opt/staekka"
+  install -dm 755 "$pkgdir/opt/metasploit/plugins/"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/staekka" README.md
 

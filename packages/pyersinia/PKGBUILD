@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pyersinia'
+pkgname=pyersinia
 pkgver=49.73f4056
 pkgrel=3
 groups=('blackarch' 'blackarch-networking' 'blackarch-fuzzer'
@@ -14,7 +14,7 @@ license=('MIT')
 depends=('python2' 'python2-scapy' 'python2-sphinx' 'python2-termcolor')
 makedepends=('git')
 source=('git+https://github.com/nottinghamprisateam/pyersinia.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/pyersinia"

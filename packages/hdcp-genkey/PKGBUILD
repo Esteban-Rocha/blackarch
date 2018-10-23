@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='hdcp-genkey'
+pkgname=hdcp-genkey
 pkgver=18.e8d342d
 pkgrel=5
 groups=('blackarch' 'blackarch-crypto' 'blackarch-cracker')
@@ -12,7 +12,7 @@ license=('unknown')
 depends=('python2' 'python2-simplejson')
 makedepends=('git')
 source=('git+https://github.com/rjw57/hdcp-genkey.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/hdcp-genkey"
@@ -29,8 +29,8 @@ prepare() {
 package() {
   cd "$srcdir/hdcp-genkey"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/hdcp-genkey"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/hdcp-genkey"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/hdcp-genkey/README.md"
 

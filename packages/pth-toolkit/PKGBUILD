@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pth-toolkit'
+pkgname=pth-toolkit
 pkgver=7.3641cdc
 pkgrel=1
 pkgdesc='Modified version of the passing-the-hash tool collection made to work straight out of the box.'
@@ -11,7 +11,7 @@ url='https://github.com/byt3bl33d3r/pth-toolkit'
 license=('BSD')
 makedepends=('git')
 source=('git+https://github.com/byt3bl33d3r/pth-toolkit.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/pth-toolkit"
@@ -25,8 +25,8 @@ package() {
   local tools="pth-net pth-rpcclient pth-smbclient pth-smbget pth-winexe"
   tools="${tools} pth-wmic pth-wmis"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/pth-toolkit"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/pth-toolkit"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/pth-toolkit/" README.md
   install -Dm644 LICENSE.md "$pkgdir/usr/share/licenses/pth-toolkit/LICENSE.md"

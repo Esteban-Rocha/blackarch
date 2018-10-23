@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='inetsim'
-pkgver='1.2.7'
+pkgname=inetsim
+pkgver=1.2.7
 pkgrel=1
 groups=('blackarch' 'blackarch-defensive' 'blackarch-honeypot')
 pkgdesc='A software suite for simulating common internet services in a lab environment, e.g. for analyzing the network behaviour of unknown malware samples.'
@@ -12,17 +12,17 @@ license=('GPL3')
 depends=('perl' 'perl-net-server' 'perl-ipc-shareable' 'openssl')
 install='inetsim.install'
 source=("http://www.inetsim.org/downloads/inetsim-${pkgver}.tar.gz")
-sha1sums=('43cccc2087c04bcd4300b4af9a8cb41e73233280')
+sha512sums=('237e2a7dd4cab559d5ee44a84221e007c7cef38eb1568d96d82601ef49e7e552b8af0e20a705c77065a5aed78a338865e8db7c3e167d91d81fa476fdb1767b06')
 
 package() {
   cd "$srcdir/inetsim-$pkgver"
 
-  mkdir -p "$pkgdir/etc"
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/var/lib"
-  mkdir -p "$pkgdir/usr/share/inetsim"
-  mkdir -p "$pkgdir/usr/share/doc/inetsim"
-  mkdir -p "$pkgdir/var/log/inetsim"
+  install -dm 755 "$pkgdir/etc"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/var/lib"
+  install -dm 755 "$pkgdir/usr/share/inetsim"
+  install -dm 755 "$pkgdir/usr/share/doc/inetsim"
+  install -dm 755 "$pkgdir/var/log/inetsim"
 
   # Program.
   cp -R --no-preserve=ownership contrib lib inetsim "$pkgdir/usr/share/inetsim"

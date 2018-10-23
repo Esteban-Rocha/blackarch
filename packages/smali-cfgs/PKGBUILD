@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='smali-cfgs'
+pkgname=smali-cfgs
 pkgver=6.4450418
 pkgrel=2
 pkgdesc="Smali Control Flow Graph's."
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2' 'python2-pydot')
 makedepends=('git')
 source=('git+https://github.com/ch0psticks/Smali-CFGs.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Smali-CFGs"

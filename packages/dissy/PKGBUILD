@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dissy'
-pkgver='10'
+pkgname=dissy
+pkgver=10
 pkgrel=4
 pkgdesc='A graphical frontend to the objdump disassembler for compiler-generated code.'
 groups=('blackarch' 'blackarch-disassembler' 'blackarch-reversing')
@@ -11,7 +11,7 @@ url='http://dissy.googlecode.com/'
 license=('GPL')
 depends=('pygtk' 'pywebkitgtk')
 source=("https://dissy.googlecode.com/files/dissy-${pkgver}.tar.gz")
-sha1sums=('3cf5db752fc0e35ed22cd0abc5d6c4ec97838516')
+sha512sums=('3cf5db752fc0e35ed22cd0abc5d6c4ec97838516')
 
 build() {
   cd "$srcdir/dissy-$pkgver"
@@ -22,7 +22,7 @@ build() {
 package() {
   cd "$srcdir/dissy-$pkgver"
 
-  mkdir -p "$pkgdir/usr/share/dissy"
+  install -dm 755 "$pkgdir/usr/share/dissy"
 
   python2 setup.py install --root="$pkgdir" --optimize=1
 

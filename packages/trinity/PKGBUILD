@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='trinity'
-pkgver=5109.1751b2bd
+pkgname=trinity
+pkgver=5113.9f6f9f91
 pkgrel=1
 pkgdesc='A Linux System call fuzzer.'
 groups=('blackarch' 'blackarch-fuzzer')
@@ -11,7 +11,7 @@ url='http://codemonkey.org.uk/projects/trinity/'
 license=('GPL')
 makedepends=('git')
 source=('git+https://github.com/kernelslacker/trinity.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/trinity"

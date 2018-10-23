@@ -1,21 +1,21 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='trid-defs'
-pkgver='2016.27.07'
-pkgrel=2
+pkgname=trid-defs
+pkgver=2018.07.03
+pkgrel=1
 pkgdesc='Filesignature database for trid'
 arch=('any')
 url='http://mark0.net/soft-trid-e.html'
 license=('custom')
 source=("triddefs-$pkgver.zip::http://mark0.net/download/triddefs.zip")
-sha1sums=('7225cd8877bdda23a267016fa404a82af2a82753')
+sha512sums=('9cf4fa316fd545d1340b8b15a6c57e191f6c2a229079c5a122f2b0c8ef8be8a80ad7a19ddf14d14472c55230d696dc884748f5742c78ac933d1b5279f9194722')
 
 package() {
   cd "$srcdir"
 
   install -D triddefs.trd "$pkgdir/usr/share/trid/triddefs.trd"
 
-  mkdir -p "$pkgdir/usr/share/licenses/trid"
+  install -dm 755 "$pkgdir/usr/share/licenses/trid"
   ln -s "/usr/share/licenses/trid" "$pkgdir/usr/share/licenses/trid"
 }

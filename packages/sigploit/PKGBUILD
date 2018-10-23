@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='sigploit'
-pkgver=615.6dfd167
+pkgname=sigploit
+pkgver=753.1528fe4
 pkgrel=1
 pkgdesc='Telecom Signaling Exploitation Framework - SS7, GTP, Diameter & SIP.'
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-mobile')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2' 'java-environment')
 makedepends=('git')
 source=('git+https://github.com/SigPloiter/SigPloit.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/SigPloit"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/SigPloit"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/sigploit"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/sigploit"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/sigploit/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/sigploit/LICENSE"

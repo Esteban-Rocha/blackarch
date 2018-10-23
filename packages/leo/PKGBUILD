@@ -1,37 +1,37 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='leo'
-pkgver='5.6'
-pkgrel=1
+pkgname=leo
+pkgver=5.8
+pkgrel=2
 pkgdesc="Literate programmer's editor, outliner, and project manager."
 arch=('any')
-url='http://webpages.charter.net/edreamleo/front.html'
+url='https://github.com/leo-editor/leo-editor/'
 license=('custom')
 depends=('python2' 'tk' 'python2-pmw' 'python2-pyqt')
 makedepends=('unzip' 'python2-setuptools')
 groups=('blackarch' 'blackarch-misc')
-source=("https://downloads.sourceforge.net/project/leo/Leo/${pkgver}/Leo-${pkgver}.zip")
-sha1sums=('93a052eddf31dfe34aa342ec6a5f111319e895c9')
+source=("https://github.com/leo-editor/leo-editor/archive/$pkgver.tar.gz")
+sha512sums=('88fb9480ba62a50bde587129fbc1af7ca1ad9740e4c581b76a7e17eb443b951c5935133bec38b412149ae07c22253da22a7d6169d29435aa23b384a61020ce98')
 
 package() {
-  cd "$srcdir/Leo-$pkgver"
+  cd "leo-editor-$pkgver"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/leo"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/$pkgname"
 
-  install -Dm644 -t "$pkgdir/usr/share/doc/leo/" INSTALL.TXT README.MD
-  install -Dm644 LICENSE.TXT "$pkgdir/usr/share/licenses/leo/LICENSE.TXT"
+  install -Dm644 -t "$pkgdir/usr/share/doc/$pkgname/" INSTALL.TXT README.md
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 
-  rm INSTALL.TXT README.MD LICENSE.TXT
+  rm INSTALL.TXT README.md LICENSE
 
-  cp -a * "$pkgdir/usr/share/leo/"
+  cp -a * "$pkgdir/usr/share/$pkgname/"
 
-  cat > "$pkgdir/usr/bin/leo" << EOF
+  cat > "$pkgdir/usr/bin/$pkgname" << EOF
 #!/bin/sh
 cd /usr/share/leo
 exec python2 launchLeo.py "\${@}"
 EOF
 
-  chmod a+x "$pkgdir/usr/bin/leo"
+  chmod a+x "$pkgdir/usr/bin/$pkgname"
 }

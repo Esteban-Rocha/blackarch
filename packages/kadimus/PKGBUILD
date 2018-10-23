@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='kadimus'
-pkgver=51.a3d190a
+pkgname=kadimus
+pkgver=53.c3aac92
 pkgrel=1
 groups=('blackarch' 'blackarch-webapp' 'blackarch-exploitation'
         'blackarch-scanner')
@@ -13,7 +13,7 @@ license=('MIT')
 depends=('curl' 'pcre' 'libssh' 'openssl')
 makedepends=('git')
 source=('git+https://github.com/P0cL4bs/Kadimus.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Kadimus"

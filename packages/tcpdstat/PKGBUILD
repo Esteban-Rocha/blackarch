@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='tcpdstat'
+pkgname=tcpdstat
 pkgver=4.be5bd28
 pkgrel=1
 groups=('blackarch' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('libpcap')
 makedepends=('git' 'make')
 source=('git+https://github.com/netik/tcpdstat.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "${srcdir}/tcpdstat"
@@ -29,7 +29,7 @@ build() {
 package() {
   cd "${srcdir}/tcpdstat"
 
-  mkdir -p "${pkgdir}/usr/bin"
+  install -dm 755 "${pkgdir}/usr/bin"
 
   make install PREFIX="${pkgdir}/usr"
 

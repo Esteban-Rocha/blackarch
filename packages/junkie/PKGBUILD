@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='junkie'
+pkgname=junkie
 pkgver=1365.70a83d6
 pkgrel=1
 groups=('blackarch' 'blackarch-sniffer' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('rlwrap' 'doxygen' 'openssl' 'libpcap' 'guile' 'p0f')
 makedepends=('git')
 source=('git+https://github.com/securactive/junkie.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/junkie"
@@ -35,7 +35,7 @@ build() {
 package() {
   cd "$srcdir/junkie"
 
-  mkdir -p "$pkgdir/etc"
+  install -dm 755 "$pkgdir/etc"
 
   make install DESTDIR="$pkgdir/"
 

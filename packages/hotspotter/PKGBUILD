@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='hotspotter'
-pkgver='0.4'
+pkgname=hotspotter
+pkgver=0.4
 pkgrel=2
 pkgdesc="Hotspotter passively monitors the network for probe request frames to identify the preferred networks of Windows XP clients, and will compare it to a supplied list of common hotspot network names."
 url="http://www.remote-exploit.org/?page_id=418"
@@ -10,7 +10,7 @@ groups=('blackarch' 'blackarch-wireless')
 license=('GPL')
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 source=("http://www.wirelessdefence.org/Contents/Files/hotspotter-${pkgver}.tar.gz")
-sha1sums=('c573a75dff6386e1dbb98bc3121f0daf4e297afe')
+sha512sums=('c573a75dff6386e1dbb98bc3121f0daf4e297afe')
 
 build() {
   cd "$srcdir/hotspotter-$pkgver/src"

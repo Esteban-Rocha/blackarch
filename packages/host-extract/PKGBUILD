@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='host-extract'
+pkgname=host-extract
 pkgver=8.0134ad7
 pkgrel=5
 epoch=1
@@ -14,7 +14,7 @@ depends=('ruby' 'ruby-mechanize' 'ruby-net-http-digest_auth' 'rubygems'
          'ruby-http-cookie' 'ruby-ntlm-http' 'ruby-webrobots')
 makedepends=('git')
 source=('git+https://github.com/jeffrbeyer/host-extract.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/host-extract"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/host-extract"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/host-extract"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/host-extract"
 
   install -Dm644 README "$pkgdir/usr/share/doc/host-extract/README"
 

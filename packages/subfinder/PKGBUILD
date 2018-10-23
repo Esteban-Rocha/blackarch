@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='subfinder'
-pkgver=87.034ab95
+pkgname=subfinder
+pkgver=402.37367bf
 pkgrel=1
 groups=('blackarch' 'blackarch-recon')
 pkgdesc='Modular subdomain discovery tool that can discover massive amounts of valid subdomains for any target.'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('glibc' 'go')
 makedepends=('go' 'git')
 source=('git+https://github.com/Ice3man543/subfinder')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/subfinder"
@@ -23,7 +23,7 @@ pkgver() {
 build() {
   cd "$srcdir"
 
-  mkdir -p src/$url && rm -rf src/$url && mv subfinder src/$url && cd src/$url
+  install -dm 755 src/$url && rm -rf src/$url && mv subfinder src/$url && cd src/$url
 
   GOPATH="$srcdir" go get -d -t github.com/Ice3man543/subfinder
 }
@@ -31,7 +31,7 @@ build() {
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   GOPATH="$srcdir" go build -v github.com/Ice3man543/subfinder
 

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='hercules-payload'
+pkgname=hercules-payload
 pkgver=220.958541e
 pkgrel=1
 groups=('blackarch' 'blackarch-binary' 'blackarch-windows' 'blackarch-backdoor')
@@ -13,8 +13,8 @@ depends=('go')
 makedepends=('git')
 source=('git+https://github.com/EgeBalci/HERCULES.git'
         'hercules.patch')
-sha1sums=('SKIP'
-          '2c3204d7d567ca306022c2282dd4265b762cec0d')
+sha512sums=('SKIP'
+            '4b4c9af300fb12da7c02407cf7a511bc86c3fe9e36192e0f8d5eac7e2c8e3d0b1ab5887f6f3febbf29edbf2d963a132a1559f63b2d6015ab8f07c1fedcf6721d')
 
 pkgver() {
   cd "$srcdir/HERCULES"
@@ -41,8 +41,8 @@ build() {
 package() {
   cd "$srcdir/HERCULES"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/hercules-payload"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/hercules-payload"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/hercules-payload/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/hercules-payload/LICENSE"

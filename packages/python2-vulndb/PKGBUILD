@@ -1,17 +1,17 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-vulndb'
-pkgver='0.0.19'
+pkgname=python2-vulndb
+pkgver=0.1.0
 pkgrel=2
 pkgdesc='Provides access to the vulndb information.'
 arch=('any')
 license=('BSD')
-url='https://pypi.python.org/pypi/vulndb'
+url='https://pypi.org/project/vulndb/#files'
 makedepends=('python2-setuptools')
 depends=('python2')
-source=("https://pypi.python.org/packages/source/v/vulndb/vulndb-${pkgver}.tar.gz")
-sha1sums=('f4699f6c57af6ea68a838e569cab6de23bc0de94')
+source=("https://files.pythonhosted.org/packages/b6/8e/e5dc89c7d916615f44d8854d471e93965ab25282df2818d239ff8e759fed/vulndb-${pkgver}.tar.gz")
+sha512sums=('e4e8e7a2e8c0ba803d17005c50e9c30a10f1bf459aabe621760baa103f0b8e4ee2dff91c54eef5c4ddd1aebd2ddbc68e81fe6de0dfa37ed11d4d18e2a112cba9')
 
 package() {
   cd "$srcdir/vulndb-$pkgver"

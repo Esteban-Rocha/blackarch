@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='sherlocked'
+pkgname=sherlocked
 pkgver=1.f190c2b
 pkgrel=2
 groups=('blackarch' 'blackarch-packer' 'blackarch-binary' 'blackarch-crypto'
@@ -13,7 +13,7 @@ license=('custom:unknown')
 depends=('glibc')
 makedepends=('git')
 source=('git+https://github.com/elfmaster/sherlocked.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/sherlocked"

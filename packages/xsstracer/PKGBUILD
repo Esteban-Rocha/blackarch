@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='xsstracer'
+pkgname=xsstracer
 pkgver=5.f2ed21a
 pkgrel=2
 groups=('blackarch' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 makedepends=('git')
 depends=('python2')
 source=('git+https://github.com/1N3/XSSTracer.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/XSSTracer"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/XSSTracer"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/xsstracer"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/xsstracer"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/xsstracer/README.md"
 

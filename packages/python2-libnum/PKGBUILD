@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-libnum'
-pkgver=45.8339bd2
-pkgrel=1
+pkgname=python2-libnum
+pkgver=47.750dddf
+pkgrel=2
 pkgdesc='Working with numbers (primes, modular, etc.).'
 arch=('any')
 url='https://github.com/hellman/libnum'
@@ -11,7 +11,7 @@ license=('MIT')
 depends=('python2')
 makedepends=('python2-setuptools' 'git')
 source=('git+https://github.com/hellman/libnum.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/libnum"

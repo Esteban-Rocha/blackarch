@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='iisbruteforcer'
-pkgver='15'
+pkgname=iisbruteforcer
+pkgver=15
 pkgrel=1
 groups=('blackarch' 'blackarch-cracker')
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
@@ -12,7 +12,7 @@ license=('custom')
 depends=('openssl')
 makedepends=('gcc')
 source=("http://www.open-labs.org/iisbruteforcer${pkgver}.tar.gz")
-sha1sums=('9a562f6af21c9d3c9b0ca8c3912af0974e468aa1')
+sha512sums=('707c2b6a5dd8cc734ad888ae17f201723d03763f86f112d0bf479cb7d7dd9efe89d21bfc68e896a970f4667bcb4d09fb9ce32d2475090e01fc621aa37c39f735')
 
 prepare() {
   cd "$srcdir"
@@ -29,7 +29,7 @@ build() {
 package() {
   cd "$srcdir/iisbruteforcer"
 
-  mkdir -p "$pkgdir/usr/share/iisbruteforcer"
+  install -dm 755 "$pkgdir/usr/share/iisbruteforcer"
 
   install -Dm755 iisbf "$pkgdir/usr/bin/iisbf"
   install -Dm644 -t "$pkgdir/usr/share/doc/iisbruteforcer" README.txt TODO.txt

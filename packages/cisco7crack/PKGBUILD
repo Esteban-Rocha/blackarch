@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='cisco7crack'
+pkgname=cisco7crack
 pkgver=2.f1c21dd
 pkgrel=2
 groups=('blackarch' 'blackarch-cracker' 'blackarch-crypto')
@@ -11,7 +11,7 @@ url='https://github.com/madrisan/cisco7crack'
 license=('GPL2')
 makedepends=('git')
 source=('git+https://github.com/madrisan/cisco7crack.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/cisco7crack"

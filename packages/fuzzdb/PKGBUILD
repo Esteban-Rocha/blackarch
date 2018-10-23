@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='fuzzdb'
+pkgname=fuzzdb
 pkgver=404.ecb0850
 pkgrel=1
 groups=('blackarch' 'blackarch-fuzzer')
@@ -12,7 +12,7 @@ license=('BSD')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/fuzzdb-project/fuzzdb.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/fuzzdb"
@@ -23,7 +23,7 @@ pkgver() {
 package() {
   cd "$srcdir/fuzzdb"
 
-  mkdir -p "$pkgdir/usr/share/fuzzdb"
+  install -dm 755 "$pkgdir/usr/share/fuzzdb"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/fuzzdb/README.md"
   install -Dm644 _copyright.txt \

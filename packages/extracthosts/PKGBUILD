@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='extracthosts'
+pkgname=extracthosts
 pkgver=14.ec8b89c
 pkgrel=2
 groups=('blackarch' 'blackarch-misc')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/bwall/ExtractHosts.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ExtractHosts"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='webxploiter'
+pkgname=webxploiter
 pkgver=56.c03fe6b
 pkgrel=2
 groups=('blackarch' 'blackarch-webapp' 'blackarch-exploitation'
@@ -14,7 +14,7 @@ depends=('python2' 'python2-requests' 'python2-termcolor' 'libffi' 'openssl'
          'ghost-py' 'python2-ndg-httpsclient')
 makedepends=('git')
 source=('git+https://github.com/xionsec/WebXploiter.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/WebXploiter"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/WebXploiter"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/webxploiter"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/webxploiter"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/webxploiter/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/webxploiter/LICENSE"

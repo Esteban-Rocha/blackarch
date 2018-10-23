@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dhcpf'
+pkgname=dhcpf
 pkgver=3.a770b20
 pkgrel=2
 groups=('blackarch' 'blackarch-fingerprint')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 makedepends=('git')
 depends=('libpcap')
 source=('git+https://github.com/elceef/dhcpf.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/dhcpf"
@@ -29,8 +29,8 @@ build() {
 package() {
   cd "$srcdir/dhcpf"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/dhcpf"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/dhcpf"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/dhcpf/README.md"
 

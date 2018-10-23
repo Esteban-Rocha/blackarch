@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='mptcp-abuse'
+pkgname=mptcp-abuse
 pkgver=6.b0eeb27
 pkgrel=2
 groups=('blackarch' 'blackarch-networking' 'blackarch-recon' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/Neohapsis/mptcp-abuse.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/mptcp-abuse"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/mptcp-abuse"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/mptcp-abuse"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/mptcp-abuse"
 
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/mptcp-abuse/LICENSE"
   install -Dm644 -t "$pkgdir/usr/share/doc/mptcp-abuse" README.md \

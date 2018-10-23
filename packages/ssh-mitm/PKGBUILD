@@ -1,18 +1,18 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ssh-mitm'
-pkgver=105.43418d1
-pkgrel=1
+pkgname=ssh-mitm
+pkgver=107.0b721dd
+pkgrel=3
 pkgdesc='SSH man-in-the-middle tool.'
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-networking')
 arch=('any')
 url='https://github.com/jtesta/ssh-mitm'
 license=('custom:unknown')
-depends=('python' 'python-ipaddress' 'python-argparse' 'wget' 'openssl')
+depends=('python' 'python-argparse' 'wget' 'openssl')
 makedepends=('git')
 source=('git+https://github.com/jtesta/ssh-mitm.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ssh-mitm"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/ssh-mitm"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/ssh-mitm"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/ssh-mitm"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/ssh-mitm/" README.md
 

@@ -1,17 +1,17 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-dis3'
-pkgver='0.1.1'
-pkgrel=1
+pkgname=python2-dis3
+pkgver=0.1.2
+pkgrel=2
 pkgdesc='Python 2.7 backport of the "dis" module from Python 3.5+.'
 arch=('any')
-url='https://pypi.python.org/pypi/dis3/'
+url='https://pypi.org/project/dis3/#files'
 license=('MIT')
 depends=('python2')
 makedepends=('python2-setuptools')
-source=("https://pypi.python.org/packages/ae/a2/fb87795f686c975c18d5dddb5d544f913ff31fa506bbddce7eb6a612d7cd/dis3-${pkgver}.tar.gz")
-sha1sums=('75eb16a16ba4616442e17bd7f1f3c7b8983b8aec')
+source=("https://files.pythonhosted.org/packages/c8/a1/bb0ab17df7e6cbc6d1555dd1c6fdaa09e90842f0f683507042b9dae83e2d/dis3-${pkgver}.tar.gz")
+sha512sums=('ff93008a5985cf1eb9926dad03cadd71e32eaca4d13653a83023d0c7ed5723ba2f2bf866d6e07aecc9338474bca042bb2f3573f0df77cf865914cfb7dac47f2f')
 
 build() {
   cd "$srcdir/dis3-$pkgver"

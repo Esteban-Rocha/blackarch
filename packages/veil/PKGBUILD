@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='veil'
+pkgname=veil
 pkgver=154.1e87a3e
-pkgrel=1
+pkgrel=3
 epoch=3
 groups=('blackarch' 'blackarch-automation' 'blackarch-exploitation')
 pkgdesc='A tool designed to generate metasploit payloads that bypass common anti-virus solutions.'
@@ -11,7 +11,7 @@ url='https://github.com/Veil-Framework/Veil'
 arch=('x86_64')
 license=('GPL2')
 depends=('sudo' 'wine' 'wine-mono' 'wine_gecko' 'git' 'python'
-         'python-crypto' 'python-pefile' 'mingw-w64-binutils' 'mingw-w64-crt'
+         'python-pycryptodome' 'python-pefile' 'mingw-w64-binutils' 'mingw-w64-crt'
          'mingw-w64-gcc' 'mingw-w64-headers' 'mingw-w64-winpthreads' 'mono'
          'mono-tools' 'python-pip' 'wget' 'unzip' 'ruby' 'python-capstone'
          'ca-certificates' 'metasploit' 'capstone' 'pyinstaller')
@@ -20,8 +20,8 @@ source=('git+https://github.com/Veil-Framework/Veil.git'
         'git+https://github.com/Veil-Framework/VeilDependencies.git')
 #        'setupsh_mod.patch')
 install='veil.install'
-sha1sums=('SKIP'
-          'SKIP')
+sha512sums=('SKIP'
+            'SKIP')
 options=('!strip')
 
 pkgver() {
@@ -41,8 +41,8 @@ prepare() {
 package() {
   cd "$srcdir/Veil"
 
-  mkdir -p "$pkgdir/usr/bin/"
-  mkdir -p "$pkgdir/usr/share/veil"
+  install -dm 755 "$pkgdir/usr/bin/"
+  install -dm 755 "$pkgdir/usr/share/veil"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/veil/README.md"
   install -m644 CHANGELOG "$pkgdir/usr/share/doc/veil/CHANGELOG"

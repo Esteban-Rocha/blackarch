@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='cmsfuzz'
+pkgname=cmsfuzz
 pkgver=5.6be5a98
 pkgrel=3
 groups=('blackarch' 'blackarch-webapp' 'blackarch-scanner' 'blackarch-fuzzer')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('ruby')
 makedepends=('git')
 source=('git+https://github.com/nahamsec/CMSFuzz.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/CMSFuzz"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/CMSFuzz"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/cmsfuzz"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/cmsfuzz"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/cmsfuzz/README.md"
 

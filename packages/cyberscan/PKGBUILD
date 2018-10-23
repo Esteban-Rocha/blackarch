@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='cyberscan'
+pkgname=cyberscan
 pkgver=72.7da9ba4
 pkgrel=2
 pkgdesc='A Network Pentesting Tool'
@@ -13,7 +13,7 @@ depends=('python2' 'python2-pygeoip' 'python2-argparse' 'python2-asn1crypto'
          'python2-scapy')
 makedepends=('git')
 source=('git+https://github.com/medbenali/CyberScan')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/CyberScan"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/CyberScan"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/cyberscan"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/cyberscan"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/cyberscan/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/cyberscan/LICENSE"

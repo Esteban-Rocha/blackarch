@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='androwarn'
+pkgname=androwarn
 pkgver=124.e0e5ad0
 pkgrel=2
 pkgdesc='Yet another static code analyzer for malicious Android applications.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2' 'python2-lxml' 'androguard')
 makedepends=('git')
 source=('git+https://github.com/maaaaz/androwarn.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/androwarn"
@@ -29,8 +29,8 @@ prepare() {
 package() {
   cd "$srcdir/androwarn"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/androwarn"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/androwarn"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/androwarn/README.md"
   install -Dm644 -t "$pkgdir/usr/share/licenses/androwarn/" COPYING \

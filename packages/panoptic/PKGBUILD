@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='panoptic'
+pkgname=panoptic
 pkgver=185.df35a6c
 pkgrel=1
 groups=('blackarch' 'blackarch-automation')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/lightos/Panoptic.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Panoptic"
@@ -30,8 +30,8 @@ prepare() {
 package() {
   cd "$srcdir/Panoptic"
 
-  mkdir -p "$pkgdir/usr/share/panoptic"
-  mkdir -p "$pkgdir/usr/bin/"
+  install -dm 755 "$pkgdir/usr/share/panoptic"
+  install -dm 755 "$pkgdir/usr/bin/"
 
   cp -a --no-preserve=ownership * "$pkgdir/usr/share/panoptic"
 

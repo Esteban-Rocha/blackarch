@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='shodanhat'
+pkgname=shodanhat
 pkgver=13.e5e7e68
 pkgrel=2
 pkgdesc='Search for hosts info with shodan.'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2' 'python2-python-nmap' 'shodan')
 makedepends=('git')
 source=('git+https://github.com/HatBashBR/ShodanHat.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ShodanHat"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/ShodanHat"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/shodanhat"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/shodanhat"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/shodanhat/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/shodanhat/LICENSE"

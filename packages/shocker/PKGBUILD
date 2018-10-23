@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='shocker'
-pkgver=62.b3a4953
+pkgname=shocker
+pkgver=63.0380a73
 pkgrel=1
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-scanner')
 pkgdesc='A tool to find and exploit servers vulnerable to Shellshock.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/nccgroup/shocker.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/shocker"
@@ -29,7 +29,7 @@ prepare() {
 package() {
   cd "$srcdir/shocker"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   install -Dm644 -t "$pkgdir/usr/share/shocker" shocker.py shocker-cgi_list \
     shocker-target_list

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='praeda'
+pkgname=praeda
 pkgver=48.1dc2220
 pkgrel=1
 groups=('blackarch' 'blackarch-scanner')
@@ -14,7 +14,7 @@ depends=('perl' 'perl-io-socket' 'perl-net-ssleay' 'perl-net-snmp'
          'perl-html-tagparser' 'perl-uri-fetch')
 makedepends=('git')
 source=('git+https://github.com/percx/Praeda.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Praeda"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/Praeda"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/praeda/"{data,jobs}
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/praeda/"{data,jobs}
 
   install -Dm755 praeda.pl "$pkgdir/usr/share/praeda/praeda.pl"
   install -Dm644 data/* "$pkgdir/usr/share/praeda/data/"

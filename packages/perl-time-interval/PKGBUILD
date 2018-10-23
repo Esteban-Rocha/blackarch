@@ -3,9 +3,9 @@
 
 _author='AHICOX'
 _perlmod='Time-Interval'
-pkgname='perl-time-interval'
-pkgver='1.233'
-pkgrel=6
+pkgname=perl-time-interval
+pkgver=1.234
+pkgrel=2
 pkgdesc='Converts time intervals of days, hours, minutes, and seconds.'
 arch=('any')
 url='http://search.cpan.org/~ahicox/Time-Interval-1.233/Interval.pod'
@@ -13,7 +13,7 @@ license=('GPL' 'PerlArtistic')
 depends=('perl')
 options=(!emptydirs)
 source=("http://search.cpan.org/CPAN/authors/id/A/AH/$_author/${_perlmod}-${pkgver}.tar.gz")
-sha1sums=('22f6a4ae4c1e1bfd915ec37dfce0cc43cc854c3d')
+sha512sums=('0bd304e5ce3cd3e54fd2a0684ffa0525a7ca29d4ec243076a3113cfe61fde33314ae9e2496f73a25c30445970f22d3947945ec28760ef1544c73bfe2c6dd92e9')
 
 prepare() {
   cd "$srcdir/$_perlmod-$pkgver"

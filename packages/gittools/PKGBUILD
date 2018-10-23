@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='gittools'
-pkgver=28.91f4137
+pkgname=gittools
+pkgver=34.217d77c
 pkgrel=1
 pkgdesc="A repository with 3 tools for pwn'ing websites with .git repositories available'."
 groups=('blackarch' 'blackarch-webapp' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'curl' 'git')
 makedepends=('git')
 source=('git+https://github.com/internetwache/GitTools.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/GitTools"
@@ -23,7 +23,7 @@ pkgver() {
 package() {
   cd "$srcdir/GitTools"
 
-  mkdir -p "$pkgdir/usr/share/doc/gittools/"{dumper,extractor,finder}
+  install -dm 755 "$pkgdir/usr/share/doc/gittools/"{dumper,extractor,finder}
 
   install -Dm755 Dumper/gitdumper.sh "$pkgdir/usr/bin/gittools-gitdumper"
   install -Dm755 Extractor/extractor.sh "$pkgdir/usr/bin/gittools-extractor"

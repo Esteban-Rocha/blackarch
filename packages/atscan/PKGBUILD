@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='atscan'
-pkgver=1830.e2dfd48
+pkgname=atscan
+pkgver=1882.3f79daf
 pkgrel=1
 groups=('blackarch' 'blackarch-scanner' 'blackarch-webapp' 'blackarch-fuzzer'
         'blackarch-exploitation' 'blackarch-automation')
@@ -16,7 +16,7 @@ depends=('perl' 'perl-io-socket' 'perl-uri' 'perl-term-ansicolor'
          'perl-file-copy-recursive')
 makedepends=('git' 'dos2unix')
 source=('git+https://github.com/AlisamTechnology/ATSCAN-V3.1.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ATSCAN-V3.1"
@@ -35,8 +35,8 @@ prepare() {
 package() {
   cd "$srcdir/ATSCAN-V3.1"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/atscan"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/atscan"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/atscan/" README.md
 

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='scout2'
-pkgver=1147.15d20ce
+pkgname=scout2
+pkgver=1180.89b0a63
 pkgrel=1
 pkgdesc='Security auditing tool for AWS environments.'
 groups=('blackarch' 'blackarch-scanner' 'blackarch-fuzzer')
@@ -14,7 +14,7 @@ depends=('python2' 'python2-boto3' 'python2-dateutil' 'python2-netaddr'
          'python2-iampoliciesgonewild')
 makedepends=('git')
 source=('git+https://github.com/iSECPartners/Scout2.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Scout2"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/Scout2"
 
-  mkdir -p "$pkgdir/usr/bin/"
-  mkdir -p "$pkgdir/usr/share/scout2"
+  install -dm 755 "$pkgdir/usr/bin/"
+  install -dm 755 "$pkgdir/usr/share/scout2"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/scout2/" README.rst
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/scout2/LICENSE"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='chapcrack'
+pkgname=chapcrack
 pkgver=17.ae2827f
 pkgrel=4
 groups=('blackarch' 'blackarch-cracker')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2' 'python2-passlib' 'python2-dpkt')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/moxie0/chapcrack.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/chapcrack"

@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='waybackpack'
+pkgname=waybackpack
 pkgver=49.36db906
-pkgrel=2
+pkgrel=3
 pkgdesc='Download the entire Wayback Machine archive for a given URL.'
 groups=('blackarch' 'blackarch-webapp' 'blackarch-recon')
 arch=('any')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python' 'python-requests' 'python-argparse')
 makedepends=('git' 'python-setuptools')
 source=('git+https://github.com/jsvine/waybackpack.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/waybackpack"

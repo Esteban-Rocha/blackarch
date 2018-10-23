@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='cdpsnarf'
-pkgver='0.1.6'
+pkgname=cdpsnarf
+pkgver=0.1.6
 pkgrel=5
 groups=('blackarch' 'blackarch-sniffer')
 pkgdesc='Cisco discovery protocol sniffer.'
@@ -12,7 +12,7 @@ arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 depends=('libpcap')
 makedepends=('git')
 source=('git+https://github.com/Zapotek/cdpsnarf')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/cdpsnarf"
@@ -31,8 +31,8 @@ build() {
 package() {
   cd "$srcdir/cdpsnarf"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/doc/cdpsnarf"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/doc/cdpsnarf"
 
   install -m755 cdpsnarf "$pkgdir/usr/bin"
   install -m644 README "$pkgdir/usr/share/doc/cdpsnarf"

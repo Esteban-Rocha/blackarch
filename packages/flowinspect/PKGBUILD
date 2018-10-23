@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='flowinspect'
+pkgname=flowinspect
 pkgver=97.34759ed
 pkgrel=1
 pkgdesc='A network traffic inspection tool.'
@@ -25,9 +25,9 @@ pkgver() {
 package() {
   cd "$srcdir/flowinspect"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/flowinspect/core"
-  mkdir -p "$pkgdir/usr/share/doc/flowinspect"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/flowinspect/core"
+  install -dm 755 "$pkgdir/usr/share/doc/flowinspect"
 
   install -Dm644 core/*.py "$pkgdir/usr/share/flowinspect/core/"
   install -Dm755 flowinspect.py "$pkgdir/usr/share/flowinspect/flowinspect.py"

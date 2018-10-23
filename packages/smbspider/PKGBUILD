@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='smbspider'
+pkgname=smbspider
 pkgver=10.7db9323
 pkgrel=3
 groups=('blackarch' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2' 'python2-netaddr' 'python2-pysmbc' 'python2-pysmb')
 makedepends=('git')
 source=('git+https://github.com/T-S-A/smbspider.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/smbspider"

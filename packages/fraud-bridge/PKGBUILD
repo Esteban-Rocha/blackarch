@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='fraud-bridge'
+pkgname=fraud-bridge
 pkgver=10.775c563
 pkgrel=4
 groups=('blackarch' 'blackarch-tunnel' 'blackarch-networking')
@@ -12,7 +12,7 @@ makedepends=('git')
 url='https://github.com/stealth/fraud-bridge'
 license=('GPL3')
 source=('git+https://github.com/stealth/fraud-bridge.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/fraud-bridge"

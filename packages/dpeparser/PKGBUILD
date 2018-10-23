@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dpeparser'
-pkgver='beta002'
+pkgname=dpeparser
+pkgver=beta002
 pkgrel=3
 epoch=1
 pkgdesc="Default password enumeration project"
@@ -12,7 +12,7 @@ license=('GPL')
 groups=('blackarch' 'blackarch-cracker')
 depends=('python2')
 source=('http://www.toolswatch.org/dpe/dpeparser.py')
-sha1sums=('3aabb405befab7bf9246d28ca8ebc65f577fd3fb')
+sha512sums=('f941a536b7eb05f589dbbc1533d07dbb10a50776f197aca5b5158b263e216603e833ce315f73b1f3d0fe59ea10578dcd1059b998ca1db27c0bd4c8c4239b9f27')
 
 prepare() {
   cd "$srcdir"
@@ -29,8 +29,8 @@ build() {
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/dpeparser"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/dpeparser"
 
   install -m755 dpeparser.py "$pkgdir/usr/share/dpeparser"
   install -m644 dpe_db.xml "$pkgdir/usr/share/dpeparser"

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='proctal'
-pkgver=472.e00ec27
+pkgname=proctal
+pkgver=477.f72cefe
 pkgrel=1
 pkgdesc='Provides a command line interface and a C library to manipulate the address space of a running program on Linux.'
 url='https://github.com/daniel-araujo/proctal'
@@ -12,7 +12,7 @@ license=("GPL3")
 depends=('keystone' 'capstone')
 makedepends=('git' 'yuck' 'php')
 source=('git://github.com/daniel-araujo/proctal.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/proctal"

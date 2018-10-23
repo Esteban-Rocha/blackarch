@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='itpp'
-pkgver='4.3.1'
+pkgname=itpp
+pkgver=4.3.1
 pkgrel=1
 pkgdesc='C++ library of mathematical, signal processing and communication routines.'
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
@@ -11,12 +11,12 @@ license=('GPL')
 depends=('blas' 'lapack' 'fftw' 'perl')
 makedepends=('cmake')
 source=("http://downloads.sourceforge.net/project/itpp/itpp/$pkgver/itpp-${pkgver}.tar.bz2")
-sha1sums=('955784bcfb61481e47d8c788a62cea8d78d175cb')
+sha512sums=('b46d048fa7f33e80d2291a5e38e205c159791ea200f92c70d69e8ad8447ac2f0c847fece566a99af739853a1643cb16e226b4200c8bf115417f324e6d38c66bd')
 
 build() {
   cd "itpp-$pkgver"
 
-  mkdir -p build
+  install -dm 755 build
   cd build
 
   cmake .. -DCMAKE_INSTALL_PREFIX=/usr

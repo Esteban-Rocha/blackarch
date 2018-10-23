@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='tekdefense-automater'
+pkgname=tekdefense-automater
 pkgver=88.42548cf
 pkgrel=3
 groups=('blackarch' 'blackarch-forensic')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/1aN0rmus/TekDefense-Automater.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/TekDefense-Automater"
@@ -29,8 +29,8 @@ prepare() {
 package() {
   cd "$srcdir/TekDefense-Automater"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/tekdefense-automater"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/tekdefense-automater"
 
   for f in *.py
   do

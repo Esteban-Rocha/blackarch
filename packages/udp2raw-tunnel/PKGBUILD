@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='udp2raw-tunnel'
-pkgver=572.2c67c31
+pkgname=udp2raw-tunnel
+pkgver=668.b1f0498
 pkgrel=1
 epoch=2
 pkgdesc='An Encrpyted, Anti-Replay, Multiplexed Udp Tunnel, tunnels udp traffic through fake-tcp or icmp by using raw socket.'
@@ -13,7 +13,7 @@ url='https://github.com/wangyu-/udp2raw-tunnel'
 license=('MIT')
 source=('git+https://github.com/wangyu-/udp2raw-tunnel.git')
 install='udp2raw-tunnel.install'
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/udp2raw-tunnel"
@@ -30,7 +30,7 @@ build() {
 package() {
   cd "$srcdir/udp2raw-tunnel"
 
-  mkdir -p "$pkgdir/usr/share/doc/udp2raw-tunnel"
+  install -dm 755 "$pkgdir/usr/share/doc/udp2raw-tunnel"
 
   install -Dm755 udp2raw "$pkgdir/usr/bin/udp2raw"
   install -Dm644 LICENSE.md "$pkgdir/usr/share/licenses/udp2raw-tunnel"

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ftp-spider'
-pkgver='1.0'
+pkgname=ftp-spider
+pkgver=1.0
 pkgrel=2
 groups=('blackarch' 'blackarch-scanner' 'blackarch-cracker')
 pkgdesc='FTP investigation tool - Scans ftp server for the following: reveal entire directory tree structures, detect anonymous access, detect directories with write permissions, find user specified data within repository.'
@@ -11,7 +11,7 @@ url='http://packetstormsecurity.com/files/35120/ftp-spider.pl.html'
 license=('unknown')
 depends=('perl' 'perl-data-dumper')
 source=('http://packetstorm.interhost.co.il/UNIX/scanners/ftp-spider.pl')
-sha1sums=('8afe598b734fc3e8656971f327f67a3edfc3e950')
+sha512sums=('8afe598b734fc3e8656971f327f67a3edfc3e950')
 
 package() {
   cd "$srcdir"

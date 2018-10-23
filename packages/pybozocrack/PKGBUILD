@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pybozocrack'
+pkgname=pybozocrack
 pkgver=75.9900883
 pkgrel=1
 pkgdesc='A silly & effective MD5 cracker in Python.'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-wheel')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/ikkebr/PyBozoCrack')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/PyBozoCrack"

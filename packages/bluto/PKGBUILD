@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='bluto'
-pkgver=115.9b84a90
+pkgname=bluto
+pkgver=129.b74a182
 pkgrel=1
 epoch=1
 groups=('blackarch' 'blackarch-scanner' 'blackarch-recon')
@@ -14,7 +14,7 @@ depends=('python2' 'python2-dnspython' 'python2-beautifulsoup4'
          'python2-termcolor' 'python2-pythonwhois')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/darryllane/Bluto.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Bluto"

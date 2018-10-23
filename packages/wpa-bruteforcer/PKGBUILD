@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wpa-bruteforcer'
+pkgname=wpa-bruteforcer
 pkgver=4.d5f8586
 pkgrel=3
 groups=('blackarch' 'blackarch-wireless')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/SYWorks/wpa-bruteforcer.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/wpa-bruteforcer"

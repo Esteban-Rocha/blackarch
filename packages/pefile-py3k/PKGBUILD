@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pefile-py3k'
+pkgname=pefile-py3k
 pkgver=10.4fba161
 pkgrel=2
 pkgdesc='Fork of pefile for python 3.'
@@ -11,7 +11,7 @@ license=('custom:unknown')
 makedepends=('git')
 depends=('python3')
 source=('git+https://github.com/simonzack/pefile-py3k.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/pefile-py3k"

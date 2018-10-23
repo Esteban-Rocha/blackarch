@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='lunar'
+pkgname=lunar
 pkgver=558.6e9c89e
 pkgrel=1
 pkgdesc='A UNIX security auditing tool based on several security frameworks.'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('bash' 'netkit-bsd-finger' 'bc')
 makedepends=('git')
 source=('git+https://github.com/lateralblast/lunar.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/lunar"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/lunar"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/lunar"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/lunar"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/lunar/" README.md changelog
 

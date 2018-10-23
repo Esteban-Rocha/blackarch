@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='gitem'
-pkgver=53.d068b00
+pkgname=gitem
+pkgver=77.7ad5eee
 pkgrel=1
 groups=('blackarch' 'blackarch-recon')
 pkgdesc='A Github organization reconnaissance tool.'
@@ -12,7 +12,7 @@ depends=('python' 'python-requests')
 makedepends=('git' 'python-setuptools')
 license=('GPL3')
 source=('git+https://github.com/mschwager/gitem.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/gitem"

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='commix'
-pkgver=1068.21ae36e
+pkgname=commix
+pkgver=1191.456ed65
 pkgrel=1
 groups=('blackarch' 'blackarch-webapp' 'blackarch-automation'
         'blackarch-exploitation')
@@ -13,7 +13,7 @@ license=('custom:unknown' 'GAGPL')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/stasinopoulos/commix.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/commix"
@@ -35,8 +35,8 @@ prepare() {
 package() {
   cd "$srcdir/commix"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/commix"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/commix"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/commix/" README.md readme/AUTHOR \
     readme/CHANGELOG.md

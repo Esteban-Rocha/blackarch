@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='node-ar-drone'
-pkgver=275.53e6622
+pkgname=node-ar-drone
+pkgver=278.9a9d60f
 pkgrel=1
 pkgdesc='A node.js client for controlling Parrot AR Drone 2.0 quad-copters.'
 arch=('any')
@@ -11,7 +11,7 @@ license=('MIT')
 depends=('nodejs' 'npm')
 makedepends=('git')
 source=('git+https://github.com/felixge/node-ar-drone')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/node-ar-drone"
@@ -28,7 +28,7 @@ prepare() {
 package() {
   cd "$srcdir/node-ar-drone"
 
- mkdir -p "$pkgdir/usr/lib/node_modules/node-ar-drone"
+ install -dm 755 "$pkgdir/usr/lib/node_modules/node-ar-drone"
 
  cp --no-preserve=ownership -r \
    {lib,examples,node_modules,test,index.js,Makefile,package.json} \

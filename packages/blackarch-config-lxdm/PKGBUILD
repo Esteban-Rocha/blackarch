@@ -1,18 +1,19 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='blackarch-config-lxdm'
-pkgver=5.068bab5
+pkgname=blackarch-config-lxdm
+pkgver=9.eec7e01
 pkgrel=3
 pkgdesc='BlackArch config for lxdm X11 login manager.'
 arch=('any')
+groups=('blackarch-config')
 url='https://github.com/BlackArch/blackarch-config-lxdm'
 license=('custom')
-depends=('lxdm' 'blackarch-wallpaper')
+depends=('lxdm' 'blackarch-wallpaper' 'terminus-font')
 makedepends=('git')
 source=('git+https://github.com/BlackArch/blackarch-config-lxdm.git')
 install='blackarch-config-lxdm.install'
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/blackarch-config-lxdm"
@@ -23,10 +24,10 @@ pkgver() {
 package() {
   cd "$srcdir/blackarch-config-lxdm"
 
-  mkdir -p "$pkgdir/etc/lxdm-blackarch/"
-  mkdir -p "$pkgdir/usr/share/blackarch/"
-  mkdir -p "$pkgdir/usr/share/lxdm-blackarch/"
-  mkdir -p "$pkgdir/usr/share/xsessions-blackarch/"
+  install -dm 755 "$pkgdir/etc/lxdm-blackarch/"
+  install -dm 755 "$pkgdir/usr/share/blackarch/"
+  install -dm 755 "$pkgdir/usr/share/lxdm-blackarch/"
+  install -dm 755 "$pkgdir/usr/share/xsessions-blackarch/"
 
   cp -p -r etc/lxdm/* "$pkgdir/etc/lxdm-blackarch/"
   cp -p -r usr/share/blackarch/* "$pkgdir/usr/share/blackarch/"

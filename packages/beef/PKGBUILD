@@ -1,46 +1,50 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='beef'
-pkgver=3107.26f176c3
-pkgrel=1
+pkgname=beef
+pkgver=3143.888e0f83
+pkgrel=2
 epoch=1
 groups=('blackarch' 'blackarch-exploitation')
-pkgdesc='The Browser Exploitation Framework that focuses on the web browser'
+pkgdesc='The Browser Exploitation Framework that focuses on the web browser.'
 arch=('any')
 url='http://beefproject.com/'
 install='beef.install'
 license=('Apache')
 makedepends=('git')
-depends=('ruby2.3' 'ruby2.3-bundler' 'sqlite' 'python2' 'libxslt')
-source=('git+http://github.com/beefproject/beef.git')
-#        'rake_dep.patch')
-sha1sums=('SKIP')
+depends=('ruby' 'ruby-bundler' 'sqlite' 'python2' 'libxslt')
+source=('git+http://github.com/beefproject/beef.git' 'Gemfile.patch')
+sha512sums=('SKIP'
+            'e8f0d957e974e4b2e575f3438d947191bf4ce702f357bf55e26ac0671fcf87ca33a7f1561f633f7f27dcdea2916ed6291dc2435ea094b9be878b6aa0bae1a27b')
 
 pkgver() {
-  cd "$srcdir/beef"
+  cd beef
 
   echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
-  #git describe | sed 's/^v//;s/-/./g;s/_/./g;s/^beef.//'
+}
+
+prepare() {
+  patch -p1 < Gemfile.patch
 }
 
 package() {
-  cd "$srcdir/beef"
+  cd beef
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/${pkgname}"
 
-  # The .git/ overhead is tiny and this allows users to update with git.
-  git clone "$srcdir/beef" "$pkgdir/usr/share/beef"
+  install -Dm644 -t "$pkgdir/usr/share/doc/${pkgname}" README.md VERSION \
+    INSTALL.txt
+  install -Dm644 doc/COPYING "$pkgdir/usr/share/licenses/${pkgname}/LICENSE"
 
-#  cd "$pkgdir/usr/share/beef"
-#  patch -Np1 -i "$srcdir/rake_dep.patch"
+  rm -rf doc README.md VERSION INSTALL.txt install
 
-  rm "$pkgdir/usr/share/beef/install"
+  cp -a * "$pkgdir/usr/share/${pkgname}"
 
   cat > "$pkgdir/usr/bin/beef" << EOF
 #!/bin/sh
 cd /usr/share/beef
-exec ruby-2.3 beef "\${@}"
+exec ruby beef "\${@}"
 EOF
 
   chmod +x "$pkgdir/usr/bin/beef"

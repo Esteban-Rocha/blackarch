@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='libvshadow'
-pkgver=122.3e58d28
-pkgrel=2
+pkgname=libvshadow
+pkgver=124.30b6a0f
+pkgrel=1
 pkgdesc='A library to access the Volume Shadow Snapshot (VSS) format.'
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 url='https://github.com/libyal/libvshadow'
@@ -12,7 +12,7 @@ depends=('libbfio')
 makedepends=('git' 'autoconf' 'automake' 'libtool' 'gettext' 'pkg-config'
              'bison' 'flex')
 source=('git+https://github.com/libyal/libvshadow.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 _gitname="libvshadow"
 

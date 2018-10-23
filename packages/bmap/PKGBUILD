@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='bmap'
-pkgver='1.0.17'
+pkgname=bmap
+pkgver=1.0.17
 pkgrel=1
 groups=('blackarch' 'blackarch-forensic')
 pkgdesc="A tool that can store data in slackspace on any filesystem. It can detect used slackspace and recover the data."
@@ -11,7 +11,7 @@ arch=('x86_64')
 license=('GPL2')
 makedepends=('linuxdoc-tools')
 source=("http://www.hacker-soft.net/tools/Miscellaneous/bmap-$pkgver.tar.gz")
-sha1sums=('962ec6d193adea7e2fae79cf87d65d09a8ea24f0')
+sha512sums=('503aa24ee3f03387d97bf69b8d22da2b759617fc1a8c7cf03f33ea87b1002a8534c64d0bb5fddca3a324fa6db773b2f83d1d2e5930594a08b00774e947a551d2')
 
 prepare() {
   cd "$srcdir/bmap-$pkgver"
@@ -29,6 +29,6 @@ build() {
 package() {
   cd "$srcdir/bmap-$pkgver"
 
-  mkdir -p "$pkgdir/usr/bin" "$pkgdir/usr/share/man/man1"
+  install -dm 755 "$pkgdir/usr/bin" "$pkgdir/usr/share/man/man1"
   make "DESTDIR=$pkgdir" install
 }

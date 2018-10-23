@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='blackarch-installer'
-pkgver='0.6.2'
+pkgname=blackarch-installer
+pkgver=0.9.4
 pkgrel=1
 pkgdesc='The official BlackArch Linux installer.'
 arch=('any')
@@ -10,21 +10,24 @@ url='https://github.com/BlackArch/blackarch-installer'
 license=('GPL3')
 depends=('bash')
 source=("https://github.com/BlackArch/blackarch-installer/archive/v${pkgver}.tar.gz")
-sha1sums=('67bf1f40aa7286a5e4c308542df29078c53dd144')
+sha512sums=('bf0950d9cca23bf15062808d147c0a2c23c391b1bdb6ba14d27e128bd0736f9139362cccb200199d01cd9f4888d6171ef87af14c011f43a831787030000d8fd9')
 
 package() {
-  cd "$srcdir/blackarch-installer-$pkgver"
+  cd "$pkgname-$pkgver"
 
-  mkdir -p "$pkgdir/usr/bin/"
-  mkdir -p "$pkgdir/usr/share/blackarch-installer"
+  install -dm 755 "$pkgdir/usr/bin/"
+  install -dm 755 "$pkgdir/usr/share/$pkgname"
 
-  install -Dm644 -t "$pkgdir/usr/share/doc/blackarch-installer/" docs/* \
+  install -Dm 644 -t "$pkgdir/usr/share/doc/$pkgname/" docs/* \
     README.md
 
   rm -rf docs README.md
 
-  cp -a * "$pkgdir/usr/share/blackarch-installer"
+  cp -a * "$pkgdir/usr/share/$pkgname"
 
-  ln -s "/usr/share/blackarch-installer/blackarch-install" \
+  chmod a+x "$pkgdir/usr/share/$pkgname/blackarch-install"
+
+  ln -s "/usr/share/$pkgname/blackarch-install" \
     "$pkgdir/usr/bin/blackarch-install"
 }
+

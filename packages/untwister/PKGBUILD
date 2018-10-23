@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='untwister'
+pkgname=untwister
 pkgver=119.a42b8f8
 pkgrel=3
 pkgdesc='Seed recovery tool for PRNGs.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('boost' 'cppunit')
 makedepends=('git')
 source=('git+https://github.com/altf4/untwister.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/untwister"

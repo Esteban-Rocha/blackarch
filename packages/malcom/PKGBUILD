@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='malcom'
+pkgname=malcom
 pkgver=708.02e55b9
 pkgrel=2
 pkgdesc="Analyze a system's network communication using graphical representations of network traffic."
@@ -19,7 +19,7 @@ optdepends=('python2-celery')
 makedepends=('git')
 install='malcom.install'
 source=('git+https://github.com/tomchop/malcom.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/malcom"
@@ -39,8 +39,8 @@ prepare() {
 package() {
   cd "$srcdir/malcom"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/malcom"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/malcom"
 
   cp -a --no-preserve=ownership * "$pkgdir/usr/share/malcom"
   install -Dm644 LICENSE.md "$pkgdir/usr/share/licenses/malcom/LICENSE.md"

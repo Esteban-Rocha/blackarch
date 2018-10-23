@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='striker'
-pkgver=53.abd4013
+pkgname=striker
+pkgver=57.763ff3f
 pkgrel=1
 pkgdesc='An offensive information and vulnerability scanner.'
 groups=('blackarch' 'blackarch-scanner' 'blackarch-recon' 'blackarch-webapp')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-ipy' 'python2-python-whois' 'python2-mechanize'
          'python2-requests' 'python2-beautifulsoup4' 'shodan')
 makedepends=('git')
 source=('git+https://github.com/UltimateHackers/Striker.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Striker"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/Striker"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/striker"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/striker"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/striker/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/striker/LICENSE"

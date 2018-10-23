@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='chameleonmini'
-pkgver=160.691b8b2
+pkgname=chameleonmini
+pkgver=216.cd21858
 pkgrel=1
 pkgdesc='Official repository of ChameleonMini, a freely programmable, portable tool for NFC security analysis that can emulate and clone contactless cards, read RFID tags and sniff/log RF data.'
 groups=('blackarch' 'blackarch-social' 'blackarch-hardware' 'blackarch-nfc')
@@ -13,7 +13,7 @@ depends=('python' 'python-argparse' 'python-colorama' 'python-pyserial')
 makedepends=('git' 'avr-gcc' 'avr-libc')
 source=('git+https://github.com/emsec/ChameleonMini.git')
 install='chameleonmini.install'
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ChameleonMini"
@@ -33,8 +33,8 @@ build() {
 package() {
   cd "$srcdir/ChameleonMini"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/chameleonmini"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/chameleonmini"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/chameleonmini/" README.md
   install -Dm644 LICENSE.txt \

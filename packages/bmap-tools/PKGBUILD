@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='bmap-tools'
-pkgver=3.4
+pkgname=bmap-tools
+pkgver=3.5
 pkgrel=1
 pkgdesc='Tool for copying largely sparse files using information from a block map file.'
 groups=('blackarch' 'blackarch-forensic')

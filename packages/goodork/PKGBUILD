@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='goodork'
-pkgver='2.2'
+pkgname=goodork
+pkgver=2.2
 pkgrel=7
 groups=('blackarch' 'blackarch-recon')
 pkgdesc='A python script designed to allow you to leverage the power of google dorking straight from the comfort of your command line.'
@@ -12,13 +12,13 @@ arch=('any')
 depends=('python2' 'git' 'python2-beautifulsoup4')
 makedepends=('git')
 source=('git+https://github.com/k3170makan/GooDork.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 package() {
   cd "$srcdir/GooDork"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/goodork"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/goodork"
 
   cp -a * "$pkgdir/usr/share/goodork"
 

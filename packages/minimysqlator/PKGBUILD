@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='minimysqlator'
-pkgver='0.5'
+pkgname=minimysqlator
+pkgver=0.5
 pkgrel=5
 groups=('blackarch' 'blackarch-exploitation')
 pkgdesc='A multi-platform application used to audit web sites in order to discover and exploit SQL injection vulnerabilities.'
@@ -12,13 +12,13 @@ license=('GPL')
 depends=('java-environment')
 source=("http://www.scrt.ch/outils/mms/mms_${pkgver//./}.jar"
         'http://www.scrt.ch/outils/mms/common_tables.txt')
-sha1sums=('c784336f8d21cb7b9be770e6dc07bafebbc77647'
+sha512sums=('c784336f8d21cb7b9be770e6dc07bafebbc77647'
           'c792e6c326e695d3c790a94ad81a3107881048a7')
 
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   install -Dm644 mms_05.jar "$pkgdir/usr/share/minimysqlator/mms.jar"
   install -Dm644 common_tables.txt \

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wirouter-keyrec'
-pkgver='1.1.2'
+pkgname=wirouter-keyrec
+pkgver=1.1.2
 pkgrel=2
 groups=('blackarch' 'blackarch-wireless' 'blackarch-cracker')
 pkgdesc='A powerful and platform independent software to recover the default WPA passphrases of the supported router models (Telecom Italia Alice AGPF, Fastweb Pirelli, Fastweb Tesley, Eircom Netopia, Pirelli TeleTu/Tele 2).'
@@ -10,7 +10,7 @@ arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 url='http://www.salvatorefresta.net/tools/'
 license=('GPL3')
 source=("http://tools.salvatorefresta.net/WiRouter_KeyRec_${pkgver}.zip")
-sha1sums=('3c17f2d0bf3d6201409862fd903ebfd60c1e8a2e')
+sha512sums=('a3c449497e3f3fed88dfbb35a90a2cfa5937efa02393e825ec51ab390b7094ce619d3238a916afd2b48e35e0e261b454f7d7005af46d6a45d77b2e1d4faaac51')
 
 build() {
   cd "$srcdir/WiRouter_KeyRec_$pkgver"
@@ -23,7 +23,7 @@ build() {
 package() {
   cd "$srcdir/WiRouter_KeyRec_$pkgver"
 
-  mkdir -p "$pkgdir/usr/share/doc/wirouter-keyrec"
+  install -dm 755 "$pkgdir/usr/share/doc/wirouter-keyrec"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/wirouter-keyrec" AUTHORS INSTALL \
     ChangeLog THANKS VERSION

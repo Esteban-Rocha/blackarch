@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='motsa-dns-spoofing'
+pkgname=motsa-dns-spoofing
 pkgver=2.6ac6980
 pkgrel=3
 pkgdesc='ManOnTheSideAttack-DNS Spoofing.'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-scapy' 'python2')
 makedepends=('git')
 source=('git+https://github.com/waytoalpit/ManOnTheSideAttack-DNS-Spoofing.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ManOnTheSideAttack-DNS-Spoofing"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/ManOnTheSideAttack-DNS-Spoofing"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/motsa-dns-spoofing"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/motsa-dns-spoofing"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/motsa-dns-spoofing/" README.md \
     README.txt

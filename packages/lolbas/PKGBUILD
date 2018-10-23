@@ -1,0 +1,27 @@
+# This file is part of BlackArch Linux ( http://blackarch.org ).
+# See COPYING for license details.
+
+pkgname=lolbas
+pkgver=190.069f3e5
+pkgrel=1
+pkgdesc='Living Off The Land Binaries And Scripts - (LOLBins and LOLScripts).'
+groups=('blackarch' 'blackarch-windows')
+arch=('any')
+makedepends=('git')
+url='https://github.com/api0cradle/LOLBAS'
+source=('git+https://github.com/api0cradle/LOLBAS.git')
+sha512sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/LOLBAS"
+
+  echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+}
+
+package() {
+  cd "$srcdir/LOLBAS"
+
+  install -dm 755 "$pkgdir/opt/windows/archive/lolbas/"
+
+  cp -a ./* "$pkgdir/opt/windows/archive/lolbas/"
+}

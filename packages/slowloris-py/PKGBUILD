@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='slowloris-py'
-pkgver=23.a89668c
+pkgname=slowloris-py
+pkgver=25.1d16de9
 pkgrel=1
 pkgdesc='Low bandwidth DoS tool.'
 groups=('blackarch' 'blackarch-dos')
@@ -12,7 +12,7 @@ license=('BSD')
 depends=('python')
 makedepends=('git' 'python-setuptools')
 source=('git+https://github.com/gkbrk/slowloris.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/slowloris"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='blacknurse'
+pkgname=blacknurse
 pkgver=9.d2a2b23
 pkgrel=1
 pkgdesc='A low bandwidth ICMP attack that is capable of doing denial of service to well known firewalls.'
@@ -11,7 +11,7 @@ url='https://github.com/jedisct1/blacknurse'
 license=('BSD2')
 makedepends=('git')
 source=('git+https://github.com/jedisct1/blacknurse.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/blacknurse"

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='box-js'
-pkgver=357.06d2d6c
+pkgname=box-js
+pkgver=360.d867e4b
 pkgrel=1
 pkgdesc='A tool for studying JavaScript malware.'
 groups=('blackarch' 'blackarch-malware')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('nodejs' 'gnuplot')
 makedepends=('git' 'npm')
 source=('git+https://github.com/CapacitorSet/box-js.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/box-js"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/box-js"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/box-js"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/box-js"
 
   npm install --production
 

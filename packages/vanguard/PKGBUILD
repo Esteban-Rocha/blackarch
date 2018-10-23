@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='vanguard'
-pkgver='0.1'
+pkgname=vanguard
+pkgver=0.1
 pkgrel=5
 groups=('blackarch' 'blackarch-webapp' 'blackarch-scanner')
 pkgdesc='A comprehensive web penetration testing tool written in Perl thatidentifies vulnerabilities in web applications.'
@@ -12,13 +12,13 @@ license=('unknown')
 depends=('perl' 'perl-clone' 'perl-data-dumper' 'perl-yaml' 'perl-libwww'
         'perl-io-socket')
 source=('https://dl.packetstormsecurity.net/UNIX/scanners/vanguard-public.tgz')
-sha1sums=('1ae9f063f8793e61a4843d20d4e71d6753c4252e')
+sha512sums=('341aac4ff802bec2df1d4bdaa75accf5634ccde794485b76e79df69f0f2e95a3e68e998ee312affb716b5a1d31bc156e2cfb2eecd1c06f1682c97a3f8cdd5e36')
 
 package() {
   cd "$srcdir/vanguard-public"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/vanguard"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/vanguard"
 
   cp -a * "$pkgdir/usr/share/vanguard"
 

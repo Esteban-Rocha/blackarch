@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='powerops'
+pkgname=powerops
 pkgver=30.b238caf
 pkgrel=1
 pkgdesc='PowerShell Runspace Portable Post Exploitation Tool aimed at making Penetration Testing with PowerShell "easier".'
@@ -11,7 +11,7 @@ url='https://github.com/fdiskyou/PowerOPS'
 license=('custom:unknown')
 makedepends=('git')
 source=('git+https://github.com/fdiskyou/PowerOPS.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/PowerOPS"
@@ -22,7 +22,7 @@ pkgver() {
 package() {
   cd "$srcdir/PowerOPS"
 
-  mkdir -p "$pkgdir/usr/share/windows/powerops"
+  install -dm 755 "$pkgdir/usr/share/windows/powerops"
 
   cp -a * "$pkgdir/usr/share/windows/powerops/"
 }

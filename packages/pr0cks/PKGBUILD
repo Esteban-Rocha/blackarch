@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pr0cks'
+pkgname=pr0cks
 pkgver=20.c98188b
 pkgrel=1
 groups=('blackarch' 'blackarch-proxy' 'blackarch-tunnel' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2' 'python2-dnslib' 'iptables')
 makedepends=('git')
 source=('git+https://github.com/n1nj4sec/pr0cks.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/pr0cks"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/pr0cks"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/pr0cks"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/pr0cks"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/pr0cks/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/pr0cks/LICENSE"

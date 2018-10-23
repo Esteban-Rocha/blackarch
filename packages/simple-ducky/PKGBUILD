@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='simple-ducky'
-pkgver='1.1.1'
+pkgname=simple-ducky
+pkgver=1.1.1
 pkgrel=8
 groups=('blackarch' 'blackarch-automation' 'blackarch-exploitation')
 pkgdesc='A payload generator.'
@@ -11,13 +11,13 @@ arch=('any')
 license=('GPL3')
 makedepends=('git')
 source=('git+https://github.com/skysploit/simple-ducky.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 package() {
   cd "$srcdir/simple-ducky"
 
-  mkdir -p "$pkgdir/usr/share/simple-ducky"
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/simple-ducky"
+  install -dm 755 "$pkgdir/usr/bin"
 
   cp -a * "$pkgdir/usr/share/simple-ducky"
 

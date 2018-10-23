@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='winregfs'
+pkgname=winregfs
 pkgver=140.c17a0a5
 pkgrel=1
 pkgdesc='Windows Registry FUSE filesystem.'
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('fuse')
 makedepends=('git')
 source=('git+https://github.com/jbruchon/winregfs.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/winregfs"

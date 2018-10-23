@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='antiransom'
-pkgver='3.02'
-pkgrel=1
+pkgname=antiransom
+pkgver=3.02
+pkgrel=2
 pkgdesc='A tool capable of detect and stop attacks of Ransomware using honeypots.'
 url='http://www.security-projects.com/?Anti_Ransom___Download'
 groups=('blackarch' 'blackarch-windows' 'blackarch-defensive'
@@ -11,14 +11,14 @@ groups=('blackarch' 'blackarch-windows' 'blackarch-defensive'
 license=('custom:unknown')
 arch=('any')
 source=("https://github.com/YJesus/AntiRansom/releases/download/V${pkgver}/AntiRansomV${pkgver}.zip")
-sha1sums=('c3502e86645c8911aba8fd8a9bfbbcfa71c99ada')
+sha512sums=('97b87cb624934b7e2ced76c1b26a76230e451420b7790a8fc2b9d956efe5f255f04cafeb79a6cc4609a82ca853ad199805857cc1953995aca154f243a6bd21e9')
 
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/share/windows/antiransom"
+  install -dm 755 "$pkgdir/opt/windows/archive/antiransom"
 
   rm AntiRansomV${pkgver}.zip
 
-  cp -a * "$pkgdir/usr/share/windows/antiransom"
+  cp -a * "$pkgdir/opt/windows/archive/antiransom"
 }

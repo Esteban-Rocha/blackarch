@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='simpleemailspoofer'
+pkgname=simpleemailspoofer
 pkgver=53.c6a7ec3
 pkgrel=1
 pkgdesc='A simple Python CLI to spoof emails.'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2' 'python2-colorama' 'python2-pysqlite')
 makedepends=('git')
 source=('git+https://github.com/lunarca/SimpleEmailSpoofer.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/SimpleEmailSpoofer"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/SimpleEmailSpoofer"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/simpleemailspoofer"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/simpleemailspoofer"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/simpleemailspoofer/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/simpleemailspoofer/LICENSE"

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ubertooth'
-pkgver='2017.03.R2'
+pkgname=ubertooth
+pkgver=2018.06.R1
 pkgrel=1
 groups=('blackarch' 'blackarch-bluetooth')
 pkgdesc='A 2.4 GHz wireless development board suitable for Bluetooth experimentation. Open source hardware and software. Tools only.'
@@ -13,7 +13,7 @@ depends=('libusbx' 'libbtbb' 'bluez-libs' 'libpcap' 'python2' 'python2-numpy'
          'python2-pyside' 'python2-pyqt4' 'python2-pyusb')
 makedepends=('cmake')
 source=("https://github.com/greatscottgadgets/ubertooth/archive/${pkgver//./-}.tar.gz")
-sha1sums=('a685db6317ee7e125da0a5ea93b694acc41a5cc6')
+sha512sums=('61e137a7b51eba494bfde000217dcf38d2809df897d05166099cff115b9f4ce976fb84277352bc0eebe7f94f9f1cb769be872927a68228550760d96e51edf92f')
 
 prepare() {
   cd "$srcdir/ubertooth-${pkgver//./-}/host"

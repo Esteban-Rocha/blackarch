@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='smalisca'
+pkgname=smalisca
 pkgver=58.1aa7a16
 pkgrel=1
 pkgdesc='Static Code Analysis for Smali files.'
@@ -15,7 +15,7 @@ depends=('python2' 'python2-cement' 'python2-pygraphviz' 'graphviz'
          'python2-mimerender' 'python2-werkzeug')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/dorneanu/smalisca.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/smalisca"

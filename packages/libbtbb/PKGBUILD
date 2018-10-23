@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='libbtbb'
-pkgver='2017.03.R2'
+pkgname=libbtbb
+pkgver=2017.03.R2
 pkgrel=1
 pkgdesc='A library to decode Bluetooth baseband packets, as produced by the Ubertooth and GR-Bluetooth projects.'
 url='https://github.com/greatscottgadgets/libbtbb/releases'
@@ -11,7 +11,7 @@ license=('GPL')
 depends=('glibc' 'python2' 'python2-pcapy' 'python2-pypcap')
 makedepends=('cmake')
 source=("https://github.com/greatscottgadgets/libbtbb/archive/${pkgver//./-}.tar.gz")
-sha1sums=('76d063471c41de24f071700238badbebcc20ee5f')
+sha512sums=('bb7b58a33198fd64fba5f0254cfbb71120c70476d594a7aaf82c77f770d1a6e89b4571f42d3d15c1d93d5246c9145c33ba8724a5ee5ad84e96f748d9f32275b5')
 
 build() {
   cd "$srcdir/libbtbb-${pkgver//./-}"

@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='brutespray'
-pkgver=116.bd65d69
-pkgrel=2
+pkgname=brutespray
+pkgver=128.56e0b07
+pkgrel=1
 pkgdesc='Brute-Forcing from Nmap output - Automatically attempts default creds on found services.'
 groups=('blackarch' 'blackarch-automation' 'blackarch-cracker')
 arch=('any')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-argparse' 'python2-lxml' 'python2-argcomplete'
          'medusa')
 makedepends=('git')
 source=('git+https://github.com/x90skysn3k/brutespray.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/brutespray"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/brutespray"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/brutespray"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/brutespray"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/brutespray/" README.md
   install -Dm644 LICENSE.md "$pkgdir/usr/share/licenses/brutespray/LICENSE.md"

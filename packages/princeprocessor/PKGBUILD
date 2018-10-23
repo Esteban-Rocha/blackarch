@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='princeprocessor'
-pkgver=130.f0c101d
-pkgrel=2
+pkgname=princeprocessor
+pkgver=132.bffda8c
+pkgrel=1
 epoch=1
 groups=('blackarch' 'blackarch-misc')
 pkgdesc='Standalone password candidate generator using the PRINCE algorithm.'
@@ -13,7 +13,7 @@ license=('MIT')
 depends=('lib32-glibc')
 makedepends=('git' 'gcc')
 source=('git+https://github.com/jsteube/princeprocessor.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/princeprocessor"

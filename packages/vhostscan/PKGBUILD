@@ -1,19 +1,20 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='vhostscan'
-pkgver=285.b91ce37
+pkgname=vhostscan
+pkgver=329.74e4681
 pkgrel=1
 pkgdesc='A virtual host scanner that can be used with pivot tools, detect catch-all scenarios, aliases and dynamic default pages.'
 groups=('blackarch' 'blackarch-scanner')
 arch=('any')
 url='https://github.com/codingo/VHostScan'
 license=('GPL3')
-depends=('python2' 'python2-requests' 'python2-numpy' 'python2-argparse'
-         'python2-pandas')
-makedepends=('git')
+depends=('python' 'python-requests' 'python-numpy' 'python-argparse'
+         'python-pandas' 'python-dnspython' 'python-fuzzywuzzy'
+         'python-argparse' 'python-urllib3' 'python-simplejson')
+makedepends=('git' 'python-setuptools')
 source=('git+https://github.com/codingo/VHostScan.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/VHostScan"
@@ -21,24 +22,32 @@ pkgver() {
   echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
 }
 
+prepare() {
+  cd "$srcdir/VHostScan"
+
+  sed -i 's/==.*//g' requirements.txt
+  sed -i 's/num_installed/NUM_INSTALLED/' setup.py
+  #sed -i 's/numpy==1.12.0/numpy/g' setup.py
+}
+
+build() {
+  cd "$srcdir/VHostScan"
+
+  python setup.py build
+}
+
 package() {
   cd "$srcdir/VHostScan"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/vhostscan"
+  python setup.py install --root="$pkgdir" --prefix="/usr"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/vhostscan/" *.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/vhostscan/LICENSE"
 
-  rm *.md LICENSE
+  mv "$pkgdir/usr/bin/VHostScan" "$pkgdir/usr/bin/vhostscan"
 
-  cp -a * "$pkgdir/usr/share/vhostscan/"
+  rm -f "$pkgdir/usr/lib/python3.7/site-packages/tests/__init__.py" \
+    "$pkgdir/usr/lib/python3.7/site-packages/tests/__pycache__/__init__.cpython-37.pyc"
 
-  cat > "$pkgdir/usr/bin/vhostscan" << EOF
-#!/bin/sh
-cd /usr/share/vhostscan
-exec python2 VHostScan.py "\${@}"
-EOF
-
-  chmod a+x "$pkgdir/usr/bin/vhostscan"
+  find "$pkgdir/" -type d -name '__pycache__' -exec rm -rf {} +
 }

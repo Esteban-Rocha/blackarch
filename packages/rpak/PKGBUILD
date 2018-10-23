@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='rpak'
-pkgver='1.0'
-pkgrel=2
+pkgname=rpak
+pkgver=1.0
+pkgrel=3
 pkgdesc='A collection of tools that can be useful for doing attacks on routing protocols.'
 url='http://ntsecurity.nu/toolbox/promisdetect/'
 groups=('blackarch' 'blackarch-windows' 'blackarch-networking'
@@ -11,12 +11,12 @@ groups=('blackarch' 'blackarch-windows' 'blackarch-networking'
 license=('custom:unknown')
 arch=('any')
 source=('http://ntsecurity.nu/downloads/rpak.zip')
-sha1sums=('07bd9fe34165278f5241290445fd77e22635ba50')
+sha512sums=('07bd9fe34165278f5241290445fd77e22635ba50')
 
 package() {
   cd "$srcdir"
 
   rm rpak.zip
 
-  install -Dm644 -t "$pkgdir/usr/share/windows/rpak/" *
+  install -Dm644 -t "$pkgdir/opt/windows/archive/rpak/" *
 }

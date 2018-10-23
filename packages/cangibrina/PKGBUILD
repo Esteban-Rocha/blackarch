@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='cangibrina'
-pkgver=120.3dfe416
-pkgrel=2
+pkgname=cangibrina
+pkgver=121.d3da43f
+pkgrel=1
 groups=('blackarch' 'blackarch-scanner' 'blackarch-webapp')
 pkgdesc='Dashboard Finder.'
 arch=('any')
@@ -14,7 +14,7 @@ depends=('python2' 'python2-beautifulsoup4' 'python2-pysocks'
 optdepends=('tor' 'nmap')
 makedepends=('git')
 source=('git+https://github.com/fnk0c/cangibrina.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/cangibrina"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/cangibrina"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/cangibrina"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/cangibrina"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/cangibrina/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/cangibrina/LICENSE"

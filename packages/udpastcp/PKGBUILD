@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='udpastcp'
+pkgname=udpastcp
 pkgver=28.86479c0
 pkgrel=1
 pkgdesc='This program hides UDP traffic as TCP traffic in order to bypass certain firewalls.'
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('libev')
 makedepends=('git')
 source=('git+https://github.com/Hello71/udpastcp.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/udpastcp"

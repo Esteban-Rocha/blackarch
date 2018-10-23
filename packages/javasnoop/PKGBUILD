@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='javasnoop'
-pkgver='1.1'
+pkgname=javasnoop
+pkgver=1.1
 pkgrel=8
 groups=('blackarch' 'blackarch-reversing')
 pkgdesc="A tool that lets you intercept methods, alter data and otherwise hack Java applications running on your computer"
@@ -11,14 +11,14 @@ arch=('any')
 license=('GPL3')
 depends=('java-environment')
 source=("https://javasnoop.googlecode.com/files/JavaSnoop-$pkgver-RC2.zip")
-sha1sums=('37b11795f1eae3b70ddbd08e7d21973048848c6d')
+sha512sums=('37b11795f1eae3b70ddbd08e7d21973048848c6d')
 
 package(){
   cd "$srcdir/JavaSnoop"
 
   # Base directories.
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/javasnoop"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/javasnoop"
 
   cp -a --no-preserve=ownership * "$pkgdir/usr/share/javasnoop"
 

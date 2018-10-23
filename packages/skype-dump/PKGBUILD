@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='skype-dump'
-pkgver='0.1'
-pkgrel=5
+pkgname=skype-dump
+pkgver=0.1
+pkgrel=6
 groups=('blackarch' 'blackarch-windows' 'blackarch-cracker')
 pkgdesc='This is a tool that demonstrates dumping MD5 password hashes from the configuration file in Skype.'
 arch=('any')
@@ -11,14 +11,14 @@ url='http://packetstormsecurity.com/files/119155/Skype-Hash-Dumper-1.0.html'
 license=('custom:unknown')
 makedepends=('unzip')
 source=('http://packetstorm.foofus.com/Win/skype_dump.zip')
-sha1sums=('2adf453d358d5d8e03fceabd644195ff1584c342')
+sha512sums=('35c8f7734f4548d8902dde03499daa276b270e918952b08dfa1779826011e52eba75de4e3143cc283f9fbaf0e77910f859136f4e4bd78ba218a1f4bd8a74412b')
 
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/share/windows/skype-dump"
+  install -dm 755 "$pkgdir/opt/windows/archive/skype-dump"
 
   rm skype_dump.zip
 
-  cp -a * "$pkgdir/usr/share/windows/skype-dump"
+  cp -a * "$pkgdir/opt/windows/archive/skype-dump"
 }

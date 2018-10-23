@@ -1,17 +1,17 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-cx_oracle'
-pkgver='6.0.3'
-pkgrel=1
+pkgname=python2-cx_oracle
+pkgver=6.3.1
+pkgrel=2
 pkgdesc='Python interface to Oracle.'
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
-url='https://pypi.python.org/pypi/cx_Oracle/'
+url='https://pypi.org/project/cx_Oracle/#files'
 license=('BSD')
 depends=('python2')
 makedepends=('python2-setuptools')
-source=("https://pypi.python.org/packages/0a/53/f345dcb49eee2f91f228e8cfc8dc4ed9875b4d0803eadf4bcee894016630/cx_Oracle-${pkgver}.tar.gz")
-sha1sums=('2d9b5743e03c7e5d34a31b4fb3a890c02f26cc8e')
+source=("https://files.pythonhosted.org/packages/23/f6/6e72fa58d47e6fe7bf6f5ea36f321de6cd64622930a2f580d822f0d5cb6c/cx_Oracle-${pkgver}.tar.gz")
+sha512sums=('64ff6edc7d0ee4a8d8b55280d316ad6267c140257c390bf05c80d5561db486aa2f75cd8145d4d97743bf0cca5aac9ece2cb285e9a024d0c63bc721b387d9593f')
 
 build() {
   cd "$srcdir/cx_Oracle-$pkgver"

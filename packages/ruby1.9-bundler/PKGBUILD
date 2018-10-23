@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ruby1.9-bundler'
+pkgname=ruby1.9-bundler
 _gemname=${pkgname#ruby1.9-}
-pkgver='1.15.1'
+pkgver=1.6.4
 pkgrel=1
 pkgdesc="Manages an application's dependencies through its entire life, across many machines, systematically and repeatably."
 arch=('any')
@@ -12,14 +12,14 @@ license=('MIT')
 depends=('ruby1.9')
 source=("http://rubygems.org/downloads/${_gemname}-${pkgver}.gem")
 noextract=("${_gemname}-${pkgver}.gem")
-sha1sums=('d3e95482b0ba4370cbd27cc455f9b364acfe81ff')
+sha512sums=('440fdcbea16eaa1c264f00ab185adb3d41c622f3a7d98940c5df54243f31aa71e2ba7b100fad8d5ea3b4eea9155456a98fe24bd986d8435f3a7328b61c574e63')
 
 package() {
   cd "$srcdir"
 
   local _gemdir="$(ruby-1.9 -rubygems -e'puts Gem.default_dir')"
 
-  mkdir -p $pkgdir/usr/bin/
+  install -dm 755 $pkgdir/usr/bin/
 
   HOME=/tmp GEM_HOME="$_gemdir" GEM_PATH="$_gemdir" gem-1.9 install \
     --ignore-dependencies --no-user-install --no-rdoc --no-ri \

@@ -1,16 +1,16 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='conn'
-pkgver='1.0.36'
-pkgrel=1
+pkgname=conn
+pkgver=1.0.37
+pkgrel=2
 pkgdesc='Small C library usefull to easy build ipv4/ipv6 network daemons/clients.'
 url='http://kernel.embedromix.ro/us/'
 license=('LGPL')
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 depends=('glibc')
 source=("http://kernel.embedromix.ro/us/Conn/Conn-$pkgver.tar.gz")
-sha1sums=('e774901180a6d11488641a4f1df217ad87f49d94')
+sha512sums=('e6f0c8364a1f682fc8e37bfea08e569fe7b409df2f866c1b8a0e8c903b6f9835ba1039084b24322bf58885cba7264e7ed0e7af7b4feae783a8022d0062e8bed3')
 
 build() {
   cd "$srcdir/Conn-$pkgver"
@@ -24,4 +24,6 @@ package() {
   cd "$srcdir/Conn-$pkgver"
 
   make DESTDIR="$pkgdir" install
+
+  mv "$pkgdir/usr/lib64" "$pkgdir/usr/lib"
 }

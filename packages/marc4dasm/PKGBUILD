@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='marc4dasm'
-pkgver='6.f11860f'
-pkgrel=2
+pkgname=marc4dasm
+pkgver=6.f11860f
+pkgrel=3
 groups=('blackarch' 'blackarch-disassembler' 'blackarch-hardware' 'blackarch-reversing')
 pkgdesc='This python-based tool is a disassembler for the Atmel MARC4 (a 4 bit Harvard micro).'
 arch=('any')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/ApertureLabsLtd/marc4dasm.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/marc4dasm"

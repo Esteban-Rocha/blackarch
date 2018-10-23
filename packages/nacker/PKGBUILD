@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='nacker'
+pkgname=nacker
 pkgver=23.b67bb39
 pkgrel=3
 groups=('blackarch' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2' 'python2-netifaces' 'python2-netaddr' 'python2-scapy')
 makedepends=('git')
 source=('git+https://github.com/carmaa/nacker.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/nacker"
@@ -23,7 +23,7 @@ pkgver() {
 package() {
   cd "$srcdir/nacker"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   install -Dm644 nacker "$pkgdir/usr/share/nacker/nacker"
   install -Dm644 README.md "$pkgdir/usr/share/doc/nacker/README.md"

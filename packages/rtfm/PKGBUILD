@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='rtfm'
-pkgver=82.95aa66e
+pkgname=rtfm
+pkgver=93.02f6432
 pkgrel=1
 pkgdesc='A database of common, interesting or useful commands, in one handy referable form.'
 groups=('blackarch' 'blackarch-misc')
@@ -23,9 +23,9 @@ pkgver() {
 package() {
   cd "${srcdir}/rtfm"
 
-  mkdir -p "${pkgdir}/usr/share/rtfm"
-  mkdir -p "${pkgdir}/usr/share/doc/rtfm"
-  mkdir -p "${pkgdir}/usr/bin"
+  install -dm 755 "${pkgdir}/usr/share/rtfm"
+  install -dm 755 "${pkgdir}/usr/share/doc/rtfm"
+  install -dm 755 "${pkgdir}/usr/bin"
 
   install -Dm755 rtfm.py "${pkgdir}/usr/share/rtfm/"
   install -Dm644 *.sql "${pkgdir}/usr/share/rtfm/"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='revipd'
+pkgname=revipd
 pkgver=5.2aaacfb
 pkgrel=4
 groups=('blackarch' 'blackarch-recon' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/PypeRanger/revipd.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/revipd"

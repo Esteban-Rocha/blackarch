@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='hamster'
-pkgver='2.0.0'
+pkgname=hamster
+pkgver=2.0.0
 pkgrel=15
 groups=('blackarch' 'blackarch-exploitation')
 pkgdesc='Tool for HTTP session sidejacking.'
@@ -12,7 +12,7 @@ license=('GPL')
 depends=('libpcap')
 makedepends=(unzip)
 source=("http://www.clshack.it/nopaste/hamster-${pkgver}.zip")
-sha1sums=('fc1a3e221399cb451c3a4e41b887421cf5a319db')
+sha512sums=('fc1a3e221399cb451c3a4e41b887421cf5a319db')
 
 prepare() {
   cd "$srcdir"
@@ -34,8 +34,8 @@ build() {
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/hamster"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/hamster"
 
   cp --no-preserve=ownership "$srcdir"/hamster/bin/* "$pkgdir/usr/share/hamster"
   cp --no-preserve=ownership "$srcdir"/ferret/bin/* "$pkgdir/usr/share/hamster"

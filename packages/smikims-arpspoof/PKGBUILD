@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='smikims-arpspoof'
+pkgname=smikims-arpspoof
 pkgver=25.244d9ee
 pkgrel=1
 groups=('blackarch' 'blackarch-spoof' 'blackarch-exploitation'
@@ -12,7 +12,7 @@ url='https://github.com/smikims/arpspoof'
 license=('custom:unknown')
 makedepends=('git')
 source=('git+https://github.com/smikims/arpspoof.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/arpspoof"

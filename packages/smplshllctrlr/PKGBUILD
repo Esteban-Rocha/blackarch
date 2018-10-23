@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='smplshllctrlr'
+pkgname=smplshllctrlr
 pkgver=9.2baf390
 pkgrel=2
 pkgdesc='PHP Command Injection exploitation tool.'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/z0noxz/smplshllctrlr.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/smplshllctrlr"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/smplshllctrlr"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/smplshllctrlr"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/smplshllctrlr"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/smplshllctrlr/README.md"
 

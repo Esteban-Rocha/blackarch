@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='crackserver'
+pkgname=crackserver
 pkgver=33.e5763ab
 pkgrel=2
 groups=('blackarch' 'blackarch-cracker')
@@ -12,7 +12,7 @@ license=('custom')
 depends=('python2' 'rcracki_mt' 'john' 'hashcat' 'ike-scan' 'pyrit')
 makedepends=('git')
 source=('git+https://github.com/averagesecurityguy/crack.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/crack"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/crack"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/crackserver"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/crackserver"
 
   install -Dm644 README.md "$pkgdir/usr/share/licenses/crackserver/README.md"
 

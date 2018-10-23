@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='littleblackbox'
-pkgver='0.1.3'
+pkgname=littleblackbox
+pkgver=0.1.3
 pkgrel=2
 pkgdesc='Penetration testing tool, search in a collection of thousands of private SSL keys extracted from various embedded devices.'
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('openssl' 'libpcap' 'sqlite' 'curl')
 makedepends=('tar')
 source=("http://littleblackbox.googlecode.com/files/littleblackbox-${pkgver}.tar.gz")
-sha1sums=('b9e1c0090a2b67b6425bc680cd11e7ce0a7beb32')
+sha512sums=('b9e1c0090a2b67b6425bc680cd11e7ce0a7beb32')
 
 prepare() {
   cd "$srcdir/littleblackbox-$pkgver"
@@ -37,7 +37,7 @@ build() {
 package() {
   cd "$srcdir/littleblackbox-$pkgver"
 
-  mkdir -p "$pkgdir/usr/share/doc/littleblackbox"
+  install -dm 755 "$pkgdir/usr/share/doc/littleblackbox"
 
   install -Dm755 bin/littleblackbox "$pkgdir/usr/bin/littleblackbox"
   install -Dm644 bin/lbb.db "$pkgdir/usr/share/littleblackbox/lbb.db"

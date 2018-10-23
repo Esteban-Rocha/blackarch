@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='omen'
+pkgname=omen
 pkgver=15.78ce868
 pkgrel=1
 pkgdesc='Ordered Markov ENumerator - Password Guesser.'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=()
 makedepends=('git')
 source=('git+https://github.com/RUB-SysSec/OMEN.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/OMEN"
@@ -29,7 +29,7 @@ build() {
 package() {
   cd "$srcdir/OMEN"
 
-  mkdir -p "$pkgdir/usr/share/omen"
+  install -dm 755 "$pkgdir/usr/share/omen"
 
   install -Dm755 alphabetCreator "$pkgdir/usr/bin/omen-alphabetcreator"
   install -Dm755 createNG "$pkgdir/usr/bin/omen-createng"

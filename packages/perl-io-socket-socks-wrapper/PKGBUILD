@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='perl-io-socket-socks-wrapper'
-pkgver='0.17'
-pkgrel=2
+pkgname=perl-io-socket-socks-wrapper
+pkgver=0.17
+pkgrel=3
 pkgdesc='Add SOCKS support for any perl object / package / program.'
 url='http://search.cpan.org/~oleg/IO-Socket-Socks-Wrapper-0.15/lib/IO/Socket/Socks/Wrapper.pm'
 depends=('perl' 'perl-io-socket-socks')
@@ -11,7 +11,7 @@ arch=('any')
 license=('GPL')
 options=('!emptydirs')
 source=("http://search.cpan.org/CPAN/authors/id/O/OL/OLEG/IO-Socket-Socks-Wrapper-${pkgver}.tar.gz")
-sha1sums=('30b59ecf73c87f758e7f8130d50429763b46dbe0')
+sha512sums=('badf2b36e7f4dfc5cdd20f01cc0b43d21a1d4e05d30e1832dda0de8ba65ab528a1b6b7a6910a915c1b2244021ed47f9b8b0d700b553ec7475dfa77115cf852e8')
 
 build() {
   cd  "$srcdir/IO-Socket-Socks-Wrapper-$pkgver"

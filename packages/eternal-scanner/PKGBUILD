@@ -3,8 +3,8 @@
 
 # Maintainer: Pedro Freitas <pedrosffreitas at gmail dot com>
 
-pkgname='eternal-scanner'
-pkgver=86.461640e
+pkgname=eternal-scanner
+pkgver=87.d02fd7a
 pkgrel=1
 groups=('blackarch' 'blackarch-scanner' 'blackarch-exploitation')
 pkgdesc='An internet scanner for exploit CVE-2017-0144 (Eternal Blue).'
@@ -14,7 +14,7 @@ license=('MIT')
 depends=('bash' 'masscan' 'metasploit')
 makedepends=('git')
 source=('git+https://github.com/peterpt/eternal_scanner.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/eternal_scanner"
@@ -25,7 +25,7 @@ pkgver() {
 package() {
   cd "$srcdir/eternal_scanner"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   install -Dm755 -t "$pkgdir/usr/bin/" escan elog
   install -Dm644 -t "$pkgdir/usr/share/doc/eternal-scanner" *.md

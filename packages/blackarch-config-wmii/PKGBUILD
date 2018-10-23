@@ -1,18 +1,19 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='blackarch-config-wmii'
-pkgver=1.8c8d638
-pkgrel=2
+pkgname=blackarch-config-wmii
+pkgver=4.3161682
+pkgrel=3
 pkgdesc='BlackArch menu, theme and config for wmii window manager.'
 arch=('any')
+groups=('blackarch-config')
 url='https://github.com/BlackArch/blackarch-config-wmii'
 license=('custom')
 depends=('wmii' 'feh' 'blackarch-wallpaper')
 makedepends=('git')
 source=('git+https://github.com/BlackArch/blackarch-config-wmii.git')
 install='blackarch-config-wmii.install'
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/blackarch-config-wmii"
@@ -23,7 +24,7 @@ pkgver() {
 package() {
   cd "$srcdir/blackarch-config-wmii"
 
-  mkdir -p "$pkgdir/usr/share/wmii-blackarch"
+  install -dm 755 "$pkgdir/usr/share/wmii-blackarch"
 
   cp -a wmii/* "$pkgdir/usr/share/wmii-blackarch/"
 }

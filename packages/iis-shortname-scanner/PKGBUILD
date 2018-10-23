@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='iis-shortname-scanner'
+pkgname=iis-shortname-scanner
 pkgver=5.4ad4937
 pkgrel=2
 pkgdesc='An IIS shortname Scanner.'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/lijiejie/IIS_shortname_Scanner.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
 	cd "$srcdir/IIS_shortname_Scanner"

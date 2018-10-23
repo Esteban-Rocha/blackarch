@@ -1,9 +1,10 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wifiphisher'
-pkgver=665.23cda6e
+pkgname=wifiphisher
+pkgver=710.19329a4
 pkgrel=1
+epoch=1
 groups=('blackarch' 'blackarch-wireless' 'blackarch-social')
 pkgdesc='Fast automated phishing attacks against WPA networks.'
 arch=('any')
@@ -14,7 +15,7 @@ depends=('python2' 'python2-httplib2' 'python2-scapy' 'aircrack-ng' 'python2-pyo
          'dnsmasq' 'python2-dbus' 'python2-argparse' 'python2-roguehostapd')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/sophron/wifiphisher.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/wifiphisher"
@@ -25,6 +26,7 @@ pkgver() {
 prepare() {
   cd "$srcdir/wifiphisher"
 
+  sed -i 's|tornado==4.5.3|tornado|' setup.py
   sed -i 's|"PyRIC", "tornado", "blessings>=1.6", "dbus-python"|"PyRIC", "tornado", "blessings"|' setup.py
 }
 
@@ -37,11 +39,14 @@ build() {
 package() {
   cd "$srcdir/wifiphisher"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/wifiphisher"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/wifiphisher"
 
   python2 setup.py install --root="$pkgdir"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/wifiphisher/" *.md
   install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/wifiphisher/LICENSE.txt"
+
+  # moron
+  sed -i '1 i\# -*- coding: utf-8 -*-' "$pkgdir/usr/lib/python2.7/site-packages/wifiphisher/common/phishingpage.py"
 }

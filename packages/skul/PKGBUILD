@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='skul'
-pkgver=14.e2c33ef
+pkgname=skul
+pkgver=27.7bd83f1
 pkgrel=1
 groups=('blackarch' 'blackarch-cracker' 'blackarch-cryptography')
 pkgdesc='A PoC to bruteforce the Cryptsetup implementation of Linux Unified Key Setup (LUKS).'
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('openssl')
 makedepends=('git')
 source=('git+https://github.com/cryptcoffee/skul.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/skul"
@@ -31,8 +31,8 @@ build() {
 package() {
   cd "$srcdir/skul"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/skul"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/skul"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/skul/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/skul/LICENSE"

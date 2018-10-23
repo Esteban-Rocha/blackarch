@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='crackle'
-pkgver=100.ff47a48
+pkgname=crackle
+pkgver=104.0fc1938
 pkgrel=1
 groups=('blackarch' 'blackarch-cracker' 'blackarch-bluetooth')
 pkgdesc="Crack and decrypt BLE encryption"
@@ -12,7 +12,7 @@ license=('GPL')
 depends=('libpcap')
 makedepends=('git')
 source=('git+https://github.com/mikeryan/crackle/')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd crackle
@@ -31,7 +31,7 @@ build() {
 package() {
   cd "$srcdir/crackle"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   make "INSTALL_DIR=$pkgdir/usr/bin" install
 }

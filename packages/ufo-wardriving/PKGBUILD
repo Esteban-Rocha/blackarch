@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ufo-wardriving'
-pkgver='4'
+pkgname=ufo-wardriving
+pkgver=4
 pkgrel=7
 groups=('blackarch' 'blackarch-cracker' 'blackarch-wireless')
 pkgdesc='Allows you to test the security of wireless networks by detecting their passwords based on the router model.'
@@ -11,13 +11,13 @@ arch=('any')
 license=('GPL2')
 depends=('python2' 'python2-pyqt4')
 source=("https://bitbucket.org/asterixthc/ufo-wardriving-4/downloads/ufo-wardriving-${pkgver}.zip")
-sha1sums=('1b260281fa78d420550052f92b714a9276715ad1')
+sha512sums=('1b260281fa78d420550052f92b714a9276715ad1')
 
 package() {
   cd "$srcdir/ufo-wardriving-$pkgver"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/ufo-wardriving"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/ufo-wardriving"
 
  cp -a * "$pkgdir/usr/share/ufo-wardriving"
 

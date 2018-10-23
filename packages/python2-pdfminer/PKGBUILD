@@ -1,16 +1,16 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-pdfminer'
-pkgver='20140328'
-pkgrel=2
+pkgname=python2-pdfminer
+pkgver=20140328
+pkgrel=3
 pkgdesc='A tool for extracting information from PDF documents.'
 arch=('any')
 url='https://github.com/euske/pdfminer/'
 license=('MIT')
 depends=('python2')
 source=("https://pypi.python.org/packages/source/p/pdfminer/pdfminer-${pkgver}.tar.gz")
-sha1sums=('66c2ea02d147333e0252183dfbc5cb4019e57dda')
+sha512sums=('8abb2328f7824ee980df0ce42d758c15534e97379ea9213b4aa1d29864d24d73c9e2d6020964e9ab734c0c6f7d1ae70bccbd6605168eaadf83923718a1f4849a')
 
 build() {
   cd "$srcdir/pdfminer-$pkgver"

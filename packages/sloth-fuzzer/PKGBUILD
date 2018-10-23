@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='sloth-fuzzer'
+pkgname=sloth-fuzzer
 pkgver=40.0f0cf2e
 pkgrel=1
 groups=('blackarch' 'blackarch-fuzzer')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('crypto++' 'flex' 'bison')
 makedepends=('git')
 source=('git+https://github.com/mfontanini/sloth-fuzzer.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/sloth-fuzzer"

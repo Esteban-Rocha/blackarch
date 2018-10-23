@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='packet-o-matic'
+pkgname=packet-o-matic
 pkgver=1392.cb92fb7
 pkgrel=1
 pkgdesc='A real time packet processor. Reads the packet from an input module, match the packet using rules and connection tracking information and then send it to a target module.'
@@ -9,10 +9,10 @@ arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 url='http://www.packet-o-matic.org/'
 license=('GPL')
 groups=('blackarch' 'blackarch-networking' 'blackarch-tunnel')
-depends=('libpcap' 'libxml2' 'libnet' 'uthash' 'libmicrohttpd' 'lua51')
+depends=('libpcap' 'libxml2' 'libnet' 'uthash' 'libmicrohttpd' 'lua51' 'libexif')
 makedepends=('git' 'xmlrpc-c' 'libtool' 'pkg-config')
 source=('git+https://github.com/gmsoft-tuxicoman/pom-ng.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/pom-ng"
@@ -23,12 +23,8 @@ pkgver() {
 build() {
   cd "$srcdir/pom-ng"
 
-  #touch config.h.in
-
-  #libtoolize --force --copy
-  #aclocal
-  #automake --add-missing
-  #autoconf
+  export lua_CFLAGS="-llua5.1"
+  export lua_LIBS="-llua5.1"
 
   autoreconf -f -i
   ./configure --prefix=/usr

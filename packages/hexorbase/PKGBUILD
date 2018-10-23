@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='hexorbase'
-pkgver='6'
+pkgname=hexorbase
+pkgver=6
 pkgrel=2
 epoch=2
 groups=('blackarch' 'blackarch-fuzzer' 'blackarch-scanner')
@@ -14,7 +14,7 @@ depends=('python2' 'python2-pyqt4' 'mysql-python' 'python2-psycopg2' 'pymssql'
          'python2-qscintilla')
 optdepends=('python2-cx_oracle: Oracle database')
 source=('svn+http://hexorbase.googlecode.com/svn/HexorBase/')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/HexorBase"
@@ -27,8 +27,8 @@ pkgver() {
 package() {
   cd "$srcdir/HexorBase"
 
-  mkdir -p "$pkgdir/usr/share/hexorbase"
-  mkdir -p "$pkgdir/usr/bin/"
+  install -dm 755 "$pkgdir/usr/share/hexorbase"
+  install -dm 755 "$pkgdir/usr/bin/"
 
   cp -a --no-preserve=ownership * "$pkgdir/usr/share/hexorbase"
 

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='goohak'
-pkgver=22.c103f43
+pkgname=goohak
+pkgver=24.fdcf891
 pkgrel=1
 pkgdesc='Automatically Launch Google Hacking Queries Against A Target Domain.'
 groups=('blackarch' 'blackarch-recon' 'blackarch-automation'
@@ -13,7 +13,7 @@ arch=('any')
 depends=('bash')
 makedepends=('git')
 source=('git+https://github.com/1N3/Goohak')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Goohak"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/Goohak"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/goohak"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/goohak"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/goohak/" README.md
 

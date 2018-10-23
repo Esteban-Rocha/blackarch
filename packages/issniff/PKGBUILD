@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='issniff'
+pkgname=issniff
 pkgver=294.79c6c2a
 pkgrel=1
 pkgdesc='Internet Session Sniffer.'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('libpcap')
 makedepends=('git')
 source=('git+https://github.com/juphoff/issniff.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/issniff"

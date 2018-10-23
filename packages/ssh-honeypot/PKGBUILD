@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ssh-honeypot'
+pkgname=ssh-honeypot
 pkgver=53.05a6377
 pkgrel=1
 pkgdesc='Fake sshd that logs ip addresses, usernames, and passwords.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('libssh')
 makedepends=('git')
 source=('git+https://github.com/droberson/ssh-honeypot.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ssh-honeypot"

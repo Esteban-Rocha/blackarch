@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='aranea'
+pkgname=aranea
 pkgver=6.469b9ee
 pkgrel=2
 groups=('blackarch' 'blackarch-spoof')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('libpcap')
 makedepends=('git')
 source=('git+https://github.com/TigerSecurity/aranea')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/aranea"

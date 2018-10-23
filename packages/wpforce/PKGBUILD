@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wpforce'
-pkgver=79.2964e6f
+pkgname=wpforce
+pkgver=87.31024e0
 pkgrel=1
 pkgdesc='Wordpress Attack Suite.'
 groups=('blackarch' 'blackarch-webapp' 'blackarch-cracker'
@@ -13,7 +13,7 @@ license=('custom:unknown"')
 depends=('python2' 'python2-requests' 'python2-argparse')
 makedepends=('git')
 source=('git+https://github.com/n00py/WPForce.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/WPForce"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/WPForce"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/wpforce"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/wpforce"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/wpforce/" README.md
 

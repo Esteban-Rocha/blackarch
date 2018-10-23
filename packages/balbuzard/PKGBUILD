@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='balbuzard'
+pkgname=balbuzard
 pkgver=67.d6349ef1bc55
 pkgrel=2
 pkgdesc='A package of malware analysis tools in python to extract patterns of interest from suspicious files (IP addresses, domain names, known file headers, interesting strings, etc).'
@@ -14,7 +14,7 @@ depends=('python2' 'yara' 'python2-yara')
 makedepends=('mercurial' 'python2-setuptools')
 options=('!strip')
 source=('hg+https://bitbucket.org/decalage/balbuzard')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/balbuzard"
@@ -25,9 +25,9 @@ pkgver() {
 package() {
   cd "$srcdir/balbuzard"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/balbuzard"
-  mkdir -p "$pkgdir/usr/share/doc/balbuzard"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/balbuzard"
+  install -dm 755 "$pkgdir/usr/share/doc/balbuzard"
 
   python2 setup.py install --root="$pkgdir" --optimize=1
 

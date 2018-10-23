@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='zackattack'
+pkgname=zackattack
 pkgver=5.1f96c14
 pkgrel=5
 pkgdesc='A new tool set to do NTLM Authentication relaying unlike any other tool currently out there.'
@@ -13,7 +13,7 @@ license=('unknown')
 depends=('ruby1.8' 'ruby1.8-sqlite3')
 makedepends=('git')
 source=('git+https://github.com/urbanesec/ZackAttack.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ZackAttack"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/ZackAttack"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/zackattack"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/zackattack"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/zackattack/README.md"
   install -Dm644 ChangeLog.md "$pkgdir/usr/share/doc/zackattack/ChangeLog.md"

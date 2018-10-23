@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='abcd'
+pkgname=abcd
 pkgver=4.2738809
 pkgrel=2
 pkgdesc='ActionScript ByteCode Disassembler.'
@@ -12,7 +12,7 @@ license=('BSD')
 depends=('python2' 'python2-setuptools' 'python2-pyswf')
 makedepends=('git')
 source=('git+https://github.com/MITRECND/abcd.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/abcd"

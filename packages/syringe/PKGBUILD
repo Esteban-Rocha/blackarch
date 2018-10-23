@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='syringe'
+pkgname=syringe
 pkgver=12.79a703e
-pkgrel=1
+pkgrel=2
 groups=('blackarch' 'blackarch-backdoor' 'blackarch-binary' 'blackarch-windows')
 pkgdesc='A General Purpose DLL & Code Injection Utility.'
 arch=('any')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('')
 makedepends=('git')
 source=('git+https://github.com/securestate/syringe.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/syringe"
@@ -23,5 +23,5 @@ pkgver() {
 package() {
   cd "$srcdir/syringe"
 
-  install -Dm644 -t "$pkgdir/usr/share/windows/syringe/" *
+  install -Dm644 -t "$pkgdir/opt/windows/archive/syringe/" *
 }

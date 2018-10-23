@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='sigspotter'
-pkgver='1.0'
-pkgrel=2
+pkgname=sigspotter
+pkgver=1.0
+pkgrel=3
 pkgdesc='A tool that search in your HD to find wich publishers has been signed binaries in your PC.'
 url='http://www.security-projects.com/?SigSpotter'
 groups=('blackarch' 'blackarch-windows' 'blackarch-misc')
@@ -12,7 +12,7 @@ arch=('any')
 makedepends=('unrar')
 source=('http://sbdtools.googlecode.com/files/SigSpotter.rar')
 noextract=('SigSpotter.rar')
-sha1sums=('728b8cd12964a4e98c529c15ed516b866bf22c36')
+sha512sums=('728b8cd12964a4e98c529c15ed516b866bf22c36')
 
 prepare() {
   cd "$srcdir"
@@ -23,9 +23,9 @@ prepare() {
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/share/windows/sigspotter"
+  install -dm 755 "$pkgdir/opt/windows/archive/sigspotter"
 
   rm SigSpotter.rar
 
-  cp -a * "$pkgdir/usr/share/windows/sigspotter"
+  cp -a * "$pkgdir/opt/windows/archive/sigspotter"
 }

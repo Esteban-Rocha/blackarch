@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='skypefreak'
+pkgname=skypefreak
 pkgver=33.9347a65
 pkgrel=2
 groups=('blackarch' 'blackarch-forensic')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2' 'python2-pysqlite')
 makedepends=('git')
 source=('git+https://github.com/OsandaMalith/SkypeFreak.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/SkypeFreak"

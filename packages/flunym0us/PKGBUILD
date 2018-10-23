@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='flunym0us'
-pkgver='2.0'
+pkgname=flunym0us
+pkgver=2.0
 pkgrel=4
 groups=('blackarch' 'blackarch-scanner' 'blackarch-webapp')
 pkgdesc='A Vulnerability Scanner for Wordpress and Moodle.'
@@ -11,7 +11,7 @@ url='http://code.google.com/p/flunym0us/'
 license=('GPL3')
 depends=('python2')
 source=("http://flunym0us.googlecode.com/files/flunym0us${pkgver}.tar.gz")
-sha1sums=('ecf8c9db6097accf39231c332bbfd26e6d2aad8c')
+sha512sums=('ecf8c9db6097accf39231c332bbfd26e6d2aad8c')
 
 prepare(){
   cd "$srcdir"
@@ -22,8 +22,8 @@ prepare(){
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin/"
-  mkdir -p "$pkgdir/usr/share/flunym0us"
+  install -dm 755 "$pkgdir/usr/bin/"
+  install -dm 755 "$pkgdir/usr/share/flunym0us"
 
   cp -r --no-preserve=ownership *.{lst,py} "$pkgdir/usr/share/flunym0us"
 

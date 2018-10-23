@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='cribdrag'
+pkgname=cribdrag
 pkgver=4.476feaa
 pkgrel=1
 pkgdesc='An interactive crib dragging tool for cryptanalysis on ciphertext generated with reused or predictable stream cipher keys.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/SpiderLabs/cribdrag')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/cribdrag"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/cribdrag"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/cribdrag"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/cribdrag"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/cribdrag/" README.md
   install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/cribdrag/LICENSE.txt"

@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pack'
+pkgname=pack
 _pkgname=PACK
-pkgver='0.0.4'
+pkgver=0.0.4
 pkgrel=8
 groups=('blackarch' 'blackarch-cracker')
 pkgdesc="Password Analysis and Cracking Kit"
@@ -13,8 +13,8 @@ license=('custom:unknown')
 depends=('python2' 'aspell' 'aspell-en')
 source=("http://thesprawl.org/media/projects/PACK-${pkgver}.tar.gz"
         'fix-all-the-things.patch')
-sha1sums=('a643777072ff683aa62a7ae0c76c10fb4fbb8b8a'
-          '97d12b3c2e8b1164e214b9176bfa7b6406be4f69')
+sha512sums=('0b134d7119daac50f47134d7e8fd8563934390460cb042a3069f90a473a864cd0488e6bbd535bef8fb727cbe1035ed77abdcb2f94f3078d4de8cfbd0dec638f0'
+            '136f2128a7a28fef47475f8933d8571f7ff6e28af556414c9d87143127a3aab794fae222d4d1dfdab566056765c5f68341ab88165c2bd2074effc3f708a1e051')
 
 prepare() {
   cd "$srcdir/PACK-$pkgver"
@@ -25,7 +25,7 @@ prepare() {
 package() {
   cd "$srcdir/PACK-$pkgver"
 
-  mkdir -p pack
+  install -dm 755 pack
   touch pack/__init__.py
 
   install -Dm755 statsgen.py "$pkgdir/usr/bin/statsgen"
@@ -36,7 +36,7 @@ package() {
 
   install -Dm644 pack/__init__.py "$pkgdir/usr/lib/python2.7/pack/__init__.py"
 
-  mkdir -p "$pkgdir/usr/lib/python2.7/pack/enchant/checker"
+  install -dm 755 "$pkgdir/usr/lib/python2.7/pack/enchant/checker"
   install -m644 enchant/*.py "$pkgdir/usr/lib/python2.7/pack/enchant"
   install -m644 enchant/checker/*.py \
     "$pkgdir/usr/lib/python2.7/pack/enchant/checker"
@@ -50,7 +50,7 @@ package() {
   install -Dm644 enchant/share/enchant/myspell/README.txt \
     "$pkgdir/usr/lib/python2.7/pack/enchant/share/enchant/myspell/README.txt"
 
-  mkdir -p "$pkgdir/usr/lib/python2.7/pack/enchant/tokenize"
+  install -dm 755 "$pkgdir/usr/lib/python2.7/pack/enchant/tokenize"
   install -m644 enchant/tokenize/*.py \
     "$pkgdir/usr/lib/python2.7/pack/enchant/tokenize"
 }

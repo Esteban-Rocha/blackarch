@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='domain-stats'
-pkgver=13.5539546
+pkgname=domain-stats
+pkgver=28.033375f
 pkgrel=1
 pkgdesc='A web API to deliver domain information from whois and alexa.'
 groups=('blackarch' 'blackarch-recon')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-python-whois' 'python2-argparse')
 makedepends=('git')
 source=('git+https://github.com/MarkBaggett/domain_stats.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/domain_stats"
@@ -29,8 +29,8 @@ prepare() {
 package() {
   cd "$srcdir/domain_stats"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/domain-stats"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/domain-stats"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/domain-stats/README.md"
 

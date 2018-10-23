@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='eyewitness'
-pkgver=691.9148dab
+pkgname=eyewitness
+pkgver=725.e9532ac
 pkgrel=1
 groups=('blackarch' 'blackarch-webapp' 'blackarch-recon' 'blackarch-misc')
 pkgdesc='Designed to take screenshots of websites, provide some server header info, and identify default credentials if possible.'
@@ -11,10 +11,11 @@ url='https://github.com/ChrisTruncer/EyeWitness'
 license=('GPL3')
 depends=('python2' 'python2-pyqt4' 'python2-netaddr' 'ghost-py' 'python2-rdpy'
          'python2-selenium' 'python2-rsa' 'xorg-server-xvfb'
-         'python2-pyvirtualdisplay' 'python2-easyprocess')
+         'python2-beautifulsoup4' 'python2-pyvirtualdisplay'
+         'python2-easyprocess' 'python2-pytesseract')
 makedepends=('git')
-source=('git+https://github.com/ChrisTruncer/EyeWitness.git')
-sha1sums=('SKIP')
+source=('git+https://github.com/FortyNorthSecurity/EyeWitness.git')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/EyeWitness"
@@ -22,11 +23,17 @@ pkgver() {
   echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
 }
 
+prepare() {
+  cd "$srcdir/EyeWitness"
+
+  grep -iRl 'python' * | xargs sed -i 's|python$|python2|'
+}
+
 package() {
   cd "$srcdir/EyeWitness"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/eyewitness"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/eyewitness"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/eyewitness/" README.md CHANGELOG
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/eyewitness/LICENSE"
@@ -38,7 +45,7 @@ package() {
   cat > "$pkgdir/usr/bin/eyewitness" << EOF
 #!/bin/sh
 cd /usr/share/eyewitness/
-exec python2 EyeWitness.py "\$@"
+exec python2 EyeWitness.py "\${@}"
 EOF
   chmod +x "$pkgdir/usr/bin/eyewitness"
 }

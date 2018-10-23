@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='meterssh'
+pkgname=meterssh
 pkgver=18.9a5ed19
 pkgrel=1
 groups=('blackarch' 'blackarch-backdoor' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'metasploit')
 makedepends=('git')
 source=('git+https://github.com/trustedsec/meterssh.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/meterssh"
@@ -29,7 +29,7 @@ prepare() {
 package() {
   cd "$srcdir/meterssh"
 
-  mkdir -p "$pkgdir/usr/share/meterssh"
+  install -dm 755 "$pkgdir/usr/share/meterssh"
 
   install -Dm755 monitor.py "$pkgdir/usr/bin/meterssh-monitor"
   install -Dm644 meterssh.py "$pkgdir/usr/share/meterssh/meterssh.py"

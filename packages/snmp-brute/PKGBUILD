@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='snmp-brute'
+pkgname=snmp-brute
 pkgver=15.64ec0ce
 pkgrel=3
 groups=('blackarch' 'blackarch-cracker' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-scapy' 'metasploit' 'net-snmp' 'john')
 makedepends=('git')
 source=('git+https://github.com/SECFORCE/snmp-brute.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/snmp-brute"

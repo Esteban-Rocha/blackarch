@@ -1,16 +1,16 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-claripy'
-pkgver='7.7.9.21'
+pkgname=python2-claripy
+pkgver=7.8.8.1
 pkgrel=1
 pkgdesc='An abstraction layer for constraint solvers.'
 arch=('any')
-url='http://pypi.python.org/pypi/claripy'
+url='https://pypi.org/project/claripy/#files'
 license=('custom:unknown')
 depends=('python2' 'z3')
-source=("https://pypi.python.org/packages/b1/ab/323241b2f6ccb97828aa8221579905391d3103d4b45fba3c3d35fb244fc1/claripy-${pkgver}.tar.gz")
-sha1sums=('2eaf8d2c9cd6a8922512fc1fe39a09d9dd5805d9')
+source=("https://files.pythonhosted.org/packages/7c/a4/22cadd58fef5b3b6e02d4596f6b8fdda24bce41e6d2c5ad3c17a2dc80d2b/claripy-7.8.8.1.tar.gz")
+sha512sums=('b36dbafd8d3a28c7e87742c46e40ad4f0668ba55e8d978cb4851f61f003ac8197cb1265a79cd7c8c48556c6ae5cfd3d75e72004ff9088e1a0481095b5499e9bd')
 
 build() {
   cd "$srcdir/claripy-$pkgver"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='phishery'
+pkgname=phishery
 pkgver=14.5743953
 pkgrel=1
 groups=('blackarch' 'blackarch-backdoor' 'blackarch-social')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('glibc' 'go')
 makedepends=('go' 'git')
 source=('git+https://github.com/ryhanson/phishery.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 _url='github.com/ryhanson/phishery'
 
 pkgver() {
@@ -24,7 +24,7 @@ pkgver() {
 build() {
   cd "$srcdir"
 
-  mkdir -p src/$url && rm -rf src/$url && mv phishery src/$url && cd src/$url
+  install -dm 755 src/$url && rm -rf src/$url && mv phishery src/$url && cd src/$url
 
   GOPATH="$srcdir" go get -d -t $_url
 }
@@ -32,7 +32,7 @@ build() {
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   GOPATH="$srcdir" go build -v $_url
 

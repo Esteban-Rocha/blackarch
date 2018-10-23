@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='needle'
-pkgver=573.3776adf
+pkgname=needle
+pkgver=577.6cefc9d
 pkgrel=1
 pkgdesc='The iOS Security Testing Framework.'
 groups=('blackarch' 'blackarch-mobile')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-pysqlite' 'python2-paramiko' 'python2-pyopenssl'
          'python2-frida' 'sshtunnel' 'mitmproxy')
 makedepends=('git')
 source=('git+https://github.com/mwrlabs/needle.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/needle"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/needle"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/needle"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/needle"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/needle/" README.md CHANGELOG.md
   install -Dm644 LICENSE.md "$pkgdir/usr/share/licenses/needle/LICENSE.md"

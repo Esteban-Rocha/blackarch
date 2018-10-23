@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wfuzz'
-pkgver=525.1d02174
+pkgname=wfuzz
+pkgver=613.18a8360
 pkgrel=1
 groups=('blackarch' 'blackarch-fuzzer' 'blackarch-webapp')
 pkgdesc='Utility to bruteforce web applications to find their not linked resources.'
@@ -13,7 +13,7 @@ depends=('python2' 'python2-pysqlite-legacy' 'python2-lxml' 'python2-pyxml'
          'python2-pycurl')
 makedepends=('git')
 source=('git+https://github.com/xmendez/wfuzz.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/wfuzz"
@@ -26,8 +26,8 @@ package() {
 
   tools="wfencode wfuzz wfpayload wxfuzz"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/wfuzz"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/wfuzz"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/wfuzz/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/wfuzz/LICENSE"

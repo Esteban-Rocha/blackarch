@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='proxenet'
+pkgname=proxenet
 pkgver=712.67fc6b5
 pkgrel=1
 groups=('blackarch' 'blackarch-webapp' 'blackarch-proxy' 'blackarch-sniffer')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('mbedtls' 'lua' 'ruby' 'python3' 'python2')
 makedepends=('git' 'cmake')
 source=('git+https://github.com/hugsy/proxenet.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/proxenet"
@@ -42,8 +42,8 @@ build() {
 package() {
   cd "$srcdir/proxenet"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/proxenet"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/proxenet"
 
   install -Dm755 proxenet-control-web.py "$pkgdir/usr/bin/proxenet-control-web"
   install -Dm755 proxenet-control-cli.py "$pkgdir/usr/bin/proxenet-control-cli"
@@ -55,7 +55,7 @@ package() {
   #cp -a proxenet keys proxenet-plugins "$pkgdir/usr/share/proxenet"
   cp -a docs/* "$pkgdir/usr/share/doc/proxenet/"
 
-  mkdir -p "$pkgdir/usr/share/proxenet/proxenet-plugins/autoload"
+  install -dm 755 "$pkgdir/usr/share/proxenet/proxenet-plugins/autoload"
 
   cat > "$pkgdir/usr/bin/proxenet" << EOF
 #!/bin/sh

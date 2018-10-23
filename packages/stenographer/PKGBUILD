@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='stenographer'
-pkgver=465.57b88aa
+pkgname=stenographer
+pkgver=466.6f29347
 pkgrel=1
 groups=('blackarch' 'blackarch-sniffer' 'blackarch-networking'
         'blackarch-forensic')
@@ -14,7 +14,7 @@ depends=('glibc' 'go')
 makedepends=('go' 'git' 'mercurial')
 url='https://github.com/google/stenographer'
 source=('git+https://github.com/google/stenographer.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/stenographer"
@@ -25,7 +25,7 @@ pkgver() {
 build() {
   cd "$srcdir"
 
-  mkdir -p src/$url && rm -rf src/$url && mv stenographer src/$url && \
+  install -dm 755 src/$url && rm -rf src/$url && mv stenographer src/$url && \
     cd src/$url
 
   GOPATH="$srcdir" go get -d -t github.com/google/stenographer
@@ -34,7 +34,7 @@ build() {
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   GOPATH="$srcdir" go build -v github.com/google/stenographer
 

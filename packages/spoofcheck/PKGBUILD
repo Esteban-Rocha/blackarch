@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='spoofcheck'
+pkgname=spoofcheck
 pkgver=16.8cce591
 pkgrel=3
 pkgdesc='Simple script that checks a domain for email protections.'
@@ -14,7 +14,7 @@ depends=('python2' 'python2-colorama' 'python2-dnslib' 'python2-tldextract'
          'python2-requests' 'python2-requests-file')
 makedepends=('git')
 source=('git+https://github.com/bishopfox/spoofcheck.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/spoofcheck"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/spoofcheck"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/spoofcheck"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/spoofcheck"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/spoofcheck/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/spoofcheck/LICENSE"

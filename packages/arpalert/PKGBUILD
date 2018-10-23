@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='arpalert'
-pkgver='2.0.12'
+pkgname=arpalert
+pkgver=2.0.12
 pkgrel=1
 epoch=1
 pkgdesc='Monitor ARP changes in ethernet networks.'
@@ -12,7 +12,7 @@ url='http://www.arpalert.org/'
 license=('GPL')
 depends=('libpcap')
 source=("http://www.arpalert.org/src/arpalert-${pkgver}.tar.gz")
-sha1sums=('60d10080daef9b885ea17ecd6130e8ad73aa35ac')
+sha512sums=('0bbc5285db47a0ab130850d000850ef0ae6b825f3ed89ebe7788ca258c127108019e50f63d6b6f6ddfe8f164a2808a7940242eb0d23db343bc2632d775bf8752')
 
 build() {
   cd "$srcdir/arpalert-$pkgver"
@@ -26,8 +26,8 @@ build() {
 package() {
   cd "$srcdir/arpalert-$pkgver"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/arpalert"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/arpalert"
 
   make DESTDIR="$pkgdir" install
 

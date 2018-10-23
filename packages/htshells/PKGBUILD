@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='htshells'
-pkgver=79.399feaa
-pkgrel=2
+pkgname=htshells
+pkgver=87.fcdca17
+pkgrel=1
 epoch=2
 groups=('blackarch' 'blackarch-exploitation')
 pkgdesc='Self contained web shells and other attacks via .htaccess files.'
@@ -12,7 +12,7 @@ arch=('any')
 license=('GPL3')
 makedepends=('git')
 source=('git+https://github.com/wireghoul/htshells.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/htshells"
@@ -23,7 +23,7 @@ pkgver() {
 package() {
   cd "$srcdir/htshells"
 
-  mkdir -p "$pkgdir/usr/share/htshells"
+  install -dm 755 "$pkgdir/usr/share/htshells"
 
   cp -a --no-preserve=ownership * "$pkgdir/usr/share/htshells"
 }

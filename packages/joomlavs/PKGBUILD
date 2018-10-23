@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='joomlavs'
-pkgver=242.6e1fdf2
+pkgname=joomlavs
+pkgver=254.eea7500
 pkgrel=1
 groups=('blackarch' 'blackarch-webapp' 'blackarch-scanner' 'blackarch-fuzzer')
 pkgdesc='A black box, Ruby powered, Joomla vulnerability scanner.'
@@ -13,7 +13,7 @@ depends=('ruby2.3' 'ruby2.3-bundler')
 makedepends=('git')
 source=('git+https://github.com/rastating/joomlavs.git')
 install='joomlavs.install'
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/joomlavs"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/joomlavs"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/joomlavs"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/joomlavs"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/joomlavs/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/joomlavs/LICENSE"

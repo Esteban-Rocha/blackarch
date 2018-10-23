@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dsjs'
-pkgver=21.79cb2c4
-pkgrel=3
+pkgname=dsjs
+pkgver=23.450a7f4
+pkgrel=1
 groups=('blackarch' 'blackarch-webapp' 'blackarch-scanner')
 pkgdesc='A fully functional JavaScript library vulnerability scanner written in under 100 lines of code.'
 arch=('any')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-simplejson')
 makedepends=('git')
 source=('git+https://github.com/stamparm/DSJS.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/DSJS"

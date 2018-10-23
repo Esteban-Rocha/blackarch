@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='omnihash'
+pkgname=omnihash
 pkgver=70.870e9ae
 pkgrel=3
 pkgdesc='Hash files, strings, input streams and network resources in various common algorithms simultaneously.'
@@ -14,7 +14,7 @@ depends=('python2' 'python2-requests' 'python2-crcmod' 'python2-click'
          'python2-sha3')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/Miserlou/omnihash.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/omnihash"

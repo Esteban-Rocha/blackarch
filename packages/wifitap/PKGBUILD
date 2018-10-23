@@ -2,8 +2,8 @@
 # See COPYING for license details.
 
 _gitname="GDSSecurity"
-pkgname='wifitap'
-pkgver='2b16088'
+pkgname=wifitap
+pkgver=2b16088
 pkgrel=9
 groups=('blackarch' 'blackarch-wireless')
 pkgdesc='WiFi injection tool through tun/tap device.'
@@ -14,7 +14,7 @@ depends=('python2' 'python2-scapy')
 optdepends=('pysco2: JIT optimization')
 makedepends=('git')
 source=('git+https://github.com/GDSSecurity/wifitap.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/wifitap"
@@ -33,8 +33,8 @@ prepare() {
 package() {
   cd "$srcdir/wifitap"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/wifitap"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/wifitap"
 
   for file in *.py ; do
     install -m755 "$file" "$pkgdir/usr/bin/${file%.*}"

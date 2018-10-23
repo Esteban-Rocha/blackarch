@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='hemingway'
+pkgname=hemingway
 pkgver=8.9c70a13
 pkgrel=2
 pkgdesc='A simple and easy to use spear phishing helper.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/ytisf/hemingway.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
 	cd "$srcdir/hemingway"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
 	cd "$srcdir/hemingway"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/hemingway"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/hemingway"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/hemingway" README.md
 

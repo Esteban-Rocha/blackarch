@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wsuspect-proxy'
+pkgname=wsuspect-proxy
 pkgver=24.89f9375
-pkgrel=1
+pkgrel=2
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-proxy')
 pkgdesc="A tool for MITM'ing insecure WSUS connections."
 arch=('any')
@@ -12,7 +12,7 @@ license=('MIT')
 makedepends=('git')
 depends=('python' 'python-twisted' 'python-lxml')
 source=('git+https://github.com/ctxis/wsuspect-proxy.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/wsuspect-proxy"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/wsuspect-proxy"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/wsuspect-proxy"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/wsuspect-proxy"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/wsuspect-proxy/README.md"
   install -Dm644 LICENSE.txt \

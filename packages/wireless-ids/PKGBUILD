@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wireless-ids'
-pkgver='24.b132071'
+pkgname=wireless-ids
+pkgver=24.b132071
 pkgrel=3
 groups=('blackarch' 'blackarch-wireless' 'blackarch-sniffer' 'blackarch-defensive')
 pkgdesc='Ability to detect suspicious activity such as (WEP/WPA/WPS) attack by sniffing the air for wireless packets.'
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/SYWorks/wireless-ids.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/wireless-ids"
@@ -23,7 +23,7 @@ pkgver() {
 package() {
   cd "$srcdir/wireless-ids"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   install -Dm644 mac-oui.db "$pkgdir/usr/share/wireless-ids/mac-oui.db"
   install -Dm644 wids.py "$pkgdir/usr/share/wireless-ids/wids.py"

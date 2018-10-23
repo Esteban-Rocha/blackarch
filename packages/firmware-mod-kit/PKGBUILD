@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='firmware-mod-kit'
-pkgver='099'
-pkgrel=5
+pkgname=firmware-mod-kit
+pkgver=099
+pkgrel=6
 groups=('blackarch' 'blackarch-firmware')
 pkgdesc='Modify firmware images without recompiling.'
 url='http://code.google.com/p/firmware-mod-kit'
@@ -11,7 +11,7 @@ arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 license=('MIT')
 depends=('python-magic')
 source=("http://firmware-mod-kit.googlecode.com/files/fmk_${pkgver}.tar.gz")
-sha1sums=('3d9aba969bdd88bf32940b9879b9e714ea7d2147')
+sha512sums=('3d9aba969bdd88bf32940b9879b9e714ea7d2147')
 
 build(){
   cd "$srcdir/fmk/src"
@@ -25,8 +25,8 @@ package() {
   cd "$srcdir/fmk"
 
   # Base directories
-  mkdir -p "$pkgdir/usr/share/firmware-mod-kit"
-  mkdir -p "$pkgdir/usr/share/doc/firmware-mod-kit"
+  install -dm 755 "$pkgdir/usr/share/firmware-mod-kit"
+  install -dm 755 "$pkgdir/usr/share/doc/firmware-mod-kit"
 
   # Shell scripts
   install -m755 *.sh "$pkgdir/usr/share/firmware-mod-kit/"

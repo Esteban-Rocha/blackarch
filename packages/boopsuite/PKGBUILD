@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='boopsuite'
-pkgver=161.0c7afe1
-pkgrel=2
+pkgname=boopsuite
+pkgver=162.bc7574c
+pkgrel=1
 pkgdesc='A Suite of Tools written in Python for wireless auditing and security testing.'
 groups=('blackarch' 'blackarch-wireless' 'blackarch-sniffer')
 arch=('any')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-argparse' 'python2-tabulate' 'python2-pyric'
          'python2-netaddr' 'python2-scapy')
 makedepends=('git')
 source=('git+https://github.com/M1ND-B3ND3R/BoopSuite.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/BoopSuite"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/BoopSuite"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/boopsuite"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/boopsuite"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/boopsuite/" README.md CHANGELOG
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/boopsuite/LICENSE"

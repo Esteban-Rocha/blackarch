@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='cmsmap'
-pkgver=3.37b64be
-pkgrel=2
+pkgname=cmsmap
+pkgver=7.cee25a7
+pkgrel=1
 epoch=1
 groups=('blackarch' 'blackarch-scanner' 'blackarch-automation'
         'blackarch-webapp' 'blackarch-exploitation')
@@ -14,7 +14,7 @@ license=('GPL3')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/Dionach/CMSmap.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/CMSmap"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/CMSmap"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/cmsmap"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/cmsmap"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/cmsmap" README.md DISCLAIMER.txt
   install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/cmsmap/LICENSE.txt"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='snoopy-ng'
+pkgname=snoopy-ng
 pkgver=128.eac73f5
 pkgrel=4
 groups=('blackarch' 'blackarch-drone' 'blackarch-exploitation'
@@ -19,7 +19,7 @@ depends=('python2' 'autossh' 'python2-psutil' 'libpcap' 'python2-sqlalchemy'
          'python2-flask' 'gpsd' 'python2-dateutil' 'python2-publicsuffix')
 makedepends=('git')
 source=('git+https://github.com/sensepost/snoopy-ng.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/snoopy-ng"
@@ -30,10 +30,10 @@ pkgver() {
 package() {
   cd "$srcdir/snoopy-ng"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir"/usr/share/snoopy-ng/{includes,plugins,transforms,uat,setup}
-  mkdir -p "$pkgdir/usr/share/doc/snoopy-ng"
-  mkdir -p "$pkgdir/usr/share/sslstrip-snoopy"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir"/usr/share/snoopy-ng/{includes,plugins,transforms,uat,setup}
+  install -dm 755 "$pkgdir/usr/share/doc/snoopy-ng"
+  install -dm 755 "$pkgdir/usr/share/sslstrip-snoopy"
 
   cp -a LICENSE.txt "$pkgdir/usr/share/snoopy-ng/"
   install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/snoopy-ng/LICENSE.txt"

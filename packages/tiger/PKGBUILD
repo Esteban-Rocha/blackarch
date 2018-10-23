@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='tiger'
-pkgver='3.2.3'
+pkgname=tiger
+pkgver=3.2.3
 pkgrel=7
 groups=('blackarch' 'blackarch-automation' 'blackarch-scanner')
 pkgdesc='A security scanner, that checks computer for known problems. Can also use tripwire, aide and chkrootkit.'
@@ -15,9 +15,9 @@ backup=('etc/tiger/tigerrc' 'etc/tiger/cronrc')
 source=("http://download.savannah.gnu.org/releases/tiger/tiger-${pkgver}.tar.gz"
         'tiger-makefile.diff'
         'build-fix.diff')
-sha1sums=('1751f9a2d73dc36ac89cce5bd224685fdd5e313c'
-          '2580679a39e2101390babcd5047c9b896ca9b806'
-          '2dc4c994f8df94bdeba02c0e7e826573db35ca16')
+sha512sums=('d0b8326ff0a0159aa99e794f114769c56d520c35a48c16d53d2ca90132ac32614fe84ae661f9ad61aa943ce8171b6051a0495e838e19447e1c34f26d5b730d73'
+            '79d9d514ee6ce8a30e68fb6ea6c751d21454321cbb96134dc65e66e34edc6c535b40068bc9138140742be0134f2e1961f3425af352caeab34b3363b4b90accde'
+            'c9105cdedb8de5a7b3485f95e342f7aa70071724534f96c11bb4752c0c48e1610791d85922a79671d42698902923f30cec84055bb20e9987f06f10db3a1c166e')
 
 prepare() {
   cd "$srcdir/tiger-$pkgver"
@@ -43,8 +43,8 @@ build() {
 package() {
   cd "$srcdir/tiger-$pkgver"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/tiger"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/tiger"
 
   cp -aR tiger "$pkgdir/usr/share/tiger/"
 

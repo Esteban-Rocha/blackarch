@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='rp'
+pkgname=rp
 pkgver=138.3a54a7c
 pkgrel=1
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-binary')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('')
 makedepends=('git' 'cmake')
 source=('git+https://github.com/0vercl0k/rp.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/rp"
@@ -23,7 +23,7 @@ pkgver() {
 build() {
   cd "$srcdir/rp"
 
-  mkdir -p build
+  install -dm 755 build
 
   cd build
 

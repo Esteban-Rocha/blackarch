@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dnsdrdos'
-pkgver='0.1'
+pkgname=dnsdrdos
+pkgver=0.1
 pkgrel=4
 groups=('blackarch' 'blackarch-dos')
 pkgdesc='Proof of concept code for distributed DNS reflection DoS.'
@@ -10,7 +10,7 @@ url='http://nullsecurity.net/tools/dos.html'
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 license=('custom')
 source=('http://nullsecurity.net/tools/dos/dnsdrdos.c')
-sha1sums=('764daa5183bba9a17b5b820b744fb4878454c696')
+sha512sums=('764daa5183bba9a17b5b820b744fb4878454c696')
 
 build() {
   cd "$srcdir"

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='a2sv'
-pkgver=122.701dcee
+pkgname=a2sv
+pkgver=127.4a876d5
 pkgrel=1
 pkgdesc='Auto Scanning to SSL Vulnerability.'
 groups=('blackarch' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2' 'python2-netaddr' 'openssl')
 makedepends=('git')
 source=('git+https://github.com/hahwul/a2sv.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/a2sv"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/a2sv"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/a2sv"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/a2sv"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/a2sv/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/a2sv/LICENSE"

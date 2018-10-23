@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='kickthemout'
-pkgver=196.e680a9b
-pkgrel=2
+pkgname=kickthemout
+pkgver=201.a438690
+pkgrel=1
 pkgdesc='Kick devices off your network by performing an ARP Spoof attack.'
 groups=('blackarch' 'blackarch-networking')
 arch=('any')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2' 'python2-scapy')
 makedepends=('git')
 source=('git+https://github.com/k4m4/kickthemout.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/kickthemout"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/kickthemout"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/kickthemout"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/kickthemout"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/kickthemout/" readme.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/kickthemout/LICENSE"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='xssless'
+pkgname=xssless
 pkgver=45.8e7ebe1
 pkgrel=2
 pkgdesc='An automated XSS payload generator written in python.'
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2' 'python2-beautifulsoup4')
 makedepends=('git')
 source=('git+https://github.com/mandatoryprogrammer/xssless.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/xssless"
@@ -30,8 +30,8 @@ prepare() {
 package() {
   cd "$srcdir/xssless"
 
-  mkdir -p "$pkgdir/usr/share/xssless"
-  mkdir -p "$pkgdir/usr/bin/"
+  install -dm 755 "$pkgdir/usr/share/xssless"
+  install -dm 755 "$pkgdir/usr/bin/"
 
   cp -a --no-preserve=ownership * "$pkgdir/usr/share/xssless"
 

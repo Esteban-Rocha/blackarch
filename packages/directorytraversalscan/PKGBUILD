@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='directorytraversalscan'
-pkgver='1.0.1.0'
+pkgname=directorytraversalscan
+pkgver=1.0.1.0
 pkgrel=3
 groups=('blackarch' 'blackarch-windows' 'blackarch-webapp')
 pkgdesc='Detect directory traversal vulnerabilities in HTTP servers and web applications.'
@@ -10,12 +10,12 @@ url='http://sourceforge.net/projects/httpdirscan/'
 arch=('any')
 license=('unknown')
 source=("http://downloads.sourceforge.net/project/httpdirscan/DirectoryTraversalScan${pkgver}.zip")
-sha1sums=('77329c9eb0499ef193047f85e7c68456701dfe01')
+sha512sums=('edff2de295ff9ed16d43a9020790e8527f68a23a8e5531db4393acd020224232421fab2a87319390f92bbf58667c570d0d349c3736fc744a971936deaea1674a')
 
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/share/windows/directorytraversalscan"
+  install -dm 755 "$pkgdir/usr/share/windows/directorytraversalscan"
 
   rm DirectoryTraversalScan${pkgver}.zip
 

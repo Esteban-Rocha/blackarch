@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='iptv'
+pkgname=iptv
 pkgver=136.de37822
 pkgrel=1
 pkgdesc='Search and brute force illegal iptv server.'
@@ -13,7 +13,7 @@ depends=('python2' 'python2-google' 'python2-psutil' 'python2-clint'
          'python2-colored' 'python2-pyprind' 'python2-pyqt4')
 makedepends=('git')
 source=('git+https://github.com/Pinperepette/IPTV.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/IPTV"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/IPTV"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/iptv"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/iptv"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/iptv/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/iptv/LICENSE"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='cisco-snmp-enumeration'
+pkgname=cisco-snmp-enumeration
 pkgver=10.ad06f57
 pkgrel=3
 groups=('blackarch' 'blackarch-automation' 'blackarch-networking'
@@ -13,7 +13,7 @@ license=('GPL3')
 depends=('bash' 'metasploit' 'net-snmp' 'john' 'screen')
 makedepends=('git')
 source=('git+https://github.com/nccgroup/cisco-SNMP-enumeration.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/cisco-SNMP-enumeration"

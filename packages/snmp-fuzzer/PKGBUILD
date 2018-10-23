@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='snmp-fuzzer'
-pkgver='0.1.1'
+pkgname=snmp-fuzzer
+pkgver=0.1.1
 pkgrel=5
 groups=('blackarch' 'blackarch-fuzzer' 'blackarch-networking')
 pkgdesc='SNMP fuzzer uses Protos test cases with an entirely new engine written in Perl.'
@@ -11,13 +11,13 @@ url='http://www.arhont.com/en/category/resources/tools-utilities/'
 license=('custom')
 depends=('perl')
 source=('http://dl.packetstormsecurity.net/UNIX/misc/snmp-fuzzer-0.1.1.tar.bz2')
-sha1sums=('d0be14daaaaf2be5ba40338899eda1f9af2351ce')
+sha512sums=('9527ab9ffd38e7f7fc0b1bb0695b436eb4e920692b4fd75b035dbde1a8e25a70c8da0295cac8f367a0563f62f2edc3c7080fb03784a1b4958b25e1c68042247e')
 
 package() {
   cd "$srcdir/snmp-fuzzer-$pkgver"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/snmp-fuzzer"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/snmp-fuzzer"
 
   install -Dm744 README "$pkgdir/usr/share/doc/snmp-fuzzer/README"
   install -Dm744 LICENSE.TXT "$pkgdir/usr/share/licenses/snmp-fuzzer/LICENSE"

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wuzz'
-pkgver=204.37fd354
+pkgname=wuzz
+pkgver=209.4c6d320
 pkgrel=1
 groups=('blackarch' 'blackarch-webapp' 'blackarch-misc')
 pkgdesc='Interactive cli tool for HTTP inspection.'
@@ -12,7 +12,7 @@ license=('GAGPL3')
 depends=('go')
 makedepends=('go' 'git')
 source=('git+https://github.com/asciimoo/wuzz.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 _url="github.com/asciimoo/wuzz"
 
 pkgver() {
@@ -24,7 +24,7 @@ pkgver() {
 build() {
   cd "$srcdir"
 
-  mkdir -p src/$_url && rm -rf src/$_url && mv wuzz src/$_url && cd src/$_url
+  install -dm 755 src/$_url && rm -rf src/$_url && mv wuzz src/$_url && cd src/$_url
 
   GOPATH="$srcdir" go get -d -t $_url
 }
@@ -32,8 +32,8 @@ build() {
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/doc/wuzz"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/doc/wuzz"
 
   GOPATH="$srcdir" go build -v github.com/asciimoo/wuzz
 

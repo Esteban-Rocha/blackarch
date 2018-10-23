@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='awsbucketdump'
+pkgname=awsbucketdump
 pkgver=74.73365f9
-pkgrel=1
+pkgrel=2
 pkgdesc='A tool to quickly enumerate AWS S3 buckets to look for loot.'
 groups=('blackarch' 'blackarch-automation' 'blackarch-scanner')
 arch=('any')
@@ -23,7 +23,7 @@ pkgver() {
 package() {
   cd "${srcdir}/AWSBucketDump"
 
-  mkdir -p "${pkgdir}/usr/share/wordlists/awsbucketdump/"
+  install -dm 755 "${pkgdir}/usr/share/wordlists/awsbucketdump/"
 
   install -Dm755 "AWSBucketDump.py" "$pkgdir/usr/bin/awsbucketdump"
   install -Dm644 -t "${pkgdir}/usr/share/wordlists/awsbucketdump/" \

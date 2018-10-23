@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pcredz'
-pkgver=35.306167d
-pkgrel=2
+pkgname=pcredz
+pkgver=45.c8bca9d
+pkgrel=1
 groups=('blackarch' 'blackarch-scanner')
 pkgdesc='A tool that extracts credit card numbers, NTLM(DCE-RPC, HTTP, SQL, LDAP, etc), Kerberos (AS-REQ Pre-Auth etype 23), HTTP Basic, SNMP, POP, SMTP, FTP, IMAP, and more from a pcap file or from a live interface.'
 arch=('any')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2' 'python2-pylibpcap')
 makedepends=('git')
 source=('git+https://github.com/lgandx/PCredz.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/PCredz"

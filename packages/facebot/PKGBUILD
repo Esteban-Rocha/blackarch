@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='facebot'
+pkgname=facebot
 pkgver=23.57f6025
 pkgrel=3
 groups=('blackarch' 'blackarch-recon' 'blackarch-webapp')
@@ -17,7 +17,7 @@ depends=('python2' 'python2-beautifulsoup4' 'python2-configparser'
          'python2-setuptools')
 makedepends=('git')
 source=('git+https://github.com/pun1sh3r/facebot.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/facebot"
@@ -28,8 +28,8 @@ pkgver() {
 package() {
   cd "$srcdir/facebot"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/facebot"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/facebot"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/facebot" README.md Dependencies \
     requirements.txt

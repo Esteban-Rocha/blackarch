@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='fs-nyarl'
-pkgver='1.0'
+pkgname=fs-nyarl
+pkgver=1.0
 pkgrel=5
 groups=('blackarch' 'blackarch-scanner' 'blackarch-networking'
         'blackarch-forensic' 'blackarch-spoof' 'blackarch-exploitation'
@@ -15,14 +15,14 @@ depends=('chaosreader' 'ettercap' 'dsniff' 'arp-scan'  'beef' 'p0f' 'mitmproxy'
         'tcpdump' 'metasploit' 'macchanger' 'hamster' 'foremost' 'sslstrip'
         'sslsplit')
 source=("http://www.fulgursecurity.com/tools/fs-nyarl/FS-NyarL_v${pkgver}-kali.tar.gz")
-sha1sums=('8e17fdb9c1941faaec2ccfff0c56096d66778363')
+sha512sums=('8e17fdb9c1941faaec2ccfff0c56096d66778363')
 
 package() {
   cd "$srcdir/FS-NyarL_v${pkgver}-kali"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/fs-nyarl"
-  mkdir -p "$pkgdir/usr/share/doc/fs-nyarl"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/fs-nyarl"
+  install -dm 755 "$pkgdir/usr/share/doc/fs-nyarl"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/fs-nyarl" README CHANGELOG TODO \
     docs/FS-NyarL.jpg docs/FS-NyarL_Manual_v1.0.pdf

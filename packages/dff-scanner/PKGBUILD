@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dff-scanner'
-pkgver='1.1'
+pkgname=dff-scanner
+pkgver=1.1
 pkgrel=2
 pkgdesc='Tool for finding path of predictable resource locations.'
 arch=('any')
@@ -11,11 +11,11 @@ license=('custom')
 depends=('php')
 groups=('blackarch' 'blackarch-webapp')
 source=("http://netsec.rs/UserFiles/File/DFF.zip")
-sha1sums=('286852ca9b085a3b8cab2344e5dd63642d3c76c2')
+sha512sums=('286852ca9b085a3b8cab2344e5dd63642d3c76c2')
 
 package() {
   cd "$srcdir/DFF"
 
-  mkdir -p "$pkgdir/usr/share/dff-scanner"
+  install -dm 755 "$pkgdir/usr/share/dff-scanner"
   cp -r * "$pkgdir/usr/share/dff-scanner"
 }

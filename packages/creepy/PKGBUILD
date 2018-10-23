@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='creepy'
+pkgname=creepy
 pkgver=137.9f60449
 pkgrel=3
 epoch=1
@@ -16,7 +16,7 @@ depends=('python2' 'python2-tweepy' 'python2-osmgpsmap' 'python2-flickrapi'
          'python2-beautifulsoup3' 'python2-exiv2' 'python2-configobj'
          'python2-simplejson' 'python2-yapsy' 'python2-pyqt4')
 source=('git+https://github.com/ilektrojohn/creepy.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/creepy"
@@ -27,8 +27,8 @@ pkgver() {
 package() {
   cd "$srcdir/creepy"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/creepy"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/creepy"
 
   install -Dm644 README.md "$pkgdir/usr/share/creepy/doc/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/creepy/LICENSE"

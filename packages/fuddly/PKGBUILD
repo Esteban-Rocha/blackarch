@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='fuddly'
+pkgname=fuddly
 pkgver=465.ed17a0b
 pkgrel=1
 groups=('blackarch' 'blackarch-fuzzer')
@@ -14,7 +14,7 @@ depends=('python2' 'python2-pycups' 'python2-rpyc' 'python2-pysqlite'
 makedepends=('git' 'python2-sphinx')
 source=('git+https://github.com/k0retux/fuddly.git')
 install=fuddly.install
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/fuddly"
@@ -41,8 +41,8 @@ build() {
 package() {
   cd "$srcdir/fuddly"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/fuddly"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/fuddly"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/fuddly/" README.rst TODO
   cp -a docs/build/html/ "$pkgdir/usr/share/doc/fuddly/"

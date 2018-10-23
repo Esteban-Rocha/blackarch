@@ -1,17 +1,17 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-telepot'
-pkgver='12.4'
-pkgrel=1
+pkgname=python2-telepot
+pkgver=12.6
+pkgrel=2
 pkgdesc='Python framework for Telegram Bot API.'
 arch=('any')
-url='https://pypi.python.org/pypi/telepot/'
+url='https://pypi.org/project/telepot/#files'
 license=('MIT')
 depends=('python2')
 makedepends=('python2-setuptools')
-source=("https://pypi.python.org/packages/e2/0d/fd58f0447113a50bc6bde4284e968a655835b4dcf9c4a2c85ffab0c54c7f/telepot-${pkgver}.tar.gz")
-sha1sums=('d95c898fcb14a5580ff90745cb5dbecc73dc6289')
+source=("https://files.pythonhosted.org/packages/50/ed/1a5047f8ef7c6f721f02afd882cf50f118f5b16ae78eeec226a5adbe80e5/telepot-${pkgver}.tar.gz")
+sha512sums=('1fa6ab968b300599826e3c6dbf2f9b2d2931909643ff5c45a2143daf28e10e2b017b60de16ea463b78399726627639d354e895258f9a57106a98603d6fe47282')
 
 build() {
   cd "$srcdir/telepot-$pkgver"

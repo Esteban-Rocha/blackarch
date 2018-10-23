@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='nsia'
-pkgver='1.0.6'
+pkgname=nsia
+pkgver=1.0.6
 pkgrel=3
 pkgdesc='A website scanner that monitors websites in realtime in order to detect defacements, compliance violations, exploits, sensitive information disclosure and other issues.'
 url='http://threatfactor.com/Products/'
@@ -15,7 +15,7 @@ source=('http://threatfactor.com/Support/Files/ThreatFactor%20NSIA.zip'
         'http://threatfactor.com/Support/Files/NSIA.Definitions'
         'nsia.tmpfiles.conf'
         'rhino.jar')
-sha1sums=('be091d9cf148acb88d76560ae205d5d646982c04'
+sha512sums=('be091d9cf148acb88d76560ae205d5d646982c04'
           'e76eba574b37b9df153192fd8329d9a936600fc1'
           'eaaf1e631a8cddaf86e4ce05cd6997962ac023dc'
           'c8b24b8803e5295030bc2a209cfd6ce0001b92b4')
@@ -35,8 +35,8 @@ package() {
 
   unset _JAVA_OPTIONS
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/var/lib/nsia/var"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/var/lib/nsia/var"
 
   install -Dm644 nsia.tmpfiles.conf "$pkgdir/usr/lib/tmpfiles.d/nsia.conf"
   install -Dm644 -t "$pkgdir/usr/share/nsia/doc" doc/"Quick Start Guide.pdf" \

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='weeman'
+pkgname=weeman
 pkgver=91.53c2efa
 pkgrel=1
 groups=('blackarch' 'blackarch-social')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-beautifulsoup4' 'python2-html5lib' 'python2-lxml'
          'python2-pdb')
 makedepends=('git')
 source=('git+https://github.com/Hypsurus/weeman.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/weeman"
@@ -31,8 +31,8 @@ prepare() {
 package() {
   cd "$srcdir/weeman"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/weeman"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/weeman"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/weeman/" README.md ChangeLog
 

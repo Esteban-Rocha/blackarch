@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='cewl'
-pkgver='5.3'
-pkgrel=2
+pkgname=cewl
+pkgver=5.3
+pkgrel=3
 groups=('blackarch' 'blackarch-automation' 'blackarch-cracker')
 pkgdesc='A custom word list generator'
 arch=('any')
@@ -13,7 +13,7 @@ depends=('ruby' 'ruby-spider' 'ruby-mini_exiftool' 'ruby-nokogiri'
          'ruby-http_configuration' 'ruby-rubyzip' 'ruby-zip' 'ruby-mime-types')
 source=("https://github.com/digininja/CeWL/archive/${pkgver}.tar.gz")
 install='cewl.install'
-sha1sums=('c9f5325dd360384cc4712e2ffbb428e7fa1f56be')
+sha512sums=('579c997b3edf7d09bbe10e70b2d64c3b27114a4bf2212ff74c57e4e3ea146bf84172f0a4018499c534a6f1a75ee29fdb38b6b5e8b470c9c2b41954ae982cb221')
 
 prepare() {
   cd "$srcdir/CeWL-$pkgver"
@@ -24,8 +24,8 @@ prepare() {
 package() {
   cd "$srcdir/CeWL-$pkgver"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/cewl"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/cewl"
 
   install -Dm644 README "$pkgdir/usr/share/doc/cewl/README"
 

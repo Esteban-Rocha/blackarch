@@ -1,18 +1,19 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='blackarch-config-awesome'
-pkgver=21.d424b89
-pkgrel=1
+pkgname=blackarch-config-awesome
+pkgver=28.5444831
+pkgrel=3
 pkgdesc='BlackArch menu, theme and config for awesome window manager.'
+groups=('blackarch-config')
 arch=('any')
 url='https://github.com/BlackArch/blackarch-config-awesome'
 license=('custom')
-depends=('awesome' 'feh' 'blackarch-wallpaper')
+depends=('awesome' 'feh' 'blackarch-wallpaper' 'terminus-font' 'xterm')
 makedepends=('git')
 source=('git+https://github.com/BlackArch/blackarch-config-awesome.git')
 install='blackarch-config-awesome.install'
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/blackarch-config-awesome"
@@ -23,9 +24,7 @@ pkgver() {
 package() {
   cd "$srcdir/blackarch-config-awesome"
 
-  mkdir -p "$pkgdir/etc"
-  mkdir -p "$pkgdir/usr"
+  install -dm 755 "$pkgdir/usr/share/blackarch/config/awesome"
 
-  cp -p -r etc/* "$pkgdir/etc/"
-  cp -p -r usr/* "$pkgdir/usr/"
+  cp -a * "$pkgdir/usr/share/blackarch/config/awesome"
 }

@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='hate-crack'
-pkgver=38.9879cea
-pkgrel=2
+pkgname=hate-crack
+pkgver=51.47ba42c
+pkgrel=1
 pkgdesc='A tool for automating cracking methodologies through Hashcat.'
 groups=('blackarch' 'blackarch-automation' 'blackarch-cracker')
 arch=('any')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'pygtk' 'python2-pyenchant')
 makedepends=('git')
 source=('git+https://github.com/trustedsec/hate_crack.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/hate_crack"
@@ -29,8 +29,8 @@ prepare() {
 package() {
   cd "$srcdir/hate_crack"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/hate-crack"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/hate-crack"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/hate-crack/" readme.md
 

@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wordpot'
-pkgver=38.ca12cb5
-pkgrel=3
+pkgname=wordpot
+pkgver=44.e96889b
+pkgrel=1
 groups=('blackarch' 'blackarch-honeypot' 'blackarch-defensive')
 pkgdesc='A Wordpress Honeypot.'
 arch=('any')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2' 'python2-flask')
 makedepends=('git')
 source=('git+https://github.com/gbrindisi/wordpot.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/wordpot"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/wordpot"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/wordpot"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/wordpot"
 
   install -Dm644 README.md "$pkgdir/usr/share/licenses/wordpot/LICENSE"
 

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dnsbrute'
+pkgname=dnsbrute
 pkgver=2.b1dc84a
 pkgrel=2
 groups=('blackarch' 'blackarch-recon' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2' 'python2-dnspython')
 makedepends=('git')
 source=('git+https://github.com/d4rkcat/dnsbrute.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/dnsbrute"
@@ -29,7 +29,7 @@ prepare() {
 package() {
   cd "$srcdir/dnsbrute"
 
-  mkdir -p "$pkgdir/usr/share/dnsbrute"
+  install -dm 755 "$pkgdir/usr/share/dnsbrute"
 
   install -Dm755 dnsbrute.py "$pkgdir/usr/bin/dnsbrute"
   install -Dm644 README.md "$pkgdir/usr/share/doc/dnsbrute/README.md"

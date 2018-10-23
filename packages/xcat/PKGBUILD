@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='xcat'
-pkgver='0.9'
-pkgrel=2
+pkgname=xcat
+pkgver=0.9
+pkgrel=4
 pkgdesc='A command line tool to automate the exploitation of blind XPath injection vulnerabilities.'
 url="https://github.com/orf/xcat"
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-automation')
@@ -15,7 +15,14 @@ license=('MIT')
 arch=('any')
 source=("https://pypi.python.org/packages/6b/60/3f8582bdc4b2bec849fdddbe94185b8daab63e10067126bdbd4b484555a6/xcat-${pkgver}.tar.gz")
 install='xcat.install'
-sha1sums=('f96ccacdc481e6e5281aadd77ff176dd479d6d7f')
+sha512sums=('ac076ec6c3caea7c7e418044ced41805c9cf6c85cdc882a98335408e0ebeb865e630ceb172470efa6a41442261b2f08286d67a6243f660f7a522ef7814e54237')
+
+prepare() {
+  cd "$srcdir/xcat-$pkgver"
+
+  sed -i 's|xpath-expressions~=0.2|xpath-expressions|' setup.py
+  sed -i 's|aiohttp~=2.1|aiohttp|' setup.py
+}
 
 build() {
   cd "$srcdir/xcat-$pkgver"

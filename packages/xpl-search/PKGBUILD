@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='xpl-search'
+pkgname=xpl-search
 pkgver=42.d4dbc97
 pkgrel=2
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-misc')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('php' 'curl')
 makedepends=('git')
 source=('git+https://github.com/CoderPirata/XPL-SEARCH.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/XPL-SEARCH"

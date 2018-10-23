@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='hpfeeds'
+pkgname=hpfeeds
 pkgver=164.f18712d
 pkgrel=2
 pkgdesc='Honeynet Project generic authenticated datafeed protocol.'
@@ -12,7 +12,7 @@ license=('BSD')
 depends=('python2')
 makedepends=('git')
 source=('git://github.com/rep/hpfeeds.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/hpfeeds"

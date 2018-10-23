@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='sandsifter'
+pkgname=sandsifter
 pkgver=2.8375e61
 pkgrel=1
 pkgdesc='The x86 processor fuzzer.'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-argparse' 'capstone')
 makedepends=('git' 'make' 'sed')
 source=('git+https://github.com/xoreaxeaxeax/sandsifter.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "${srcdir}/sandsifter"
@@ -32,8 +32,8 @@ build () {
 package() {
   cd "${srcdir}/sandsifter"
 
-  mkdir -p "${pkgdir}/usr/bin"
-  mkdir -p "${pkgdir}/opt/sandsifter"
+  install -dm 755 "${pkgdir}/usr/bin"
+  install -dm 755 "${pkgdir}/opt/sandsifter"
 
   install -Dm644 -t "${pkgdir}/usr/share/doc/sandsifter/" README.md
 

@@ -1,21 +1,21 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='keimpx'
+pkgname=keimpx
 pkgver=166.a10a0c7
-pkgrel=2
+pkgrel=3
 epoch=3
 groups=('blackarch' 'blackarch-cracker')
 pkgdesc='Tool to verify the usefulness of credentials across a network over SMB.'
 url='http://code.google.com/p/keimpx/'
 license=('Apache')
-depends=('python2' 'impacket' 'python2-crypto')
+depends=('python2' 'impacket' 'python2-pycryptodome')
 makedepends=('git' 'python2-distribute')
 arch=('any')
 source=('git+https://github.com/inquisb/keimpx.git'
         'setup.py-remove_py2exe.patch')
-sha1sums=('SKIP'
-          'd54425f9d34d17870d13eade888207252233cfb5')
+sha512sums=('SKIP'
+            'aec4d1650df3dbf7442c803c7cb7f08739c0a71c7c504cfce09781621cf84a5c8447b2126bde895d8de909dbed3cb9c30c1266bc7c4a647d8a95afbc2e9c5b36')
 
 pkgver() {
   cd "$srcdir/keimpx"
@@ -33,8 +33,8 @@ prepare() {
 package() {
   cd "$srcdir/keimpx"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/keimpx"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/keimpx"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/keimpx/README.md"
 

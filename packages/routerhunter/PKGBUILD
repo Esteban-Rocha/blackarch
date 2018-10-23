@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='routerhunter'
+pkgname=routerhunter
 pkgver=21.4da257c
 pkgrel=1
 groups=('blackarch' 'blackarch-scanner' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-simplejson')
 makedepends=('git')
 source=('git+https://github.com/jh00nbr/Routerhunter-2.0.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Routerhunter-2.0"

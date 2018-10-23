@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='packetsender'
-pkgver=343.d197cd5
+pkgname=packetsender
+pkgver=377.4535e09
 pkgrel=1
 groups=('blackarch' 'blackarch-networking')
 pkgdesc='An open source utility to allow sending and receiving TCP and UDP packets.'
@@ -13,7 +13,7 @@ depends=('openssl' 'qt5-base' 'libxcb' 'libcap' 'libgcrypt' 'libstdc++5'
          'libpng' 'glib2')
 makedepends=('git')
 source=('git+https://github.com/dannagle/PacketSender.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/PacketSender"

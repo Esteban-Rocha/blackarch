@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='nosqlattack'
-pkgver=91.4c55415
+pkgname=nosqlattack
+pkgver=94.93c9bde
 pkgrel=1
 pkgdesc='Python tool to automate exploit MongoDB server IP on Internet anddisclose the database data by MongoDB default configuration weaknesses and injection attacks.'
 groups=('blackarch' 'blackarch-automation' 'blackarch-scanner')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-httplib2' 'python2-pymongo' 'python2-requests'
          'python2-ipcalc' 'shodan' 'mongodb')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/youngyangyang04/NoSQLAttack.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/NoSQLAttack"
@@ -30,8 +30,8 @@ build() {
 package() {
   cd "$srcdir/NoSQLAttack"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/nosqlattack"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/nosqlattack"
 
 #  python2 setup.py install --root="$pkgdir" --prefix=/usr --optimize=1
 

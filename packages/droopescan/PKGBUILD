@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='droopescan'
-pkgver='1.40.2'
+pkgname=droopescan
+pkgver=1.41.1
 pkgrel=1
 groups=('blackarch' 'blackarch-scanner' 'blackarch-webapp')
 pkgdesc='A plugin-based scanner that aids security researchers in identifying issues with several CMSs, mainly Drupal & Silverstripe.'
@@ -14,7 +14,7 @@ depends=('python2' 'python2-cement' 'python2-requests' 'python2-pystache'
          'python2-beautifulsoup4' 'python2-simplejson')
 makedepends=('git')
 source=("https://github.com/droope/droopescan/archive/${pkgver}.tar.gz")
-sha1sums=('c82cb3aeb63510ef18b499da010a9a21d271a5db')
+sha512sums=('2aab2e1a86f7ff787192f00b465753ea9ae0a69956bfe7693de91c580f3d512488c0817c76d300fd7aeb61f702a5caf141b24e1c70e76a510123e4eb7e2c5935')
 
 build() {
   cd "$srcdir/droopescan-$pkgver"

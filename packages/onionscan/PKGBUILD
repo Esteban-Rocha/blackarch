@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='onionscan'
+pkgname=onionscan
 pkgver=130.da42865
 pkgrel=1
 groups=('blackarch' 'blackarch-scanner' 'blackarch-defensive')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('glibc' 'go' 'libexif')
 makedepends=('go' 'git')
 source=('git+https://github.com/s-rah/onionscan.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 url='github.com/s-rah/onionscan'
 
 pkgver() {
@@ -24,7 +24,7 @@ pkgver() {
 build() {
   cd "$srcdir"
 
-  mkdir -p src/${url} && rm -rf src/${url} && mv onionscan src/${url} && \
+  install -dm 755 src/${url} && rm -rf src/${url} && mv onionscan src/${url} && \
     cd src/${url}
 
   GOPATH="$srcdir" go get -d -t ${url}
@@ -33,7 +33,7 @@ build() {
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   GOPATH="$srcdir" go build -v ${url}
 

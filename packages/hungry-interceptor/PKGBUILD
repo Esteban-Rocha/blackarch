@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='hungry-interceptor'
+pkgname=hungry-interceptor
 pkgver=391.1aea7f3
 pkgrel=1
 groups=('blackarch' 'blackarch-sniffer')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-flask-wtf' 'python2-flask-cors'
          'python2-flask-pymongo' 'python2-py2neo')
 makedepends=('git')
 source=('git+https://github.com/nbuechler/hungry-interceptor.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/hungry-interceptor"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/hungry-interceptor"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/hungry-interceptor"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/hungry-interceptor"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/hungry-interceptor/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/hungry-interceptor/LICENSE"

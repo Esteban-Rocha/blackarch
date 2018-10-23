@@ -1,18 +1,18 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='c5scan'
+pkgname=c5scan
 pkgver=29.33a500c
-pkgrel=1
+pkgrel=2
 pkgdesc='Vulnerability scanner and information gatherer for the Concrete5 CMS.'
-groups=('blackarch' 'blackarch-webabb' 'blackarch-scan' 'blackarch-recon')
+groups=('blackarch' 'blackarch-webapp' 'blackarch-scan' 'blackarch-recon')
 arch=('any')
 url='https://github.com/auraltension/c5scan'
 license=('GPL2')
 depends=('python2' 'python2-argparse' 'python2-lxml' 'python2-requests')
 makedepends=('git')
 source=('git+https://github.com/auraltension/c5scan')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/c5scan"

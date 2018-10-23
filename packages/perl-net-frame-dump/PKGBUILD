@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='perl-net-frame-dump'
-pkgver='1.14'
-pkgrel=5
+pkgname=perl-net-frame-dump
+pkgver=1.15
+pkgrel=2
 pkgdesc='Base-class for a tcpdump like implementation.'
 arch=('any')
 url='http://search.cpan.org/~gomor/Net-Frame-Dump-1.13/lib/Net/Frame/Dump.pm'
@@ -11,7 +11,7 @@ license=('GPL' 'PerlArtistic')
 depends=('perl')
 options=(!emptydirs)
 source=("http://search.cpan.org/CPAN/authors/id/G/GO/GOMOR/Net-Frame-Dump-${pkgver}.tar.gz")
-sha1sums=('897b7136c9065cf19b4f3b6a852b5b40a6925996')
+sha512sums=('567c8bd4e5a1e0df0b020a65c2bcbc25b7fbefee45e19205b9f7a3d9e22d2e1ca015b28f77a9dcdc01fb3618a2a231f2b585a9bf0cfa00e0219bb087351d6761')
 
 prepare() {
   cd "$srcdir/Net-Frame-Dump-$pkgver"

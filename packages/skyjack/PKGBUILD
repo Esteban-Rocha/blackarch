@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='skyjack'
+pkgname=skyjack
 pkgver=16.24e3878
 pkgrel=1
 groups=('blackarch' 'blackarch-drone')
@@ -13,7 +13,7 @@ depends=('node-ar-drone')
 makedepends=('git')
 optdepends=('aircrack-ng: putting wireless card in monitor mode')
 source=('git+https://github.com/samyk/skyjack')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/skyjack"
@@ -30,7 +30,7 @@ prepare() {
 package() {
   cd "$srcdir/skyjack"
 
-  mkdir -p "$pkgdir/usr/share/skyjack"
+  install -dm 755 "$pkgdir/usr/share/skyjack"
 
   install -Dm755 skyjack.pl "$pkgdir/usr/bin/skyjack"
   install -Dm644 README.md "$pkgdir/usr/share/doc/skyjack/README.md"

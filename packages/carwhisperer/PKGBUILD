@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='carwhisperer'
-pkgver='0.2'
+pkgname=carwhisperer
+pkgver=0.2
 pkgrel=4
 pkgdesc='Intends to sensibilise manufacturers of carkits and other Bluetooth appliances without display and keyboard for the possible security threat evolving from the use of standard passkeys.'
 url='http://trifinite.org/trifinite_stuff_carwhisperer.html'
@@ -11,7 +11,7 @@ license=('GPL')
 depends=('bluez-libs' 'perl')
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 source=("http://trifinite.org/Downloads/carwhisperer-${pkgver}.tar.gz")
-sha1sums=('072f5fef66d2d0a5a3bcece1800cfeb577c38e23')
+sha512sums=('bf322bde831ae7eaceba4d2dd3d34768218c5db693f8eda28af0a1cc0fb889f4e66f1c8baadd39f2203b61b478e4ae73e4dd2b59be878410b2badf23e2eb80e1')
 
 build() {
   cd "$srcdir/carwhisperer-$pkgver"
@@ -22,10 +22,10 @@ build() {
 package(){
   cd "$srcdir/carwhisperer-$pkgver"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/carwhisperer/samples"
-  mkdir -p "$pkgdir/usr/share/carwhisperer/scripts"
-  mkdir -p "$pkgdir/usr/share/doc/carwhisperer"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/carwhisperer/samples"
+  install -dm 755 "$pkgdir/usr/share/carwhisperer/scripts"
+  install -dm 755 "$pkgdir/usr/share/doc/carwhisperer"
 
   install -Dm755 carwhisperer "$pkgdir/usr/bin/carwhisperer"
   install -m644 README "$pkgdir/usr/share/doc/carwhisperer"

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ptf'
-pkgver=953.7f34a53
+pkgname=ptf
+pkgver=1012.ccdc840
 pkgrel=1
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-scanner'
         'blackarch-recon' 'blackarch-automation')
@@ -13,7 +13,7 @@ license=('custom:unknown')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/trustedsec/ptf.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ptf"
@@ -30,8 +30,8 @@ prepare() {
 package() {
   cd "$srcdir/ptf"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/ptf"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/ptf"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/ptf/" README.md \
     readme/*

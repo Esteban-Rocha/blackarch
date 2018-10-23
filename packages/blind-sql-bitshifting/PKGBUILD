@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='blind-sql-bitshifting'
+pkgname=blind-sql-bitshifting
 pkgver=54.5bbc183
 pkgrel=1
 pkgdesc='A blind SQL injection module that uses bitshfting to calculate characters.'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2' 'python2-requests')
 makedepends=('git')
 source=('git+https://github.com/libeclipse/blind-sql-bitshifting.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/blind-sql-bitshifting"
@@ -23,7 +23,7 @@ pkgver() {
 package() {
   cd "$srcdir/blind-sql-bitshifting"
 
-  mkdir -p "$pkgdir/usr/share/blind-sql-bitshifting"
+  install -dm 755 "$pkgdir/usr/share/blind-sql-bitshifting"
 
   install -Dm755 blind_sql_bitshifting.py \
     "$pkgdir/usr/bin/blind-sql-bitshifting"

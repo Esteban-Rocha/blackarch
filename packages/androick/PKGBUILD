@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='androick'
-pkgver=5.35048d7
-pkgrel=2
+pkgname=androick
+pkgver=8.522cfb4
+pkgrel=1
 groups=('blackarch' 'blackarch-mobile' 'blackarch-forensic')
 pkgdesc='A python tool to help in forensics analysis on android.'
 arch=('any')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-magic' 'sqlite' 'android-sdk-build-tools'
          'android-sdk-platform-tools' 'android-sdk')
 makedepends=('git')
 source=('git+https://github.com/Flo354/Androick.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Androick"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/Androick"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/androick"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/androick"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/androick/README.md"
   install -m644 changelog "$pkgdir/usr/share/doc/androick/changelog"

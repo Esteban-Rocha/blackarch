@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='lfi-autopwn'
-pkgver='3.0'
+pkgname=lfi-autopwn
+pkgver=3.0
 pkgrel=5
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-fuzzer')
 pkgdesc="A Perl script to try to gain code execution on a remote server via LFI"
@@ -11,7 +11,7 @@ arch=('any')
 license=('GPL2')
 depends=('perl' 'perl-libwhisker2')
 source=("http://www.blackhatlibrary.net/releases/lfi_autopwn.tgz")
-sha1sums=('b21c68ea11d643da5766d998a48ec80f237995f3')
+sha512sums=('973b983a194393cbfbbd67a3b20cf8b3b0b957c1d550a46d1d95d1034428da717d4ff5bbe49e5bdac67da9d94d84ee52815a07ff3f26b4b8c58f4b8f8f962c26')
 
 package() {
   cd "$srcdir/lfi_autopwn"

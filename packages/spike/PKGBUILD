@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='spike'
-pkgver='2.9'
+pkgname=spike
+pkgver=2.9
 pkgrel=6
 groups=('blackarch' 'blackarch-fuzzer')
 pkgdesc="IMMUNITYsec's fuzzer creation kit in C"
@@ -13,7 +13,7 @@ depends=('gcc' 'automake' 'openssl')
 optdepends=('python2: needed to run SPIKE_Console.py python GUI'
             'wxpython: needed to run SPIKE_Console.py python GUI')
 source=("http://www.immunitysec.com/downloads/SPIKE${pkgver}.tgz")
-sha1sums=('efc403a5f48f7172402f8896f398d2b1b9881f29')
+sha512sums=('733d788dfb0558bb1fa8e083e7dca095f188cbc65d7bb94349dd487a84a627937b2dea5fb32d16272deea8d464085b8c6efc374ffd6806710106358d873439e2')
 
 prepare() {
   cd $srcdir/SPIKE/SPIKE/src
@@ -33,11 +33,11 @@ package() {
   cd $srcdir/SPIKE/SPIKE/src
 
   # Create directory structure.
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/lib"
-  mkdir -p "$pkgdir/usr/include/spike"
-  mkdir -p "$pkgdir/usr/share/spike"
-  mkdir -p "$pkgdir/usr/share/doc/spike"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/lib"
+  install -dm 755 "$pkgdir/usr/include/spike"
+  install -dm 755 "$pkgdir/usr/share/spike"
+  install -dm 755 "$pkgdir/usr/share/doc/spike"
 
   # Install binaries.
   # The package doesn't provide a decent method of installation.

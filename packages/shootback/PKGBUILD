@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='shootback'
+pkgname=shootback
 pkgver=56.73cdc12
 pkgrel=1
 pkgdesc='A reverse TCP tunnel let you access target behind NAT or firewall.'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/aploium/shootback.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/shootback"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/shootback"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/shootback"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/shootback"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/shootback/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/shootback/LICENSE"

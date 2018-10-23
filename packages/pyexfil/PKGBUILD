@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pyexfil'
+pkgname=pyexfil
 pkgver=71.03a91a4
 pkgrel=1
 groups=('blackarch' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2' 'impacket' 'python2-requests')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/ytisf/PyExfil.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/PyExfil"
@@ -29,7 +29,7 @@ build() {
 package() {
   cd "$srcdir/PyExfil"
 
-  mkdir -p "$pkgdir/usr/share/pyexfil"
+  install -dm 755 "$pkgdir/usr/share/pyexfil"
 
   python2 setup.py install --root="$pkgdir" --optimize=1
 

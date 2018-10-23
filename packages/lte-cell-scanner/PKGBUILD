@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='lte-cell-scanner'
+pkgname=lte-cell-scanner
 pkgver=57.5fa3df8
 pkgrel=1
 groups=('blackarch' 'blackarch-scanner' 'blackarch-mobile' 'blackarch-recon')
@@ -12,7 +12,7 @@ license=('GAGPL')
 depends=('itpp' 'boost' 'boost-libs' 'fftw' 'rtl-sdr')
 makedepends=('git' 'cmake')
 source=('git+https://github.com/Evrytania/LTE-Cell-Scanner.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/LTE-Cell-Scanner"

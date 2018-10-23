@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='networkmap'
+pkgname=networkmap
 pkgver=58.f5faf17
 pkgrel=2
 groups=('blackarch' 'blackarch-networking' 'blackarch-misc')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-decorator' 'python2-networkx' 'python2-pydotplus'
          'python2-pyparsing' 'python2-nose' 'python2-ipaddress')
 makedepends=('git')
 source=('git+https://github.com/lorenzog/NetworkMap.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/NetworkMap"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/NetworkMap"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/networkmap"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/networkmap"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/networkmap/" README.md
   install -Dm644 -t "$pkgdir/usr/share/licenses/networkmap/" license.txt

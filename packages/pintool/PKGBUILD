@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pintool'
-pkgver=19.19a8420
-pkgrel=2
+pkgname=pintool
+pkgver=22.c746c00
+pkgrel=1
 pkgdesc='This tool can be useful for solving some reversing challenges in CTFs events.'
 groups=('blackarch' 'blackarch-reversing' 'blackarch-binary')
 arch=('any')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/wagiro/pintool.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/pintool"

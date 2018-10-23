@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='usernamer'
-pkgver=9.0d27ccb
+pkgname=usernamer
+pkgver=13.b79b0f3
 pkgrel=1
 groups=('blackarch' 'blackarch-misc' 'blackarch-automation')
 pkgdesc='Pentest Tool to generate usernames/logins based on supplied names.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/jseidl/usernamer.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/usernamer"

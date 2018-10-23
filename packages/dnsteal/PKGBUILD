@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dnsteal'
+pkgname=dnsteal
 pkgver=23.9b3b929
 pkgrel=2
 groups=('blackarch' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('GPL2')
 makedepends=('git')
 depends=('python2')
 source=('git+https://github.com/m57/dnsteal.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/dnsteal"

@@ -1,18 +1,18 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='knxmap'
-pkgver=241.400ccd5
+pkgname=knxmap
+pkgver=243.2d6f622
 pkgrel=1
 pkgdesc='KNXnet/IP scanning and auditing tool for KNX home automation installations.'
 groups=('blackarch' 'blackarch-scanner')
 arch=('any')
 url='https://github.com/ernw/knxmap'
 license=('GPL3')
-depends=('python' 'python-ipaddress')
+depends=('python')
 makedepends=('git' 'python-setuptools')
 source=('git+https://github.com/ernw/knxmap.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/knxmap"
@@ -29,8 +29,8 @@ build() {
 package() {
   cd "$srcdir/knxmap"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/knxmap"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/knxmap"
 
   #python setup.py install --root="$pkgdir" --prefix=/usr --optimize=1
 

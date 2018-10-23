@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='drinkme'
-pkgver=17.6e83a87
+pkgname=drinkme
+pkgver=19.acf1a14
 pkgrel=1
 pkgdesc='A shellcode testing harness.'
 groups=('blackarch' 'blackarch-exploitation')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=()
 makedepends=('git')
 source=('git+https://github.com/emptymonkey/drinkme.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/drinkme"
@@ -29,7 +29,7 @@ build() {
 package() {
   cd "$srcdir/drinkme"
 
-  mkdir -p "$pkgdir/usr/share/drinkme"
+  install -dm 755 "$pkgdir/usr/share/drinkme"
 
   install -Dm755 drinkme "$pkgdir/usr/bin/drinkme"
   install -Dm644 -t "$pkgdir/usr/share/doc/drinkme/" README.md

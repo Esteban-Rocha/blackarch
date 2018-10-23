@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='plutil'
-pkgver='1.6'
+pkgname=plutil
+pkgver=1.6
 pkgrel=1
 pkgdesc='Converts .plist files between binary and UTF-8 (editable) text formats.'
 groups=('blackarch' 'blackarch-misc')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('perl')
 makedepends=('dos2unix')
 source=('http://scw.us/iPhone/plutil/plutil.pl')
-sha1sums=('3fde647494ad36c06f30b23c5b250d030855b919')
+sha512sums=('3fde647494ad36c06f30b23c5b250d030855b919')
 
 prepare() {
   cd "$srcdir"

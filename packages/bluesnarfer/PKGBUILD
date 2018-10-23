@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='bluesnarfer'
-pkgver='0.1'
+pkgname=bluesnarfer
+pkgver=0.1
 pkgrel=4
 groups=('blackarch' 'blackarch-bluetooth')
 pkgdesc="A bluetooth attacking tool"
@@ -11,7 +11,7 @@ arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 license=('custom')
 depends=('bluez-libs')
 source=("http://www.alighieri.org/tools/bluesnarfer.tar.gz")
-sha1sums=('558ec3d0b97d31ac7061e129fa262296b7d75659')
+sha512sums=('929010a6751ccd258edc6053248b3873c66f3c3db7da9414a5c020c80274004ebe89e4c32f45c34768954e3fb8e8019d15c219ec53b7d6ea0b98edec6ab8da2a')
 
 build() {
   cd "$srcdir/bluesnarfer"
@@ -22,8 +22,8 @@ package() {
   cd "$srcdir/bluesnarfer"
 
   # Base directories.
-  mkdir -p "$pkgdir/usr/share/bluesnarfer/"
-  mkdir -p "$pkgdir/usr/bin/"
+  install -dm 755 "$pkgdir/usr/share/bluesnarfer/"
+  install -dm 755 "$pkgdir/usr/bin/"
 
   # Docs.
   install -m644 README "$pkgdir/usr/share/bluesnarfer/"

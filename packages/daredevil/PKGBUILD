@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='daredevil'
+pkgname=daredevil
 pkgver=37.897f602
 pkgrel=1
 pkgdesc='A tool to perform (higher-order) correlation power analysis attacks (CPA).'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('openmp')
 makedepends=('git' 'clang')
 source=('git+https://github.com/SideChannelMarvels/Daredevil.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Daredevil"
@@ -29,8 +29,8 @@ build() {
 package() {
   cd "$srcdir/Daredevil"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/daredevil"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/daredevil"
 
   cp -a LUT CONFIG "$pkgdir/usr/share/daredevil/"
 

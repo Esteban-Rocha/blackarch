@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='nimbostratus'
-pkgver='54.c7c206f'
+pkgname=nimbostratus
+pkgver=54.c7c206f
 pkgrel=2
 groups=('blackarch' 'blackarch-fingerprint' 'blackarch-exploitation' 'blackarch-fuzzer')
 pkgdesc='Tools for fingerprintinging and exploiting Amazon cloud infrastructures.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2' 'python2-nose' 'python2-boto' 'python2-requests' 'python2-httpretty')
 makedepends=('git')
 source=('git+https://github.com/andresriancho/nimbostratus.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/nimbostratus"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/nimbostratus"
 
-  mkdir -p "$pkgdir/usr/bin/"
-  mkdir -p "$pkgdir/usr/share/nimbostratus"
+  install -dm 755 "$pkgdir/usr/bin/"
+  install -dm 755 "$pkgdir/usr/share/nimbostratus"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/nimbostratus/README"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/nimbostratus/LICENSE"

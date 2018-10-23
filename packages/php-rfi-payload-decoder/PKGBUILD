@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='php-rfi-payload-decoder'
+pkgname=php-rfi-payload-decoder
 pkgver=30.bd42caa
 pkgrel=2
 groups=('blackarch' 'blackarch-cracker' 'blackarch-nfc')
@@ -12,7 +12,7 @@ license=('BSD')
 depends=('php' 'apache')
 makedepends=('git')
 source=('git+https://github.com/bwall/PHP-RFI-Payload-Decoder')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/PHP-RFI-Payload-Decoder"
@@ -23,7 +23,7 @@ pkgver() {
 package() {
   cd "$srcdir/PHP-RFI-Payload-Decoder"
 
-  mkdir -p "$pkgdir/usr/share/php-rfi-payload-decoder"
+  install -dm 755 "$pkgdir/usr/share/php-rfi-payload-decoder"
 
   cp -a Decoder "$pkgdir/usr/share/php-rfi-payload-decoder/Decoder"
 

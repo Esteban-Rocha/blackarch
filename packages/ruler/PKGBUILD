@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ruler'
-pkgver=260.7f58e4c
+pkgname=ruler
+pkgver=271.882cc5f
 pkgrel=1
 groups=('blackarch' 'blackarch-webapp' 'blackarch-exploitation')
 pkgdesc='A tool to abuse Exchange services.'
@@ -12,7 +12,7 @@ license=('CC0')
 depends=('go')
 makedepends=('git')
 source=('git+https://github.com/sensepost/ruler.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ruler"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/ruler"
 
-  mkdir -p "$pkgdir/usr/bin/"
-  mkdir -p "$pkgdir/usr/share/ruler"
+  install -dm 755 "$pkgdir/usr/bin/"
+  install -dm 755 "$pkgdir/usr/share/ruler"
 
   export GOPATH="$pkgdir/usr/share/ruler"
 

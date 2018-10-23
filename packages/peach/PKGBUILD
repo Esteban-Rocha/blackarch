@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='peach'
-pkgver='3.0.202'
+pkgname=peach
+pkgver=3.0.202
 pkgrel=1
 groups=('blackarch' 'blackarch-fuzzer')
 pkgdesc='A SmartFuzzer that is capable of performing both generation and mutation based fuzzing.'
@@ -11,7 +11,7 @@ url=('http://peachfuzzer.com/')
 license=('MIT')
 depends=('mono' 'python2' 'giflib' 'gcc-libs')
 source=("http://downloads.sourceforge.net/project/peachfuzz/Peach/3.1%20Nightly/peach-${pkgver}-source.zip")
-sha1sums=('cbebed85ee67f87d94f2d6eeae27752021d5c7ca')
+sha512sums=('cbebed85ee67f87d94f2d6eeae27752021d5c7ca')
 
 prepare() {
   cd "$srcdir/"
@@ -35,8 +35,8 @@ package() {
   python2 ./waf build --variant=release
   python2 ./waf install --variant=release --destdir="$pkgdir/usr/share/peach"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/peach"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/peach"
 
   if [ "$CARCH" == i686 ]; then
     mv "$pkgdir/usr/share/peach/output/linux_x86_release/bin"/* \

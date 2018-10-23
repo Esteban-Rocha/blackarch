@@ -1,23 +1,23 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='filibuster'
+pkgname=filibuster
 pkgver=167.c54ac80
-pkgrel=1
+pkgrel=2
 groups=('blackarch' 'blackarch-networking')
 pkgdesc='A Egress filter mapping application with additional functionality.'
 arch=('any')
 url='https://github.com/subinacls/Filibuster'
 license=('GPL3')
 depends=('python2' 'python2-numpy' 'python2-configparser' 'python2-dnspython'
-         'python2-pyliblzma' 'python2-crypto')
+         'python2-pyliblzma' 'python2-pycryptodome')
 makedepends=('git')
 source=('git+https://github.com/subinacls/Filibuster.git'
         'lulz.patch'
         'filterbuster.py')
-sha1sums=('SKIP'
-          'd2a4d782d73c425f6553cd027ceeac22b0aeed9a'
-          'cb4a97d0d27ca33899f3b323de8df5df86daa904')
+sha512sums=('SKIP'
+            'b87d3b06db4937b1aaf20abd10898603764675f3976b9aae38a5bcb3ef11df928fe18e7eaa0b7c0bea9646360df578d3226f0eced6962093765f69d69eff5e79'
+            'f47f54590bacaee6ab3095c56e998391eedf157369611c0c4ef6debe799ef91b683d8012bc31b971a6fb1b0684d6a9784884eacffef650c4e6e3dd79f3933336')
 
 pkgver() {
   cd "$srcdir/Filibuster"
@@ -37,8 +37,8 @@ prepare() {
 package() {
   cd "$srcdir/Filibuster"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/filibuster"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/filibuster"
 
   install -Dm644 README "$pkgdir/usr/share/doc/filibuster/README"
   install -Dm644 GPLv3 "$pkgdir/usr/share/licenses/filibuster/GPLv3"

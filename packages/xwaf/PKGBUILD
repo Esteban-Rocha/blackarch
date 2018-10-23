@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='xwaf'
-pkgver=150.ae30164
+pkgname=xwaf
+pkgver=151.8c462ae
 pkgrel=1
 pkgdesc='Automatic WAF bypass tool.'
 groups=('blackarch' 'blackarch-webapp' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python3')
 makedepends=('git')
 source=('git+https://github.com/3xp10it/bypass_waf.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/bypass_waf"
@@ -23,12 +23,12 @@ pkgver() {
 package() {
   cd "$srcdir/bypass_waf"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/xwaf"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/xwaf"
 
-  install -Dm644 -t "$pkgdir/usr/share/doc/xwaf/" README.md *.pdf
+  install -Dm644 -t "$pkgdir/usr/share/doc/xwaf/" readme.md *.pdf
 
-  rm README.md *.pdf
+  rm readme.md *.pdf
 
   cp -a * "$pkgdir/usr/share/xwaf/"
 

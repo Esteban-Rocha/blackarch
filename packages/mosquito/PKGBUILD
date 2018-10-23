@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='mosquito'
+pkgname=mosquito
 pkgver=39.fe54831
 pkgrel=3
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-webapp')
@@ -14,7 +14,7 @@ depends=('python2' 'python2-simplejson' 'python2-lxml' 'python2-urwid'
          'python2-flask' 'python2-jsbeautifier')
 makedepends=('git')
 source=('git+https://github.com/koto/mosquito.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/mosquito"
@@ -31,8 +31,8 @@ prepare() {
 package() {
   cd "$srcdir/mosquito"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/mosquito"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/mosquito"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/mosquito/README.md"
 

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='socketfuzz'
+pkgname=socketfuzz
 pkgver=26.089add2
 pkgrel=1
 pkgdesc='Simple socket fuzzer.'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/landw1re/socketfuzz.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/socketfuzz"

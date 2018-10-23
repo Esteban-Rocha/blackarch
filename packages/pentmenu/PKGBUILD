@@ -1,18 +1,18 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pentmenu'
+pkgname=pentmenu
 pkgver=192.abb78c5
-pkgrel=1
+pkgrel=2
 groups=('blackarch' 'blackarch-automation')
 arch=('any')
 pkgdesc='A bash script for recon and DOS attacks.'
 url='https://github.com/GinjaChris/pentmenu'
 license=('GPL3')
-depends=('bash' 'hping' 'gnu-netcat' 'openssl' 'stunnel' 'nmap' 'whois')
+depends=('bash' 'hping' 'netcat' 'openssl' 'stunnel' 'nmap' 'whois')
 makedepends=('git')
 source=('git+https://github.com/GinjaChris/pentmenu.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/pentmenu"

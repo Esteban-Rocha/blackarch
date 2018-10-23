@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='barf'
-pkgver=884.90a3814
+pkgname=barf
+pkgver=892.df7359b
 pkgrel=1
 pkgdesc='A multiplatform open source Binary Analysis and Reverse engineering Framework.'
 groups=('blackarch' 'blackarch-binary' 'blackarch-reversing')
@@ -13,7 +13,7 @@ depends=('python2' 'python2-pygments' 'python2-pyparsing' 'python2-pydot'
          'python2-pyelftools' 'python2-capstone' 'python2-ropper' 'ropgadget')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/programa-stic/barf-project.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/barf-project"

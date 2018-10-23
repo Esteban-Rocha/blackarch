@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='vbscan'
-pkgver=31.9383a39
+pkgname=vbscan
+pkgver=37.f11f1f0
 pkgrel=1
 epoch=1
 groups=('blackarch' 'blackarch-webapp' 'blackarch-fuzzer' 'blackarch-scanner')
@@ -13,7 +13,7 @@ license=('GPL3')
 depends=('perl')
 makedepends=('git')
 source=('git+https://github.com/rezasp/vbscan.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/vbscan"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/vbscan"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/vbscan"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/vbscan"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/vbscan/README.md"
   install -Dm644 -t "$pkgdir/usr/share/licenses/vbscan/" CHANGELOG.md \

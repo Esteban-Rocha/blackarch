@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='exrex'
-pkgver=126.c8bc8a2
+pkgname=exrex
+pkgver=130.5ab57ea
 pkgrel=1
 pkgdesc='Irregular methods on regular expressions.'
 groups=('blackarch' 'blackarch-misc')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/asciimoo/exrex.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/exrex"

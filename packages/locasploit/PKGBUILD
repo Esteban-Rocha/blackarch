@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='locasploit'
+pkgname=locasploit
 pkgver=117.fa48151
 pkgrel=2
 pkgdesc='Local enumeration and exploitation framework.'
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python3' 'binwalk' 'python2-scapy')
 makedepends=('git')
 source=('git+https://github.com/lightfaith/locasploit.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/locasploit"
@@ -32,8 +32,8 @@ prepare() {
 package() {
   cd "$srcdir/locasploit"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/locasploit"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/locasploit"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/locasploit/" README.md TODO
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/locasploit/LICENSE"

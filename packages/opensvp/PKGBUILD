@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='opensvp'
+pkgname=opensvp
 pkgver=65.df54ed8
 pkgrel=2
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-networking')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2' 'python2-scapy' 'ftplib')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/regit/opensvp.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/opensvp"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='lisa.py'
+pkgname=lisa.py
 pkgver=42.dc4e241
 pkgrel=1
 groups=('blackarch' 'blackarch-exploitation')
@@ -13,7 +13,7 @@ depends=('python2' 'lldb')
 makedepends=('git')
 source=('git+https://github.com/ant4g0nist/lisa.py.git')
 install='lisa.py.install'
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/lisa.py"

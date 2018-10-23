@@ -1,10 +1,10 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='vmcloak'
-pkgver='0.4.5a2'
+pkgname=vmcloak
+pkgver=0.4.5
 pkgrel=1
-epoch=1
+epoch=2
 pkgdesc='Automated Virtual Machine Generation and Cloaking for Cuckoo Sandbox.'
 groups=('blackarch-malware')
 url='https://github.com/jbremer/vmcloak'
@@ -14,7 +14,7 @@ depends=('cdrkit' 'virtualbox' 'dmidecode' 'lshw' 'python2-lockfile'
          'python2-sphinx')
 makedepends=('python2-setuptools' 'unzip')
 source=("https://github.com/jbremer/vmcloak/archive/${pkgver}.tar.gz")
-sha1sums=('4d9141962e98cf26f18c88a027a64564903fbd2c')
+sha512sums=('d4fc754f3d28576b89ed112439b9ba1bdad8f981aa90e28b24a0060f76423801c6f6468787decada8d2ae47e39702d27d56d0ffc15d7d1089a0f3b9e776e444d')
 
 build() {
   cd "$srcdir/vmcloak-$pkgver"

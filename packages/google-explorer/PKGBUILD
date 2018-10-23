@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='google-explorer'
-pkgver=126.cd7576e
-pkgrel=1
+pkgname=google-explorer
+pkgver=129.a923d02
+pkgrel=2
 pkgdesc='Google mass exploit robot - Make a google search, and parse the results for a especific exploit you define.'
 groups=('blackarch' 'blackarch-automation' 'blackarch-exploitation')
 arch=('any')
@@ -13,7 +13,7 @@ depends=('python' 'python-selenium' 'python-docopt' 'python-colorama'
          'python-requests' 'python-lxml' 'python-beautifulsoup4' 'chromium')
 makedepends=('git')
 source=('git+https://github.com/anarcoder/google_explorer.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/google_explorer"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/google_explorer"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/google-explorer"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/google-explorer"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/google-explorer/" README.md
 

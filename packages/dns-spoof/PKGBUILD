@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dns-spoof'
+pkgname=dns-spoof
 pkgver=12.3918a10
 pkgrel=1
 pkgdesc='Yet another DNS spoof utility.'
@@ -12,7 +12,7 @@ license=('GPL')
 depends=('libpcap')
 makedepends=('git')
 source=('git+https://github.com/maurotfilho/dns-spoof.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/dns-spoof"

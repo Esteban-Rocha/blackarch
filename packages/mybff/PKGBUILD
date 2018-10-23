@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='mybff'
+pkgname=mybff
 pkgver=94.6547c51
 pkgrel=1
 pkgdesc='A Brute Force Framework.'
@@ -13,7 +13,7 @@ depends=('python2' 'python2-requests' 'python2-lxml' 'python2-selenium'
          'python2-beautifulsoup4')
 makedepends=('git')
 source=('git+https://github.com/MooseDojo/myBFF.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/myBFF"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/myBFF"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/mybff"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/mybff"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/mybff/" README.md
   install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/mybff/LICENSE.txt"

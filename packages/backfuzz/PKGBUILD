@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='backfuzz'
-pkgver='36.8e54ed6'
-pkgrel=2
+pkgname=backfuzz
+pkgver=38.c650cbf
+pkgrel=1
 groups=('blackarch' 'blackarch-fuzzer' 'blackarch-networking')
 pkgdesc='A network protocol fuzzing toolkit.'
 arch=('any')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python2')
 makedepends=('git')
 source=("git+https://github.com/localh0t/backfuzz.git")
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/backfuzz"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/backfuzz"
 
-  mkdir -p "$pkgdir/usr/bin/"
-  mkdir -p "$pkgdir/usr/share/backfuzz"
+  install -dm 755 "$pkgdir/usr/bin/"
+  install -dm 755 "$pkgdir/usr/share/backfuzz"
 
   install -Dm644 README "$pkgdir/usr/share/doc/backfuzz/README"
   install -m644 VERSION "$pkgdir/usr/share/doc/backfuzz/VERSION"

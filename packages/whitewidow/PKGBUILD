@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='whitewidow'
+pkgname=whitewidow
 pkgver=605.4f27bfe
-pkgrel=2
+pkgrel=3
 pkgdesc='SQL Vulnerability Scanner.'
 groups=('blackarch' 'blackarch-scanner' 'blackarch-webapp')
 arch=('any')
@@ -13,7 +13,7 @@ depends=('ruby' 'ruby-bundler')
 makedepends=('git')
 source=('git+https://github.com/Ekultek/whitewidow.git')
 install='whitewidow.install'
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/whitewidow"
@@ -30,8 +30,8 @@ prepare() {
 package() {
   cd "$srcdir/whitewidow"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/whitewidow"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/whitewidow"
 
   install -Dm644 -t "$pkgdir/usr/share/licenses/whitewidow/" docs/legal/*
   install -Dm644 -t "$pkgdir/usr/share/doc/whitewidow/" README.md \

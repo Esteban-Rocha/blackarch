@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='jeangrey'
-pkgver=21.e67c6b1
+pkgname=jeangrey
+pkgver=23.dede197
 pkgrel=1
 pkgdesc='A tool to perform differential fault analysis attacks (DFA).'
 groups=('blackarch' 'blackarch-cracker' 'blackarch-crypto')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('python')
 makedepends=('git')
 source=('git+https://github.com/SideChannelMarvels/JeanGrey')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/JeanGrey"

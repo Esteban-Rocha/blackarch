@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='search1337'
+pkgname=search1337
 pkgver=16.ee49db9
 pkgrel=2
 groups=('blackarch' 'blackarch-automation' 'blackarch-exploitation')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2' 'python2-mechanize')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/b3mb4m/Search1337.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Search1337"

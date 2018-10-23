@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='inception'
-pkgver=445.176e8c9
+pkgname=inception
+pkgver=450.ffe83ee
 pkgrel=1
 pkgdesc='A FireWire physical memory manipulation and hacking tool exploiting IEEE 1394 SBP-2 DMA.'
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-hardware')
@@ -14,7 +14,7 @@ makedepends=('cmake' 'git' 'python-setuptools')
 options=('!strip')
 _gitname='inception'
 source=("git+https://github.com/carmaa/${_gitname}.git")
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/inception"

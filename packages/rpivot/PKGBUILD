@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='rpivot'
-pkgver=2.c280a92
+pkgname=rpivot
+pkgver=5.4963487
 pkgrel=1
 pkgdesc='Socks4 reverse proxy for penetration testing.'
 groups=('blackarch' 'blackarch-proxy')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-ntlm-auth')
 makedepends=('git')
 source=('git+https://github.com/artkond/rpivot.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/rpivot"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/rpivot"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/rpivot"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/rpivot"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/rpivot/" README.md
 

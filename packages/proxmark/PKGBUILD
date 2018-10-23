@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='proxmark'
-pkgver=2111.e069547c
-pkgrel=2
+pkgname=proxmark
+pkgver=2209.dc3e2acf
+pkgrel=1
 groups=('blackarch' 'blackarch-radio' 'blackarch-recon' 'blackarch-scanner')
 pkgdesc='A powerful general purpose RFID tool, the size of a deck of cards, designed to snoop, listen and emulate everything from Low Frequency (125kHz) to High Frequency (13.56MHz) tags.'
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('libusb' 'perl' 'qt4' 'termcap')
 makedepends=('git' 'arm-none-eabi-gcc' 'arm-none-eabi-newlib')
 source=('git+https://github.com/Proxmark/proxmark3.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/proxmark3"
@@ -29,8 +29,8 @@ build() {
 package() {
   cd "$srcdir/proxmark3"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/proxmark"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/proxmark"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/proxmark/" README.md HACKING.txt \
     COMPILING.txt CHANGELOG.md doc/*

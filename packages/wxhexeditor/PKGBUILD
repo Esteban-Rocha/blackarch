@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wxhexeditor'
+pkgname=wxhexeditor
 pkgver=663.16f75d1
 pkgrel=2
 pkgdesc='A free hex editor / disk editor for Linux, Windows and MacOSX.'
@@ -12,7 +12,7 @@ license=('GPL')
 depends=('wxgtk' 'mhash' 'python' 'python2')
 makedepends=('git')
 source=('git+https://github.com/EUA/wxHexEditor.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/wxHexEditor"

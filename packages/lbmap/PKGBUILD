@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='lbmap'
+pkgname=lbmap
 pkgver=147.2d15ace
 pkgrel=1
 groups=('blackarch' 'blackarch-fingerprint' 'blackarch-webapp')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('perl' 'perl-data-dump' 'perl-io-socket-ssl' 'perl-getopt-long')
 makedepends=('git')
 source=('git+https://github.com/wireghoul/lbmap.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/lbmap"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/lbmap"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/lbmap"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/lbmap"
 
   install -Dm644 README "$pkgdir/usr/share/doc/lbmap/README"
   install -Dm644 Changelog "$pkgdir/usr/share/doc/lbmap/Changelog"

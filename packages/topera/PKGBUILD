@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='topera'
-pkgver='19.3e230fd'
+pkgname=topera
+pkgver=19.3e230fd
 pkgrel=4
 groups=('blackarch' 'blackarch-scanner' 'blackarch-networking')
 pkgdesc="An IPv6 security analysis toolkit, with the particularity that their attacks can't be detected by Snort."
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2' 'python2-scapy')
 makedepends=('git')
 source=('git+https://github.com/toperaproject/topera.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/topera"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/topera"
 
-  mkdir -p "$pkgdir/usr/bin/"
-  mkdir -p "$pkgdir/usr/share/topera"
+  install -dm 755 "$pkgdir/usr/bin/"
+  install -dm 755 "$pkgdir/usr/share/topera"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/topera/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/topera/LICENSE"

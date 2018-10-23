@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='social-vuln-scanner'
+pkgname=social-vuln-scanner
 pkgver=11.91794c6
-pkgrel=4
+pkgrel=5
 pkgdesc='Gathers public information on companies to highlight social engineering risk.'
 groups=('blackarch' 'blackarch-social' 'blackarch-recon')
 arch=('any')
@@ -15,7 +15,7 @@ depends=('python' 'python-beautifulsoup4' 'python-editdistance'
          'iotop')
 makedepends=('git')
 source=('git+https://github.com/Betawolf/social-vuln-scanner.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/social-vuln-scanner"
@@ -26,8 +26,8 @@ pkgver() {
 package() {
   cd "$srcdir/social-vuln-scanner"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/social-vuln-scanner"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/social-vuln-scanner"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/social-vuln-scanner/" README.md \
     CREDENTIALS

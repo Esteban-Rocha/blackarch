@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='hashpump'
+pkgname=hashpump
 pkgver=49.314268e
 pkgrel=1
 pkgdesc='A tool to exploit the hash length extension attack in various hashing algorithms.'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('openssl')
 makedepends=('git')
 source=('git+https://github.com/bwall/HashPump.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/HashPump"
@@ -30,7 +30,7 @@ build() {
 package() {
   cd "$srcdir/HashPump"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   make INSTALLLOCATION="$pkgdir/usr/bin" install
 

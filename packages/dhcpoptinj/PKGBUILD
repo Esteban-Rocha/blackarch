@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dhcpoptinj'
+pkgname=dhcpoptinj
 pkgver=45.ec80d98
 pkgrel=1
 pkgdesc='DHCP option injector.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('libnetfilter_queue')
 makedepends=('git' 'cmake')
 source=('git+https://github.com/misje/dhcpoptinj.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/dhcpoptinj"

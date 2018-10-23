@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='smbcrunch'
+pkgname=smbcrunch
 pkgver=12.313400e
 pkgrel=1
 pkgdesc='3 tools that work together to simplify reconaissance of Windows File Shares.'
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('perl')
 makedepends=('git')
 source=('git+https://github.com/Raikia/SMBCrunch.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/SMBCrunch"

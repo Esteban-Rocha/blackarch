@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='imagemounter'
-pkgver=354.29c9a01
+pkgname=imagemounter
+pkgver=373.8621378
 pkgrel=1
 pkgdesc='Command line utility and Python package to ease the (un)mounting of forensic disk images.'
 groups=('blackarch' 'blackarch-forensic' 'blackarch-misc')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python' 'python-termcolor' 'python-argparse')
 makedepends=('git' 'python-setuptools')
 source=('git+https://github.com/ralphje/imagemounter.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/imagemounter"

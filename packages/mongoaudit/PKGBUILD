@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='mongoaudit'
+pkgname=mongoaudit
 pkgver=217.c03c68a
 pkgrel=1
 pkgdesc='A powerful MongoDB auditing and pentesting tool .'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2' 'python2-pymongo' 'python2-urwid')
 makedepends=('git' 'python2-setuptools')
 source=('git+https://github.com/stampery/mongoaudit.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/mongoaudit"

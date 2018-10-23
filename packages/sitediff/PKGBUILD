@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='sitediff'
+pkgname=sitediff
 pkgver=3.1383935
 pkgrel=1
 groups=('blackarch' 'blackarch-webapp' 'blackarch-fingerprint')
@@ -13,7 +13,7 @@ depends=('ruby')
 makedepends=('ruby' 'git')
 source=('git+https://github.com/digininja/sitediff.git')
 install='sitediff.install'
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/sitediff"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/sitediff"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/sitediff"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/sitediff"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/sitediff/" README.md
 

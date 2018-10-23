@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pyew'
+pkgname=pyew
 pkgver=104.4754f38
 pkgrel=1
 groups=('blackarch' 'blackarch-malware')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('distorm' 'python2')
 makedepends=('git')
 source=('git+https://github.com/joxeankoret/pyew')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/pyew"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/pyew"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/pyew"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/pyew"
 
   for i in *.py
   do
@@ -35,7 +35,7 @@ package() {
 
   for i in Elf anal contrib logo plugins scripts
   do
-    mkdir -p "$pkgdir/usr/share/pyew/$i"
+    install -dm 755 "$pkgdir/usr/share/pyew/$i"
     cp -a $i/* "$pkgdir/usr/share/pyew/$i/";
   done
 

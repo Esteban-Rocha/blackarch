@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dorkbot'
-pkgver=18.f264e0a
+pkgname=dorkbot
+pkgver=49.870eb65
 pkgrel=1
 pkgdesc='Command-line tool to scan Google search results for vulnerabilities.'
 groups=('blackarch' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-argparse')
 makedepends=('git')
 source=('git+https://github.com/utiso/dorkbot.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/dorkbot"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/dorkbot"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/dorkbot"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/dorkbot"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/dorkbot/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/dorkbot/LICENSE"

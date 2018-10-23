@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='sn1per'
-pkgver=233.ebb7fc4
+pkgname=sn1per
+pkgver=275.6742318
 pkgrel=1
 pkgdesc='Automated Pentest Recon Scanner.'
 groups=('blackarch' 'blackarch-recon' 'blackarch-automation' 'blackarch-scanner'
@@ -13,13 +13,13 @@ arch=('any')
 depends=('whois' 'theharvester' 'dnsenum' 'curl' 'nmap' 'php' 'w3af' 'amap'
          'wapiti' 'hydra' 'firefox' 'wpscan' 'sqlmap' 'arachni' 'golismero'
          'nbtscan' 'enum4linux' 'cisco-torch' 'metasploit' 'nikto' 'bind-tools'
-         'smtp-user-enum' 'whatweb' 'python' 'sslscan' 'bash' 'testssl' 'sslyze'
-         'python2' 'dos2unix' 'xsstracer' 'ruby' 'cutycapt' 'postgresql'
-         'xprobe2' 'unzip' 'brutex' 'goohak')
+         'smtp-user-enum' 'whatweb' 'python' 'sslscan' 'bash' 'testssl.sh'
+         'sslyze' 'python2' 'dos2unix' 'xsstracer' 'ruby' 'cutycapt'
+         'postgresql' 'xprobe2' 'unzip' 'brutex' 'goohak')
 makedepends=('git')
 source=('git+https://github.com/1N3/Sn1per.git')
 install='sn1per.install'
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Sn1per"
@@ -34,10 +34,10 @@ prepare() {
 }
 
 package() {
-  cd "$srcdir/Sniper"
+  cd "$srcdir/Sn1per"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/sniper"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/sniper"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/sniper/" README.md CHANGELOG.md \
     TODO.md
@@ -52,5 +52,5 @@ cd /usr/share/sniper
 exec bash ./sniper "\${@}"
 EOF
 
-  chmod a+x "$pkgdir/usr/bin/sn1per"
+  chmod a+x "$pkgdir/usr/bin/sniper"
 }

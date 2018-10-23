@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='arpstraw'
+pkgname=arpstraw
 pkgver=27.ab40e13
 pkgrel=2
 pkgdesc='Arp spoof detection tool.'
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2' 'python2-pyshark' 'python2-netifaces' 'python2-scapy')
 makedepends=('git')
 source=('git+https://github.com/he2ss/arpstraw.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/arpstraw"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/arpstraw"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/arpstraw"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/arpstraw"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/arpstraw/" README.md
 

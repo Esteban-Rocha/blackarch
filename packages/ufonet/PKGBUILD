@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ufonet'
-pkgver=38.be77287
+pkgname=ufonet
+pkgver=43.7d328c5
 pkgrel=1
 groups=('blackarch' 'blackarch-dos' 'blackarch-webapp')
 pkgdesc="A tool designed to launch DDoS attacks against a target, using
@@ -13,7 +13,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-pycurl' 'python2-geoip' 'geoip')
 makedepends=('git')
 source=('git+https://github.com/epsylon/ufonet.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/ufonet"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/ufonet"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/ufonet"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/ufonet"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/ufonet/" README.md docs/*
 

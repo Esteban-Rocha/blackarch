@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='lans'
+pkgname=lans
 pkgver=147.a4f99fe
 pkgrel=2
 epoch=1
@@ -15,7 +15,7 @@ depends=('python2' 'python2-scapy' 'python2-nfqueue' 'aircrack-ng' 'python2-twis
 makedepends=('git')
 optsdepends=('beef')
 source=('git+https://github.com/DanMcInerney/LANs.py.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/LANs.py"

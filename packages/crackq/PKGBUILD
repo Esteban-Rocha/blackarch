@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='crackq'
+pkgname=crackq
 pkgver=48.89b7318
 pkgrel=2
 groups=('blackarch' 'blackarch-cracker')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 makedepends=('git')
 depends=('python2' 'python2-simplejson')
 source=('git+https://github.com/vnik5287/Crackq.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Crackq"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/Crackq"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/crackq"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/crackq"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/crackq/README.md"
 

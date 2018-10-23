@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='powersploit'
+pkgname=powersploit
 pkgver=476.c7985c9
-pkgrel=2
+pkgrel=3
 groups=('blackarch' 'blackarch-exploitation' 'blackarch-windows')
 pkgdesc='A PowerShell Post-Exploitation Framework.'
 url='https://github.com/mattifestation/PowerSploit'
@@ -11,7 +11,7 @@ arch=('any')
 license=('BSD')
 makedepends=('git')
 source=('git+https://github.com/mattifestation/PowerSploit.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/PowerSploit"
@@ -22,7 +22,7 @@ pkgver() {
 package() {
   cd "$srcdir/PowerSploit"
 
-  mkdir -p "$pkgdir/usr/share/windows/powersploit"
+  install -dm 755 "$pkgdir/opt/windows/archive/powersploit"
 
-  cp -a --no-preserve=ownership * "$pkgdir/usr/share/windows/powersploit"
+  cp -a --no-preserve=ownership * "$pkgdir/opt/windows/archive/powersploit"
 }

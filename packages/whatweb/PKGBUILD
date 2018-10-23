@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='whatweb'
-pkgver=4254.f3948d4a
+pkgname=whatweb
+pkgver=4260.e142cc61
 pkgrel=1
 groups=('blackarch' 'blackarch-recon' 'blackarch-webapp')
 pkgdesc='Next generation web scanner that identifies what websites are running.'
@@ -10,9 +10,10 @@ arch=('any')
 url='http://www.morningstarsecurity.com/research/whatweb'
 license=('GPL')
 depends=('ruby')
-makedepends=('git')
+makedepends=('git' 'ruby-bundler')
 source=('git+https://github.com/urbanadventurer/WhatWeb.git')
-sha1sums=('SKIP')
+install='whatweb.install'
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/WhatWeb"
@@ -23,10 +24,24 @@ pkgver() {
 package() {
   cd "$srcdir/WhatWeb"
 
-  mkdir -p "$pkgdir/usr/share/doc/whatweb"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/whatweb"
+
+  #make DESTDIR="$pkgdir" install
 
   install -Dm644 -t "$pkgdir/usr/share/doc/whatweb" CHANGELOG README INSTALL
+  install -Dm644 whatweb.1 "$pkgdir/usr/share/man/man1/whatweb.1"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/whatweb/LICENSE"
 
-  make DESTDIR="$pkgdir" install
+  rm CHANGELOG README INSTALL whatweb.1 LICENSE
+
+  cp -a * "$pkgdir/usr/share/whatweb"
+
+  cat > "$pkgdir/usr/bin/whatweb" << EOF
+#!/bin/sh
+cd /usr/share/whatweb
+exec ruby whatweb "\${@}"
+EOF
+
+  chmod a+x "$pkgdir/usr/bin/whatweb"
 }

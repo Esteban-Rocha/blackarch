@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='khc'
-pkgver='0.2'
+pkgname=khc
+pkgver=0.2
 pkgrel=4
 groups=('blackarch' 'blackarch-cracker')
 pkgdesc='A small tool designed to recover hashed known_hosts fiels back to their plain-text equivalents.'
@@ -11,7 +11,7 @@ url='http://packetstormsecurity.com/files/87003/Known-Host-Cracker-0.2.html'
 license=('custom:unknown')
 depends=('openssl')
 source=("https://dl.packetstormsecurity.net/UNIX/utilities/khc_${pkgver}.tar.gz")
-sha1sums=('5dee15404c46ed3f99478777b9095441bbf09f68')
+sha512sums=('97d044b3b9dacc001ee224a62c769e387219382ce68ae037c730528e116511fa5873f42f46a635202d694103504dfb591335f604d3fb7d802dc9bc4c0b4181b3')
 
 build() {
   cd "$srcdir/khc"
@@ -24,7 +24,7 @@ package() {
 
   install -Dm755 khc "$pkgdir/usr/bin/khc"
 
-  mkdir -p "$pkgdir/usr/share/doc/khc"
+  install -dm 755 "$pkgdir/usr/share/doc/khc"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/khc" AUTHORS CHANGELOG CONCEPT \
     EXAMPLES INSTALL TODO VERSION

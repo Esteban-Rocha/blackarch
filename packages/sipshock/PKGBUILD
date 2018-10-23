@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='sipshock'
+pkgname=sipshock
 pkgver=7.6ab5591
 pkgrel=2
 groups=('blackarch' 'blackarch-scanner' 'blackarch-voip')
@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('go')
 makedepends=('git')
 source=('git+https://github.com/zaf/sipshock.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/sipshock"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/sipshock"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/sipshock"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/sipshock"
 
   install -Dm644 sipshock.go "$pkgdir/usr/share/sipshock/sipshock.go"
   install -Dm644 Readme.md "$pkgdir/usr/share/doc/sipshock/Readme.md"

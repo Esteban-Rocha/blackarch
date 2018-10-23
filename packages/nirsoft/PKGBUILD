@@ -1,0 +1,35 @@
+# This file is part of BlackArch Linux ( http://blackarch.org ).
+# See COPYING for license details.
+
+pkgname=nirsoft
+pkgver=1.20.38
+pkgrel=2
+pkgdesc='Unique collection of small and useful freeware utilities.'
+groups=('blackarch' 'blackarch-windows' )
+arch=('any')
+makedepends=('unzip' 'curl')
+url='https://www.nirsoft.net'
+urlZip="https://download.nirsoft.net/nirsoft_package_enc_${pkgver}.zip"
+
+pkgver() {
+  cd "$srcdir"
+
+	curl "https://launcher.nirsoft.net/downloads/index.html" 2>/dev/null |
+    grep -P '<a.*_enc_.*\.zip' | sed -r 's/.*_([0-9]+\.[0-9]+\.[0-9]+).*/\1/gi'
+}
+package() {
+  cd "$srcdir"
+
+	tmpFile='/tmp/nirsoft.zip'
+	targetDir="$pkgdir/opt/windows/nirsoft/"
+
+  install -dm 755 "${targetDir}"
+
+  curl -H "Referer: ${url}" --output "${tmpFile}" "${urlZip}"
+
+  unzip -d "${targetDir}" -P 'nirsoft9876$' "${tmpFile}"
+
+  rm -rf "${tmpFile}"
+}
+
+

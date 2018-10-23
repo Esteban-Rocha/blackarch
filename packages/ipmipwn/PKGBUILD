@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='ipmipwn'
+pkgname=ipmipwn
 pkgver=6.74a08a8
 pkgrel=2
 groups=('blackarch' 'blackarch-cracker' 'blackarch-automation')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'ipmitool' 'nmap')
 makedepends=('git')
 source=('git+https://github.com/AnarchyAngel/IPMIPWN.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/IPMIPWN"
@@ -29,8 +29,8 @@ prepare() {
 package() {
   cd "$srcdir/IPMIPWN"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/ipmipwn"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/ipmipwn"
 
   install -Dm755 ipmipwn.py "$pkgdir/usr/bin/ipmipwn"
   install -Dm644 -t "$pkgdir/usr/share/doc/ipmipwn/" README.md

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='creak'
+pkgname=creak
 pkgver=40.52b0d74
 pkgrel=2
 groups=('blackarch' 'blackarch-networking' 'blackarch-exploitation'
@@ -13,7 +13,7 @@ license=('GPL3')
 makedepends=('git')
 depends=('python2' 'python2-pypcap' 'python2-dpkt')
 source=('git+https://github.com/codepr/creak.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/creak"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/creak"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/creak"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/creak"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/creak/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/creak/LICENSE"

@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='rtlsdr-scanner'
-pkgver=1010.b07f713
+pkgname=rtlsdr-scanner
+pkgver=1013.3c032de
 pkgrel=1
 groups=('blackarch' 'blackarch-scanner')
 pkgdesc='A cross platform Python frequency scanning GUI for the OsmoSDR rtl-sdr library.'
@@ -13,7 +13,7 @@ depends=('python2' 'python2-pyrtlsdr' 'wxpython' 'python2-pyserial'
          'python2-pillow' 'python2-numpy' 'rtl-sdr' 'python2-matplotlib')
 makedepends=('git')
 source=('git+https://github.com/EarToEarOak/RTLSDR-Scanner.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/RTLSDR-Scanner"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/RTLSDR-Scanner"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/rtlsdr-scanner"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/rtlsdr-scanner"
 
   install -Dm644 readme.md "$pkgdir/usr/share/doc/rtlsdr-scanner/readme.md"
   install -Dm644 COPYING "$pkgdir/usr/share/licenses/rtlsdr-scanner/COPYING"

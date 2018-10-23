@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='gobd'
+pkgname=gobd
 pkgver=81.e64b5a5
 pkgrel=1
 groups=('blackarch' 'blackarch-backdoor')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('glibc' 'go' 'libpcap')
 makedepends=('go' 'git' 'libpcap')
 source=('git+https://github.com/razc411/GoBD.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 _url='https://github.com/razc411/GoBD'
 
@@ -25,7 +25,7 @@ pkgver() {
 build() {
   cd "$srcdir"
 
-  mkdir -p src/$url && rm -rf src/$url && mv GoBD src/$url && cd src/$url
+  install -dm 755 src/$url && rm -rf src/$url && mv GoBD src/$url && cd src/$url
 
   GOPATH="$srcdir" go get -d -t github.com/razc411/GoBD
 }
@@ -33,7 +33,7 @@ build() {
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   GOPATH="$srcdir" go build -v github.com/razc411/GoBD
 

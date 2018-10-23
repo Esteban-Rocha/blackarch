@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='wifi-monitor'
+pkgname=wifi-monitor
 pkgver=24.33b682e
 pkgrel=4
 groups=('blackarch' 'blackarch-sniffer')
@@ -12,7 +12,7 @@ license=('custom')
 depends=('python2' 'python2-scapy' 'nbtscan' 'aircrack-ng')
 makedepends=('git')
 source=('git+https://github.com/DanMcInerney/wifi-monitor.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/wifi-monitor"

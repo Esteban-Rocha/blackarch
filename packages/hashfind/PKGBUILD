@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='hashfind'
+pkgname=hashfind
 pkgver=8.e9a9a14
 pkgrel=2
 groups=('blackarch' 'blackarch-crypto')
@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/rurapenthe/hashfind.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/hashfind"

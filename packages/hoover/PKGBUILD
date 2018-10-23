@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='hoover'
+pkgname=hoover
 pkgver=4.9bda860
 pkgrel=2
 groups=('blackarch' 'blackarch-wireless' 'blackarch-sniffer')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('perl' 'perl-getopt-long' 'wireless_tools' 'wireshark-cli')
 makedepends=('git')
 source=('git+https://github.com/xme/hoover.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/hoover"

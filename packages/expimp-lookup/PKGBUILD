@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='expimp-lookup'
+pkgname=expimp-lookup
 pkgver=4.79a96c7
 pkgrel=2
 groups=('blackarch' 'blackarch-binary' 'blackarch-recon')
@@ -13,8 +13,8 @@ depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/tr3w/ExpImp-Lookup.git'
         'git+https://github.com/tr3w/PEace.git')
-sha1sums=('SKIP'
-          'SKIP')
+sha512sums=('SKIP'
+            'SKIP')
 
 pkgver() {
   cd "$srcdir/ExpImp-Lookup"
@@ -32,7 +32,7 @@ prepare() {
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   install -Dm755 ExpImp-Lookup/expimp_lookup.py \
     "$pkgdir/usr/share/expimp-lookup/expimp_lookup.py"

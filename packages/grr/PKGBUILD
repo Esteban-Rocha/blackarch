@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='grr'
+pkgname=grr
 pkgver=20.9546b16
 pkgrel=1
 pkgdesc='High-throughput fuzzer and emulator of DECREE binaries.'
@@ -12,7 +12,7 @@ license=('Apache2')
 depends=('gflags')
 makedepends=('git' 'clang')
 source=('git+https://github.com/trailofbits/grr.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/grr"
@@ -36,7 +36,7 @@ build() {
 package() {
   cd "$srcdir/grr"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   install -Dm755 -t "$pkgdir/usr/bin" \
     bin/debug_decree_user/{grrcov,grrplay,grrshot}

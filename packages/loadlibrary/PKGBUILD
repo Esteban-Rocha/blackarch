@@ -1,18 +1,18 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='loadlibrary'
-pkgver=48.bccf60b
+pkgname=loadlibrary
+pkgver=51.4f26ce6
 pkgrel=1
 pkgdesc='Porting Windows Dynamic Link Libraries to Linux.'
 groups=('blackarch' 'blackarch-binary')
 arch=('x86_64' 'armv6h' 'armv7h' 'aarch64')
 url='https://github.com/taviso/loadlibrary'
 license=('GPL2')
-depends=('cabextract' 'readline' 'gcc')
+depends=('cabextract' 'readline' 'gcc' 'lib32-glibc')
 makedepends=('git')
 source=('git+https://github.com/taviso/loadlibrary.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/loadlibrary"
@@ -29,8 +29,8 @@ build() {
 package() {
   cd "$srcdir/loadlibrary"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/loadlibrary"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/loadlibrary"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/loadlibrary/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/loadlibrary/LICENSE"

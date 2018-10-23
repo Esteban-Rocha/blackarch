@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='strutscan'
+pkgname=strutscan
 pkgver=4.8712c12
 pkgrel=2
 groups=('blackarch' 'blackarch-scanner')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('perl' 'perl-http-cookies' 'perl-uri')
 makedepends=('git')
 source=('git+https://github.com/riusksk/StrutScan.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/StrutScan"

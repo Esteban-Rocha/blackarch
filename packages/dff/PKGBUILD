@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='dff'
+pkgname=dff
 pkgver=183.d40d46b
 pkgrel=1
 pkgdesc='A Forensics Framework coming with command line and graphical interfaces.'
@@ -27,8 +27,8 @@ source=(
   'git+https://github.com/arxsys/dff.git'
   'fixes.patch'
 )
-sha1sums=('SKIP'
-          '69120adc9b09eab5d7d2eaccd90ef1c01c90af45')
+sha512sums=('SKIP'
+            '25757b4fad24da09393d752f41c752a7ab4982c0af77431ead0885ddb9a7fd775dcd06934c15fc780fd2c163b4aea65d96d1ee6a68f96bc328b1adc2df6d2d89')
 
 _gitname="dff"
 
@@ -59,10 +59,10 @@ build() {
 
   # create build folder
   rm -rf build
-  mkdir -p build && cd build
+  install -dm 755 build && cd build
 
   # python2 temporary alias
-  mkdir -p bin
+  install -dm 755 bin
   cp /usr/bin/python2 bin/python
 
   # build process

@@ -1,17 +1,17 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-pyexecjs'
-pkgver='1.5.0'
-pkgrel=1
+pkgname=python2-pyexecjs
+pkgver=1.5.1
+pkgrel=2
 pkgdesc='Run JavaScript code from Python.'
 arch=('any')
-url='https://pypi.python.org/pypi/PyExecJS'
+url='https://pypi.org/project/PyExecJS/#files'
 license=('MIT')
 depends=('python2')
 makedepends=('python2-setuptools')
-source=("https://pypi.python.org/packages/1c/a0/359e179605bbf3f6c6ed96c44e056eebed39732b67427f30d56e259934f2/PyExecJS-${pkgver}.tar.gz")
-sha1sums=('4646581cd884529e77ff26a0bc2994f8291fb0fc')
+source=("https://files.pythonhosted.org/packages/ba/8e/aedef81641c8dca6fd0fb7294de5bed9c45f3397d67fddf755c1042c2642/PyExecJS-${pkgver}.tar.gz")
+sha512sums=('df6eb89e038dfedab70d43ab76e08b12ac6d701f97be31f36ef92da747c03de5f6c7d477f6841788d849da36659d4e7ec8eb8a63c8ddda9d0b3c3acf0cf76853')
 
 build() {
   cd "$srcdir/PyExecJS-$pkgver"

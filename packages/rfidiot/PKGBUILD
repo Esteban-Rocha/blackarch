@@ -1,18 +1,18 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='rfidiot'
+pkgname=rfidiot
 pkgver=78.f4b5582
 pkgrel=1
 groups=('blackarch' 'blackarch-wireless')
 pkgdesc='An open source python library for exploring RFID devices.'
 url='http://rfidiot.org/'
 license=('GPL')
-makedepends=('git' 'python2-distribute' 'python2-crypto')
+makedepends=('git' 'python2-distribute' 'python2-pycryptodome')
 depends=('python2' 'openssl')
 arch=('any')
 source=('git+https://github.com/AdamLaurie/RFIDIOt')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/RFIDIOt"

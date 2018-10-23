@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='peach-fuzz'
+pkgname=peach-fuzz
 pkgver=55.404e8ee
 pkgrel=2
 pkgdesc='Simple vulnerability scanning framework.'
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-colorama')
 makedepends=('git')
 source=('git+https://github.com/Caleb1994/peach.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/peach"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/peach"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/peach-fuzz"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/peach-fuzz"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/peach-fuzz/README.md"
 

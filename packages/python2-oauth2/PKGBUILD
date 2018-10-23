@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='python2-oauth2'
-pkgver='1.9.0'
-pkgrel=2
+pkgname=python2-oauth2
+pkgver=1.9.0
+pkgrel=3
 pkgdesc='Library for OAuth version 1.9.'
 arch=('any')
 url='https://pypi.python.org/pypi/oauth2/'
@@ -11,7 +11,7 @@ license=('MIT')
 depends=('python2')
 makedepends=('python2-setuptools')
 source=("https://pypi.python.org/packages/64/19/8b9066e94088e8d06d649e10319349bfca961e87768a525aba4a2627c986/oauth2-${pkgver}.post1.tar.gz")
-sha1sums=('d8136724b257ab82bf700c346b84c3b8778cf757')
+sha512sums=('a3b64eef331d4c4f59c275f14efb2dfb48ad60de47a59a88106f60d64428a09b76d8bedf08c98c113493968d83708b1478b4b61b2b5528b5b01fa22777daff4c')
 
 build() {
   cd "$srcdir/oauth2-$pkgver.post1"

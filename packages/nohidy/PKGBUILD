@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='nohidy'
+pkgname=nohidy
 pkgver=67.22c1283
 pkgrel=1
 pkgdesc='The system admins best friend, multi platform auditing tool.'
@@ -13,7 +13,7 @@ license=('GPL2')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/flipchan/Nohidy')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/Nohidy"
@@ -30,8 +30,8 @@ prepare() {
 package() {
   cd "$srcdir/Nohidy"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/nohidy"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/nohidy"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/nohidy/" README.md README.txt Help/*
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/nohidy/LICENSE"

@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='bsqlinjector'
-pkgver=8.5dc3f27
-pkgrel=3
+pkgname=bsqlinjector
+pkgver=13.027184f
+pkgrel=1
 groups=('blackarch' 'blackarch-webapp' 'blackarch-exploitation')
 pkgdesc='Blind SQL injection exploitation tool written in ruby.'
 arch=('any')
@@ -12,7 +12,7 @@ license=('custom:unknown')
 depends=('ruby')
 makedepends=('git')
 source=('git+https://github.com/enjoiz/BSQLinjector.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/BSQLinjector"

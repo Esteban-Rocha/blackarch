@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='smod'
+pkgname=smod
 pkgver=53.7eb8423
 pkgrel=4
 groups=('blackarch' 'blackarch-scanner' 'blackarch-fuzzer' 'blackarch-recon'
@@ -14,7 +14,7 @@ depends=('python2' 'python2-scapy' 'python2-pexpect' 'python2-asn1crypto'
          'python2-archinfo')
 makedepends=('git')
 source=('git+https://github.com/enddo/smod.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/smod"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/smod"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/smod"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/smod"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/smod/" README.md
   install -Dm644 LICENSE.md "$pkgdir/usr/share/licenses/smod/LICENSE.md"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='blackmate'
+pkgname=blackmate
 pkgver=49.6e5f2d3
 pkgrel=1
 pkgdesc='BlackArch specific Xfce4 WM.'
@@ -12,7 +12,7 @@ depends=('xdg-utils' 'blackarch-config-gtk' 'xfce4-terminal' 'xfce4-session'
          'blackarch-menus' 'sudo' 'wget')
 makedepends=('git')
 source=('git+https://github.com/Anyon3/blackmate')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/blackmate"
@@ -23,8 +23,8 @@ pkgver() {
 package() {
   cd "$srcdir/blackmate"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/blackmate"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/blackmate"
 
   cp -a * "$pkgdir/usr/share/blackmate"
 

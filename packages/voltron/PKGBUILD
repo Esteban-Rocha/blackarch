@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='voltron'
+pkgname=voltron
 pkgver=596.4ee3cbe
-pkgrel=1
+pkgrel=2
 pkgdesc="UI for GDB, LLDB and Vivisect's VDB."
 groups=('blackarch' 'blackarch-debugger')
 arch=('any')
@@ -17,8 +17,8 @@ makedepends=('git' 'python-setuptools')
 optdepends=('gdb: GDB' 'lldb: LLDB' 'vivisect: VDB')
 source=('git+https://github.com/snare/voltron.git'
         'git+https://github.com/snare/voltron.wiki')
-sha1sums=('SKIP'
-          'SKIP')
+sha512sums=('SKIP'
+            'SKIP')
 
 pkgver() {
   cd "$srcdir/voltron"

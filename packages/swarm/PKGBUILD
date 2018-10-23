@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='swarm'
+pkgname=swarm
 pkgver=41.1713c1e
 pkgrel=2
 epoch=1
@@ -14,7 +14,7 @@ license=('GPL3')
 depends=('python2' 'python2-ipy')
 makedepends=('git')
 source=('git+https://github.com/Arvin-X/swarm.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/swarm"
@@ -25,8 +25,8 @@ pkgver() {
 package() {
   cd "$srcdir/swarm"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/swarm"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/swarm"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/swarm/" README.md docs/*
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/swarm/LICENSE"

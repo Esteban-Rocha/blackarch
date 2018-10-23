@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='davscan'
+pkgname=davscan
 pkgver=27.9ad8f2f
 pkgrel=1
 pkgdesc='Fingerprints servers, finds exploits, scans WebDAV.'
@@ -13,7 +13,7 @@ license=('custom:unknown')
 depends=('python2' 'python2-requests' 'python2-pysqlite' 'python2-lxml')
 makedepends=('git')
 source=('git+https://github.com/Graph-X/davscan.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/davscan"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/davscan"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/davscan"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/davscan"
 
   install -Dm644 -t "$pkgdir/usr/share/doc/davscan/" README.md
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/davscan/LICENSE"

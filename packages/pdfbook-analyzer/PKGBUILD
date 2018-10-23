@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pdfbook-analyzer'
-pkgver='2'
+pkgname=pdfbook-analyzer
+pkgver=2
 pkgrel=6
 epoch=1
 groups=('blackarch' 'blackarch-forensic')
@@ -13,7 +13,7 @@ license=('GPL2')
 depends=('python2')
 makedepends=('git')
 source=('git+http://git.code.sf.net/p/pdfbook/code')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 prepare() {
   cd "$srcdir/code"

@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='cnamulator'
+pkgname=cnamulator
 pkgver=5.4667c68
 pkgrel=1
 groups=('blackarch' 'blackarch-mobile' 'blackarch-recon')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('glibc' 'go')
 makedepends=('go' 'git')
 source=('git+https://github.com/packetassailant/cnamulator.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/cnamulator"
@@ -23,7 +23,7 @@ pkgver() {
 build() {
   cd "$srcdir"
 
-  mkdir -p src/$url && rm -rf src/$url && mv cnamulator src/$url && cd src/$url
+  install -dm 755 src/$url && rm -rf src/$url && mv cnamulator src/$url && cd src/$url
 
   GOPATH="$srcdir" go get -d -t github.com/packetassailant/cnamulator
 }
@@ -31,7 +31,7 @@ build() {
 package() {
   cd "$srcdir"
 
-  mkdir -p "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/bin"
 
   GOPATH="$srcdir" go build -v github.com/packetassailant/cnamulator
 

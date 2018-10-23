@@ -1,8 +1,8 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='pwned'
-pkgver=292.8d2841d
+pkgname=pwned
+pkgver=397.16959b0
 pkgrel=1
 pkgdesc="A command-line tool for querying the 'Have I been pwned?' service."
 groups=('blackarch' 'blackarch-recon')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('nodejs')
 makedepends=('git' 'npm')
 source=("git+https://github.com/wKovacs64/pwned.git")
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver(){
   cd "$srcdir/pwned"
@@ -25,7 +25,7 @@ package() {
 
   local _npmdir="$pkgdir/usr/lib/node_modules/"
 
-  mkdir -p $_npmdir
+  install -dm 755 $_npmdir
 
   cd $_npmdir
 

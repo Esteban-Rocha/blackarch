@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='bamf-framework'
+pkgname=bamf-framework
 pkgver=35.30d2b4b
 pkgrel=2
 pkgdesc='A modular framework designed to be a platform to launch attacks against botnets.'
@@ -13,7 +13,7 @@ depends=('python2' 'python2-yara' 'yara' 'python2-simplejson' 'python2-pycurl'
         'python2-pygeoip')
 makedepends=('git')
 source=('git+https://github.com/bwall/BAMF.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/BAMF"
@@ -24,8 +24,8 @@ pkgver() {
 package() {
   cd "$srcdir/BAMF"
 
-  mkdir -p "$pkgdir/usr/bin/"
-  mkdir -p "$pkgdir/usr/share/bamf"
+  install -dm 755 "$pkgdir/usr/bin/"
+  install -dm 755 "$pkgdir/usr/share/bamf"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/bamf/README.md"
   install -Dm644 LICENSE.TXT "$pkgdir/usr/share/licenses/bamf/LICENSE.TXT"

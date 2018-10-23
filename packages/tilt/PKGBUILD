@@ -1,7 +1,7 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='tilt'
+pkgname=tilt
 pkgver=90.2bc2ef2
 pkgrel=3
 groups=('blackarch' 'blackarch-recon')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python2')
 makedepends=('git')
 source=('git+https://github.com/AeonDave/tilt.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/tilt"
@@ -29,8 +29,8 @@ prepare() {
 package() {
   cd "$srcdir/tilt"
 
-  mkdir -p "$pkgdir/usr/bin"
-  mkdir -p "$pkgdir/usr/share/tilt"
+  install -dm 755 "$pkgdir/usr/bin"
+  install -dm 755 "$pkgdir/usr/share/tilt"
 
   install -Dm644 README.md "$pkgdir/usr/share/doc/tilt/README.md"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/tilt/LICENSE"

@@ -1,9 +1,9 @@
 # This file is part of BlackArch Linux ( http://blackarch.org ).
 # See COPYING for license details.
 
-pkgname='chiasm-shell'
+pkgname=chiasm-shell
 pkgver=33.e20ed9f
-pkgrel=1
+pkgrel=2
 pkgdesc='Python-based interactive assembler/disassembler CLI, powered byKeystone/Capstone.'
 groups=('blackarch' 'blackarch-disassembler')
 arch=('any')
@@ -12,7 +12,7 @@ license=('MIT')
 depends=('python' 'python-keystone-engine' 'python-capstone')
 makedepends=('git' 'python-setuptools')
 source=('git+https://github.com/0xbc/chiasm-shell.git')
-sha1sums=('SKIP')
+sha512sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/chiasm-shell"
